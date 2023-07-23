@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Xorg</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">Xorg</span>
+</div>
+
+<h1>Xorg</h1>
+
+<h2>Autostarting Application</h2>
+
+The system autostart directory is <code>/etc/xdg/autostart/</code>. The user autostart directory is <code>$HOME/.config/autostart/</code>. By placing an application's <code>.desktop</code> file in one of the Autostart directories the application will be automatically launched during startup of the user's desktop environment after the user has logged in. [<a href="http://standards.freedesktop.org/autostart-spec/autostart-spec-latest.html">Desktop Application Autostart Specification</a>]
+
+
+<h2>Configure Second Monitor</h2>
+
+<ol> 
+	<li>Check names of monitors:<br />
+ 		<code>$ xrandr -q</code></li>
+  <li>Adjust "positions":<br/>
+  	<code>$ xrandr --output VGA-1 --right-of LVDS-1</code></li>
+</ol>
+
+<h2>Set Brightness</h2>
+
+<p><code>$ xrandr --output LVDS-1 --brightness 0.7</code></p>
+
+<p><a href="https://wiki.archlinux.org/index.php/Backlight">Backlight - ArchWiki</a></p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 22 July 2019
+</div>
+</body>
+</html>

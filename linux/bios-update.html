@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>BIOS Update</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="How to update BIOS in Linux">
+	<meta name="keywords" content="BIOS, flashing BIOS, Linux">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">BIOS Update</span>
+</div>
+
+<h1>BIOS Update</h1>
+
+<p>You downloaded Windows executable BIOS update file <code><em>bios.exe</em></code>. How to update the BIOS under Linux?</p>
+
+<p><strong>1. Download <a href="http://www.freedos.org/">FreeDOS</a></strong> archive of bootable image</p>
+
+<p><code>$ wget https://www.ibiblio.org/pub/micro/pc-stuff/freedos/files/distributions/1.2/FD12FULL.zip</code></p>
+<p><strong>2. Extract the archive</strong></p>
+
+<p><code>$ unzip FD12FULL.zip</code></p>
+
+<p><strong>3. Write the image to USB stick</strong></p>
+
+<p>Determine which of <code>/dev/sdX</code> is your USB stick</p>
+
+<p><code># fdisk -l</code></p>
+
+<p>In my case the USB stick is device <code>/dev/sdb</code></p>
+
+<p>Write the image directly to the device</p>
+
+<p><code># dd if=FD12FULL.img of=/dev/sdb status=progress</code></p>
+
+<p><strong>4. Mount USB stick</strong></p>
+
+<p><strong>5. Copy <code><em>bios.exe</em></code> to USB stick</strong></p>
+
+<p><code>$ cp <em>bios.exe</em> /media/<em>user-name</em>/FD-SETUP/</code></p>
+
+<p><strong>6. Unmount USB stick and reboot</strong></p>
+
+<p><strong>7.</strong> In the FreeDOS live installation environment you will be prompted to install FreeDOS, <strong>select "No - Return to DOS"</strong></p>
+
+<p><strong>8. Run <em><code>bios.exe</code></em></strong></p>
+
+<p>The status of update process is displayed on the screen. PC is rebooted automatically at the end of upgrade.</p>
+
+
+<h2 id="references">References</h2>
+
+<a href="https://wiki.archlinux.org/index.php/Flashing_BIOS_from_Linux">Flashing BIOS from Linux - ArchWiki</a>
+
+<div id="footer">
+<hr />
+Last Modified: 20 February 2021
+</div>
+
+</body>
+
+</html>

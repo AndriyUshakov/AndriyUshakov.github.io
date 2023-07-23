@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Archive Files and Directories</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">Archive Files</span>
+</div>
+
+<h1>Archive Files and Directories</h1>
+
+<h2>Compress</h2>
+
+<p>To compress files:<br />
+<code>
+	$ tar -c<strong>z</strong>vf &lang;archive-name&rang;.tar.<strong>gz</strong> &lang;list-of-files-and-dirs&rang;<br />
+</code>
+</p>
+
+<p>Compression options: <code>z</code> - gzip, <code>j</code> - bzip2, <code>J</code> - xz.</p>
+
+<p>Multi-thread compress:<br />
+<code>
+	$ tar -c &lang;directory&rang;/ | pigz &gt; &lang;directory&rang;.tar.gz
+</code></p>
+
+
+<h2>Decompress</h2>
+
+<p><code>
+	$ tar -xf &lang;archive&rang;.tar.gz
+</code></p>
+
+
+<h2>List Files</h2>
+
+<p><code>$ tar -tf &lang;archive&rang;.tar.gz</code></p>
+
+<p><code>$ unzip -l  &lang;archive&rang;.zip</code></p>
+
+
+<h2>Extract a Specific File</h2>
+
+<p><code>$ tar -xf &lang;archive&rang;.tar.gz  &lang;path/to/a/specific/file&rang;</code></p>
+
+<p><code>$ unzip -p &lang;archive&rang;.zip &lang;path/to/a/specific/file&rang; > file</code></p>
+
+
+<p><a href="https://savannah.gnu.org/projects/tar/">GNU tar</a></p>
+
+
+<h2>Password Protection</h2>
+
+<p>To create a password protected <code>7z</code>-archive with encrypted file list</p>
+
+<p><code>$ 7z a -p -mhe=on &lang;archive&rang;.7z &lang;list-of-files-and-dirs&rang;</code></p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 06 March 2021
+</div>
+
+</body>
+</html>

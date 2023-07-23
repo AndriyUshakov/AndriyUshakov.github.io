@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>yum</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0"><code>yum</code></span>
+</div>
+
+<h1>yum</h1>
+
+<h2>Old packages</h2>
+
+<p>Fedora developers update packages frequently. Usually, the new packages are working properly and there is no need to look back, but in rare occasions a new package can misbehave and you would like to roll back to the previous version. Where the older package can be found?</p>
+
+<p>All officially built packages can be downloaded from Fedora Buildsystem (<a href="http://koji.fedoraproject.org">koji</a>). If you like to keep the  installed packages yourself, you have to change <code>/etc/yum.conf</code> and set <code>keepcache=1</code>. By default, yum does not keep packages in cache that is located in <code>/var/cache/yum/</code>.  </p>
+
+<h2 id="repositories">Repositories</h2>
+
+<p><code>$ yum repolist all</code></p>
+
+<p><code># yum --disablerepo=&lang;repo-name&rang;</code></p>
+
+<h2>Temporary Activate Repository</h2>
+
+<p><code>$ yum --enablerepo=updates-testing list updates</code></p>
+
+<p><code># yum --enablerepo=updates-testing update &lang;package&rang;</code></p>
+
+<h2>Temporary Exclude Certain Packages from Update</h2>
+
+<p><code># yum --exclude=&lang;package&rang; update</code></p>
+
+<h2>Download Package</h2>
+
+<p><code># yum update &lang;package&rang; --downloadonly --downloaddir=&lang;dir&rang;</code><br />
+<code>$ yumdownloader --source &lang;package&rang;</code></p>
+
+<h2>Install Local Package</h2>
+
+<p><code># yum localinstall &lang;path-to-package&rang;</code></p>
+
+<h2>Searching for Packages</h2>
+
+<h3>Search by Package Name</h3>
+
+<p><code>$ yum list &lang;package-name&rang;\*</code></p>
+
+<h3>Searching Packages by Keyword in Description</h3>
+
+<p><code>$ yum search &lang;keyword&rang;</code></p>
+
+<h3>Find Package that Provides File</h3>
+
+<p><code>$ yum provides "*/&lang;file-name&rang;"</code><br /> or <br />
+<code>$ repoquery --nvr --whatprovides &lang;file-name&rang;</code></p>
+
+
+<h3>Orphans</h3>
+
+<p><code>$ yum list extras</code> &nbsp; or &nbsp; <code>$ package-cleanup --orphans</code><br />
+list packages installed on the system that are not available in any known repository.</p>
+
+<h3>List Installed Packages from Certain Repository</h3>
+
+<p><code>yum list installed | grep &lang;repo-name&rang;</code></p>
+
+<h2>Security Plugin</h2>
+
+<p><code>yum-plugin-security</code> adds the options <code>--security</code>, <code>--cve</code>, <code>--bz</code> and <code>--advisory</code> flags to yum and the list-security and info-security commands. The options make it possible to limit list/upgrade of packages to specific security relevant ones.</p>
+
+<p><code>$ yum list-security | sort</code> &nbsp; or &nbsp; <code>$ yum list-security bugzillas | sort</code></p>
+
+<p><code>$ yum info-security FEDORA-2013-xxxx</code></p>
+
+<p><code># yum update --advisory FEDORA-2013-xxxx</code></p>
+
+<h2>Changelog</h2>
+
+<p><code>$ yum-plugin-changelog</code> allows to look in package changelogs.</p>
+
+<p><code>$ yum changelog &lang;number&rang;</code> &nbsp; show chosen number of package changes.</p>
+
+<h2>History</h2>
+
+<p>The history of changes made by <code>yum</code> is stored in <code>/var/log/yum.log</code>.</p>
+
+<p><code># yum history list all</code></p>
+
+<p><code># yum history info &lang;id-number&rang;</code></p>
+
+<p><code># yum history undo &lang;id-number&rang;</code><br />
+<code># yum history redo &lang;id-number&rang;</code></p>
+
+<h2>Disable Certain Packages</h2>
+
+<p>To disable certain packages from being installed it is needed to add <code>exclude</code> list into <code>/etc/yum.conf</code> or to <code>.repo</code> (repository configuration) in <code>/etc/yum.repos.d/</code></p>
+
+<p>The syntax is as follows:<br />
+<code>exclude=package1 packages2* packages3?</code></p>
+
+<h2>Package Groups</h2>
+
+<p><code>$ yum -v grouplist</code></p>
+
+<p><code>$ yum groupinfo development-tools</code></p>
+
+<p><code># yum groupremove "Tibetan Support"</code> &nbsp; or &nbsp;  <code># yum remove @tibetan-support</code></p>
+
+<h2>Old Kernels</h2>
+
+<p>The old kernels can by removed by <code>package-cleanup</code> from <code>yum-utils</code> package</p>
+
+<p><code>package-cleanup --oldkernels --count=2</code></p>
+
+<p>To make amount of installed kernels permanent, set <code>installonly_limit=2</code> in <code>/etc/yum.conf</code>.</p>
+
+<div id="footer">
+<hr />
+Last Modified: 03 August 2014
+</div>
+
+</body>
+</html>

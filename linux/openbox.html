@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Openbox</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">Openbox</span>
+</div>
+
+<h1>Openbox</h1>
+
+<h2 id="font_rendering">Font Rendering</h2>
+
+<p>To set DPI, anti-aliasing, hinting and other X font settings:</p>
+
+<p>Create <code>~/.Xresources</code></p>
+
+<pre>
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgb
+Xft.hintstyle:  hintslight
+</pre>
+
+<p>This file is automatically merged into the default X resources upon login. To make changes to these settings and make them effective immediately, merge them into the database using the following command:</p>
+
+<code>$ xrdb -merge ~/.Xresources</code>
+
+
+<h2>Configuration Files</h2>
+
+<p>The default Openbox configuration are located in <code>/etc/xdg/openbox/</code>. To change user configuration of Openbox, it is needed to create a directory <code>~/.config/openbox</code> and copy into it all default configuration files.
+</p>
+
+<h2>Key Bindings</h2>
+
+<p>Key bindings are defined in <code>rc.xml</code> at <code>&lt;keyboard&gt;</code> section.</p>
+
+<h3>Menu Key</h3>
+
+<textarea readonly rows="5" cols="30">
+<keybind key="Menu">
+  <action name="ShowMenu">
+    <menu>root-menu</menu>
+    </action>
+</keybind></textarea>
+
+<p><a href="http://openbox.org/wiki/Help:Bindings">Help:Binding - Openbox</a></p>
+
+
+<h2 id="auto-starting_applications">Auto-starting applications</h2>
+
+<p>Network manager applet is automatically starting by default. To prevent start of <code>nm-applet</code>:</p>
+
+<p>1. <code>$ cp /etc/xdg/autostart/nm-applet.desktop $HOME/.config/autostart/</code></p>
+
+<p>2. Change <code>nm-applet.desktop</code>. Add <code>OPENBOX</code> to the list <code>NotShowIn</code>:<br />
+<code>NotShowIn=KDE;OPENBOX;</code></p>
+
+
+<h2>Keyboard Layouts and Toggle Hotkey</h2>
+
+<p>Add to <code>$HOME/.config/openbox/autoststart</code>:</p>
+
+<p><code>setxkbmap -layout de,us -option grp:rctrl_rshift_toggle,grp_led:scroll &</code></p>
+
+
+<p><a href="https://wiki.archlinux.org/index.php/Openbox">Openbox - ArchWiki</a></p>
+
+<div id="footer">
+<hr />
+Last Modified: 15 June 2020
+</div>
+
+</body>
+
+</html>

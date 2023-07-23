@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>zsh</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0"><code>zsh</code></span>
+</div>
+
+<h1>zsh</h1>
+
+<p>
+<a href="#options">Options</a><br />
+<a href="#command_prompt">Command Prompt</a><br />
+<a href="#completion">Completion</a><br />
+<a href="#change_directory">Change Directory</a><br />
+&nbsp; &nbsp; <a href="#auto_cd">Auto cd</a><br />
+&nbsp; &nbsp; <a href="#named_directories">Named Directories</a><br />
+&nbsp; &nbsp; <a href="#directory_stack">Directory Stack</a><br />
+<a href="#aliases">Aliases</a><br />
+<a href="#command_history">Command History</a><br />
+<a href="#key_bindings">Key Bindings</a><br />
+<a href="zsh-shortcuts.html">Shortcuts</a><br />
+<a href="#startup_and_termination">Startup and Termination</a><br />
+<a href="#update_commands">Update List of Commands</a><br />
+<a href="#references">References</a>
+</p>
+
+
+<h2 id="options">Options</h2>
+
+<p><code>zsh</code> options are case insensitive and underscores are ignored. An option name may be inverted by preceding it with ‘no’, so <code>setopt No_Beep</code> is equivalent to <code>unsetopt beep</code>. [<a href="http://zsh.sourceforge.net/Doc/Release/Options.html">Manual</a>]</p>
+
+
+<h2 id="command_prompt">Command Prompt</h2>
+
+<dl>
+	<dt><code>autoload -Uz promptinit</code><br />
+	<code>promptinit</code></dt>
+	<dd><code>-U</code>: suppress alias expansion when the function is loaded</dd>
+	<dd><code>-z</code>: mark the function to be autoloaded using the zsh style</dd>
+</dl>
+
+<dl>
+	<dt><code>$ prompt adam1</code></dt>
+	<dd>select <code>adam1</code> prompt scheme</dd>
+</dl>
+
+<dl>
+	<dt><code>$ prompt -l</code></dt>
+	<dd>list available prompt themes</dd>
+</dl>
+
+<dl>
+	<dt><code>$ whence -f promptinit</code></dt>
+	<dd>display promptinit function</dd>
+</dl>
+
+
+<h2 id="completion">Completion</h2>
+
+<p>To load completion:</p>
+
+<p><code>autoload -Uz compinit</code><br />
+<code>compinit</code></p>
+
+<dl>
+	<dt><code>zstyle ':completion:*' menu select=3</code></dt>
+	<dd>menu selection will only be started if there are at least 3 matches</dd>
+
+	<dt><code>zstyle ':completion:*:correct:*' insert-unambiguous true</code></dt>
+	<dd>the completer will start menu completion only if it could find no unambiguous initial string at least as long as the original string typed by the user</dd>
+</dl>
+
+
+
+<h2 id="change_directory">Change Directory</h2>
+
+<h3 id="auto_cd">Auto cd</h3>
+
+<dl>
+	<dt><code>setopt auto_cd</code></dt>
+	<dd>if command can’t be executed and the command is the name of a directory, perform <code>cd</code> to that directory</dd>
+</dl>
+
+
+<h3 id="named_directories">Named Directories</h3>
+
+<p>Frequently used directories can be abbreviated.</p>
+
+<dl>
+	<dt><code>hash -d ff=$HOME/soft/firefox/</code></dt>
+	<dd>determine name <code>ff</code> for directory <code>$HOME/soft/firefox/</code><br />
+	To change into the directory: <code>$ cd ~ff</code></dd>
+</dl>
+
+<dl>
+	<dt><code>$ hash -Ld</code></dt>
+	<dd>show the list of named directories</dd>
+</dl>
+
+
+<h3 id="directory_stack">Directory Stack</h3>
+
+<dl>
+	<dt><code>setopt auto_pushd</code></dt>
+	<dd><code>cd dir-name</code> results in adding <code>dir-name</code> onto the directory stack</dd>
+	<dt><code>setopt pushd_ignore_dups</code></dt>
+	<dd>don’t push multiple copies of the same directory onto the directory stack</dd>
+</dl>
+
+<dl>
+	<dt><code>dirs -v</code></dt>
+	<dd>show numbered list of directories in the stack</dd>
+	<dt><code>pushd dir-name</code></dt>
+	<dd>add <code>dir-name</code> to the stack</dd>
+	<dt><code>popd +2</code></dt>
+	<dd>remove the stack entry #2 from top in numbered representation</dd>
+</dl>
+
+
+<h2 id="aliases">Aliases</h2>
+
+<p>Frequently used commands can be abbreviated.</p>
+
+<dl>
+	<dt><code>alias ll='ls -al --color --group-directories-first'</code></dt>
+	<dd>determine command <code>ll</code></dd>
+</dl>
+
+<dl>
+	<dt><code>$ alias</code></dt>
+	<dd>show the list of aliases</dd>
+</dl>
+
+
+<h2 id="command_history">Command History</h2>
+
+<dl>
+	<dt><code>setopt share_history</code></dt>
+	<dd>zsh’s running in different windows share the same history</dd>
+</dl>
+
+<dl>
+	<dt><code>setopt hist_ignore_all_dups</code></dt>
+	<dd>if a new command duplicates an older one, the older command is removed</dd>
+</dl>
+
+<dl>
+	<dt><code>setopt hist_ignore_space</code></dt>
+	<dd>command starting with a space is not added to the history</dd>
+</dl>
+
+<dl>
+	<dt><code>setopt hist_reduce_blanks</code></dt>
+	<dd>removing any excess blanks that mean nothing to the shell</dd>
+</dl>
+
+<dl>
+	<dt><code>HISTSIZE=2000</code></dt>
+	<dd>maximum number of history events kept within one session</dd>
+	<dt><code>SAVEHIST=2000</code></dt>
+	<dd>maximum number of history events to save in the history file</dd>
+	<dt><code>HISTFILE=$HOME/.zsh_history</code></dt>
+	<dd>file to save history. If unset, the history is not saved</dd>
+</dl>
+
+
+<h2 id="key_bindings">Key Bindings</h2>
+
+<p><code>bindkey</code> command manipulates keymaps and key bindings.</p>
+
+<dl>
+	<dt><code>bindkey "^[[1;5D" backward-word</code></dt>
+	<dd><code>Ctrl</code>+&larr;: move to the beginning of the previous word</dd>
+	<dt><code>bindkey "^[[1;5C" forward-word</code></dt>
+	<dd><code>Ctrl</code>+&rarr;: move to the beginning of the next word</dd>
+</dl>
+
+<p><code>read</code> shows what key is typed.</p>
+
+<h2 id="startup_and_termination">Startup and Termination</h2>
+
+<p><a href="http://zsh.sourceforge.net/Guide/zshguide02.html#l9">User's Guide: All the startup files</a></p>
+
+<p>Order of initialization files:</p>
+
+<p><code>
+/etc/zsh/zshenv<br />
+$HOME/.zshenv<br />
+/etc/zsh/zprofile<br />
+$HOME/.zprofile<br />
+/etc/zsh/zshrc<br />
+$HOME/.zshrc<br />
+/etc/zsh/zlogin<br />
+$HOME/.zlogin
+</code></p>
+
+<p>Termination:</p>
+
+<p><code>
+$HOME/.zlogout<br />
+/etc/zsh/zlogout
+</code></p>
+
+
+<h2 id="update_commands">Update List of Commands</h2>
+
+<p><code>zsh</code> does not automatically recognize new commands after installation of new packages.</p>
+
+<dl>
+	<dt><code>$ rehash</code></dt>
+	<dd>refresh cache of executable commands</dd>
+</dl>
+
+
+
+<h2 id="references">References</h2>
+
+<p>
+<a href="http://www.zsh.sourceforge.net/">sourceforge.net</a><br />
+<a href="https://wiki.archlinux.org/index.php/Zsh">ArchWiki</a><br />
+<a href="https://wiki.debian.org/Zsh">Debian Wiki</a>
+</p>
+
+<div id="footer">
+<hr />
+Last Modified: 12 February 2021
+</div>
+
+</body>
+</html>

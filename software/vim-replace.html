@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Vim: Search and Replace</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="vim.html">Vim</a></span>
+	<span class="tb0">Search&amp;Replace</span>
+</div>
+
+<h1>Examples of Search and Replace in Vim</h1>
+
+<p>Replace all spaces with new lines (in the current line only):</p>
+
+<p><code>:s/ /\r/g</code> </p>
+
+<p>Replace "%3A" with ":" and "%2F" with "/"</p>
+
+<p><code>:s/%3A/\:/g</code><br />
+<code>:s/%2F/\//g</code></p>
+
+<p>If substitution consists from more than one step and is used frequently, it is easier to use a hotkey for that. To map the substitution above to the hotkey "-r", add into <code>.vimrc</code>:</p>
+
+<p><code>let mapleader = "-"</code><br />
+<code>map &lt;Leader&gt;r :s/%3A/\:/g&lt;CR&gt;:s/%2F/\//g&lt;CR&gt;</code></p>
+
+
+<div id="footer">
+<hr />
+Last modified: 03 February 2020
+</div>
+
+</body>
+</html>

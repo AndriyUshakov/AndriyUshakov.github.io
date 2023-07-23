@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SSH Server</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">SSH Server</span>
+</div>
+
+
+<h1>SSH Server</h1>
+
+
+<h2 id="install">Install (Debian)</h2>
+
+<p><code># apt install openssh-server</code></p>
+
+
+<h2 id="configure">Configure</h2>
+
+<p>To allow only users from your local network (for instance, 192.168.1.x) to connect apply the following:</p>
+
+<p>1. Add to <code>/etc/hosts.allow</code></p>
+
+<p><code>sshd: 192.168.1.0/255.255.255.0</code></p>
+
+<p>2. Add to <code>/etc/hosts.deny</code> </p>
+
+<p><code>sshd: ALL</code></p>
+
+<p>To allow only user "john" to login:</p>
+
+<p>Add to <code>/etc/ssh/sshd_config</code></p>
+
+<p><code>AllowUsers john</code> </p>
+
+
+<h2 id="ssh_service">SSH Service</h2>
+
+<p>To check the status, stop or start ssh server:</p>
+
+<p><code># service ssh status/stop/start</code></p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 23 February 2019
+</div>
+</body>
+</html>

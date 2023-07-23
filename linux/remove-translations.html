@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Remove Translations</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">Remove Translations</span>
+</div>
+
+
+<h1>Remove Translations (Debian)</h1>
+
+
+<p>1. Add <code>/etc/dpkg/dpkg.cfg.d/excludes</code>:</p>
+
+<textarea readonly rows="9" cols="69">
+# Drop locales except English
+path-exclude /usr/share/locale/*
+path-include /usr/share/locale/en/*
+path-include /usr/share/locale/en_US/*
+path-include /usr/share/locale/locale.alias
+#
+# Drop translated manual pages except English
+path-exclude=/usr/share/man/*
+path-include=/usr/share/man/man[1-9]/*</textarea>
+
+<p>2. Reinstall packages:</p>
+
+<p><code># apt-get --reinstall install &lang;packages&rang;</code> </p>
+
+
+<h2 id="references">References</h2>
+
+<p><a href="https://raphaelhertzog.com/2010/11/15/save-disk-space-by-excluding-useless-files-with-dpkg/">Raphael Hertzog, Save disk space by excluding useless files with dpkg</a></p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 24 February 2019
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Email Notification</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="How to get notified when a new email has been reveived">
+	<meta name="keywords" content="email, notification">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">Email Notification</span>
+</div>
+
+<h1>Email Notification</h1>
+
+<p><a href="https://github.com/pulb/mailnag">Mailnag</a> is a daemon program that checks POP3 and IMAP servers for new mail. On mail arrival it performs various actions provided by plugins.</p>
+
+<p><code># apt install mailnag</code></p>
+
+<p>In case of using <code>OpenBox</code> as a windows manager and <code>tint2</code> as a panel, after the installation of <code>mailnag</code> and configuration of email account, by default, only a pop-up window appearing just for few seconds and sound alert will notify you on getting new email, no permanent notification in the system tray will remind you that you have the new mails. To have the alert in system tray some additional efforts are needed.</p>
+
+<p>1. Install <a href="https://sourceforge.net/projects/yad-dialog/"><code>yad</code></a>. It will allow you to add notification icon into system tray using a shell script.</p>
+
+<p><code># apt install yad</code></p>
+
+<p>2. Create a script <code>$HOME/scripts/mailnag-tray</code></p>
+
+<textarea readonly rows="13" cols="49">
+#!/bin/bash
+
+mail_meta='$quantity $account $sender $header'
+quantity=$1
+account=$2
+sender=$3
+header=$4
+
+yad --notification \
+    --text="$account has $quantity new mail - From: $sender - Regarding: $header" \
+    --image=mail-unread \
+    --menu="Sylpheed! sylpheed"
+</textarea>
+
+<p>3. Start <code>mailnag-config</code>, click on "Plugins" and switch "User Script" on.</p>
+
+4. Add to <code>~/.config/mailnag/mailnag.cfg</code>
+
+<p><code>[userscriptplugin]</code><br />
+<code>script_file = /home/<em>your-user-name</em>/scripts/mailnag-tray</code></p>
+
+<p>That is all.</p>
+
+<p>On new mails your will get a <code>mail-unread</code> icon in the notification area of <code>tint2</code> panel. On mouse hover icon you will get the information which account has got mail, name of sender and mail subject. The mouse right-click: let you open the email client (<code>sylpheed</code>). The mouse left-click removes the notification from the panel.</p>
+
+<p><code>seahorse</code> can be used to check the passwords for the email accounts in <code>mailnag</code>.</p>
+
+<div id="footer">
+<hr />
+Last Modified: 28 February 2021
+</div>
+
+</body>
+
+</html>

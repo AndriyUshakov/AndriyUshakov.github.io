@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>journalctl</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0"><code>journalctl</code></span>
+</div>
+
+<h1>journalctl</h1>
+
+<h2 id="show_journal_messages">Show Journal Messages</h2>
+
+<p><code># journalctl -b</code><br />
+show all messages of the <em>current boot</em>.
+</p>
+
+<p><code># journalctl --since=2013-01-01 --until="2013-01-02 23:59:59" -p err</code><br />
+show <em>errors</em> that happened in selected time interval (<code>--since=today</code> or <code>--since=yesterday</code> can be also used).
+</p>
+
+<p><code># journalctl -f</code><br />
+show most recent journal entries and print new entries "live".</p>
+
+<p><code># journalctl _PID=<em>number</em></code><br />
+show all messages by a specific process.</p>
+
+<p><code># journalctl -u <em>unit</em></code><br />
+show all messages by a specific unit.</p>
+
+
+<h2 id="clean_journal_files_manually">Clean Journal Files Manually</h2>
+
+<p><code># journalctl --vacuum-time=2d</code><br />
+remove journal data older than 2 days.</p>
+
+<p><code># journalctl --vacuum-size=100M</code><br />
+remove archived journal files until the disk space they use falls below 100 MB.</p>
+
+
+<h2>References</h2>
+<ul>
+	<li><a href="https://wiki.archlinux.org/index.php/Systemd/Journal">ArchWiki</a></li>
+</ul>
+
+<div id="footer">
+<hr />
+Last Modified: 23 January 2021
+</div>
+</body>
+</html>

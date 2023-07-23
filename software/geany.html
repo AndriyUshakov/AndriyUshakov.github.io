@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Geany</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb0">Geany</span>
+</div>
+
+<h1>Geany</h1>
+
+<p><a href="http://www.geany.org/">Geany</a> is a powerful and lightweight programmer's text editor.</p>
+
+
+<h2>Open HTML File in Firefox</h2>
+
+<p>Menu Build &rarr; Set Build Commands &rarr; Execute Commands:</p>
+
+<p>Execute: <code>firefox %d/%f</code></p>
+
+<p><a href="http://wiki.geany.org/howtos/configurebuildmenu#configuring_with_the_user_interface_the_easy_way">Configure Build Menu - Geany Wiki</a></p>
+
+
+<h2>Custom Commands (Linux)</h2>
+
+Menu Edit &rarr; Format &rarr; Send Selection to &rarr; Set Custom Commands
+
+<p>Command: <code>sort</code><br />
+Label: Sort lines</p>
+
+<p>Command: <code>tr [:upper:] [:lower:]</code><br />
+Label: To lower case</p>
+
+<p>Command: <code>tr [:lower:] [:upper:]</code><br />
+Label: To upper case</p>
+
+
+<h2 id="sessions">Sessions</h2>
+
+<p>You can start several instances of Geany, but only the first will load files from the last session [<a href="https://www.geany.org/manual/current/">Manual</a>]. To open selected files in a new instance of geany (<code>-i</code>) like in a new "session":</p>
+
+<p><code>$ geany -i file1 file2 file3</code></p>
+
+<p>Storing and opening session files can be done on a <a href="https://www.geany.org/manual/current/#project-management">project</a> basis. <a href="https://plugins.geany.org/projectorganizer.html">Project Organizer</a> is an extension of Geany's project management displaying a tree of files belonging to the project in the sidebar.</p>
+
+
+<h2>More Info</h2>
+
+<p><a href="http://www.geany.org/manual/current/">Manual</a></p>
+
+<p><a href="http://www.geany.org/manual/current/#keybindings">Keybindings</a></p>
+
+<p><a href="http://plugins.geany.org/">Plugins</a></p>
+
+<p><a href="http://wiki.geany.org/">Wiki</a></p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 18 February 2021
+</div>
+
+</body>
+</html>

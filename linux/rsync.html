@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>rsync and diff</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0"><code>rsync</code></span>
+</div>
+
+<h1>rsync</h1>
+
+<p>To backup files on the local device from directory <code>source</code> to <code>destination</code> (if <code>destination</code> does not exist, it will be created automatically) in "archive" mode (preserving permissions and timestamps) and skip files that are newer on the receiver:</p>
+
+<p><code>$ <a href="https://rsync.samba.org/">rsync</a> -auv source/ destination/</code></p>
+
+<p>To perform a trial run with no changes made and show information about the changes:</p>
+
+<p><code>$ rsync -aunv source/ destination/</code></p>
+
+<dl>
+	<dt><code>--delete</code></dt>
+	<dd>remove files in <code>destination</code> if they do not exist in <code>source</code></dd>
+
+	<dt><code>--existing</code></dt>
+	<dd>update only files existing in <code>source</code></dd>
+
+	<dt><code>--exclude "pattern*"</code></dt>
+
+	<dt><code>--exclude "dir/"</code></dt>
+	<dd>exclude any directory called <code>dir</code></dd>
+
+	<dt><code>--exclude "/dir1/**/file1"</code></dt>
+	<dd>exclude any file called <code>file1</code> two or mode levels below a base directory called <code>dir1</code></dd>
+
+	<dt><code>--progress</code></dt>
+	<dd>print information showing the progress of the transfer</dd>
+</dl>
+
+<p>To ignore permissions:</p>
+
+<p><code>$ rsync -aunv --no-perms --no-owner --no-group source/ destination/</code></p>
+
+<p>To list the differences made in last commit:</p>
+
+<p><code>git diff @~</code></p>
+
+<p>To list the differences made in last two commits:</p>
+
+<p><code>git diff @~2</code></p>
+
+<p>To list the differences of the second most recent commit:</p>
+
+<p><code>git diff @~2 @~1</code></p>
+
+
+<h1 id="find_differences_between_2_directories">Find Differences between 2 Directories</h1>
+
+<p><code>$ diff -qr dir1 dir2</code></p>
+
+<dl>
+	<dt> <code>-q</code></dt>
+	<dd>report only when files differ</dd>
+
+	<dt> <code>-r</code></dt>
+	<dd>compare recursively</dd>
+
+	<dt> <code>-s</code></dt>
+	<dd>report when two files are the same</dd>
+</dl>
+
+
+<p><code>$ <a href="http://meldmerge.org/">meld</a> dir1 dir2</code></p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 2023-07-03
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>less</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0"><code>less</code></span>
+</div>
+
+
+<h1><code>less</code></h1>
+
+
+<h2 id="repaint">Repaint</h2>
+
+<p>If a viewed file is changed and a key <code>r</code> or <code>Ctrl</code>+<code>R</code> is typed, than the file has to be updated (repainted). But, it does not do that. To see the updated file without re-starting <code>less</code>, type <code>h</code> and after that type <code>q</code>.</p>
+
+
+<h2 id="syntax_highlighting">Syntax Highlighting</h2>
+
+<ol>
+	<li>Install <code><a href="http://www.gnu.org/software/src-highlite/">source-highlight</a></code>:<br />
+	<code># apt install source-highlight</code>
+	</li>
+
+	<li>Add to <code>.bashrc</code> or <code>.zshrc</code>:<br />
+	<code>export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"</code><br />
+	<code>export LESS="-R"</code>
+	</li>
+</ol>
+
+<h2 id="options">Other Options</h2>
+
+<dl>
+	<dt><code>-M</code> or <code>--LONG-PROMPT</code></dt>
+	<dd>name of viewed file and line numbers of showed part are added to <code>less</code> prompt</dd>
+</dl>
+
+<dl>
+	<dt><code>-I</code> or <code>--IGNORE-CASE</code></dt>
+	<dd>ignore case in search</dd>
+</dl>
+
+<dl>
+	<dt><code>-s</code> or <code>--squeeze-blank-lines</code></dt>
+	<dd>squeeze consecutive blank lines into a single blank line</dd>
+</dl>
+
+
+<div id="footer">
+<hr />
+Last Modified: 09 February 2021
+</div>
+</body>
+</html>

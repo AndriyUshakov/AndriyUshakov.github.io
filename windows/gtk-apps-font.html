@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Font Settings of GTK Applications in Windows 7</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="How to change the font of GTK application in Windows 7">
+	<meta name="keywords" content="font, GTK application, Windows 7">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="windows-index.html"><img src="../img/Windows.svg" width="15" height="15" alt="MS Windows"/> MS Windows</a></span>
+	<span class="tb0">Font Settings</span>
+</div>
+
+<h2>Font Settings of GTK Applications</h2>
+
+<p>Add following into <code>.gtkrc-2.0</code> in <code>C:\Users\&lang;UserName&rang;\</code>. If <code>.gtkrc-2.0</code> does not exist, create such file.</p>
+
+<textarea readonly rows="4" cols="40">
+style "win32-font" {
+  font_name = "calibri 12"
+}
+class "*" style "win32-font"</textarea>
+
+<p>The restart of GTK application is needed after the changes made in 
+<code>.gtkrc-2.0</code> file.</p>
+
+<div id="footer">
+<hr />
+Last modified: 31 Januar 2014
+</div>
+
+</body>
+</html>

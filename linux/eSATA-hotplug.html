@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>eSATA Hot Plug/Unplug</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">eSATA</span>
+</div>
+
+
+<h1>eSATA&nbsp;Hot Plug/Unplug</h1>
+
+<p>Install <code>scsitools</code> and <code>hdparm</code></p>
+
+
+<h2>Hot Plug</h2>
+
+<p>If your eSATA drive is not detected when you plug it in, there are some options to solve the issue without reboot with the eSATA plugged in.</p>
+
+<p>Option 1a</p>
+
+<p><code># echo 0 0 0 | tee /sys/class/scsi_host/host*/scan</code><br />
+	[<a href="https://wiki.archlinux.org/index.php/Udev#Detect_new_eSATA_drives">Detect new eSATA drives - ArchWiki</a>].
+</p>
+
+<p>&nbsp; &nbsp; Or</p>
+
+<p>Option 1b</p>
+
+<p><code># rescan-scsi-bus</code></p>
+
+<p>2. Mount disk</p>
+
+
+<h2>Safely Unplug</h2>
+
+<p>1. Unmount disk(s)</p>
+
+<p>2. Force drive to enter the standby mode</p>
+
+<p><code># hdparm -y /dev/sdb</code></p>
+
+<p>3a. Power drive off, or</p>
+
+<p>3b. If you want to spin drive up again</p>
+
+<p><code># sg_sat_set_features -f 7 /dev/sdb</code></p>
+
+<p><a href="https://bbs.archlinux.org/viewtopic.php?pid=1712710#p1712710">Power-up HDD in standby - Arch Linux Forums</a>
+<br />
+<a href="https://superuser.com/questions/879374/hdd-power-up-in-standby-prevent-from-spinning-up">HDD Power-Up in Standby - Super User</a>
+</p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 14 February 2021
+</div>
+</body>
+
+</html>
+

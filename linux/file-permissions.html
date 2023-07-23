@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>File Permissions</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">Permissions</span>
+</div>
+
+<h1>File Permissions</h1>
+
+<h2>Change Permissions</h2>
+
+<p>To remove the <strong>r</strong>ead, <strong>w</strong>rite and e<strong>x</strong>ecute rights for the <strong>g</strong>roup and <strong>o</strong>thers:</p>
+
+<p><code>$ chmod go-rwx &lang;files&rang;</code></p>
+
+<p>For copied directories and files from ntfs partition:</p>
+
+<p><code>$ find &lang;dir&rang;/ -type d -print0 | xargs -0 chmod 0755</code><br />
+<code>$ find &lang;dir&rang;/ -type f -print0 | xargs -0 chmod 0644</code></p>
+
+<h2>Change Owner</h2>
+
+<p><code># chown -c &lang;user&rang;:&lang;group&rang; &lang;files&rang;</code></p>
+
+<div id="footer">
+<hr />
+Last Modified: 22 December 2019
+</div>
+
+</body>
+
+</html>

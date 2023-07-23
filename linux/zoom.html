@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Zoom</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">Zoom</span>
+</div>
+
+<h1>Zoom</h1>
+
+<h2 id="installation">Installation</h2>
+
+
+
+
+
+<p><strong>1.</strong> Download Zoom client from <a href="https://zoom.us/download?os=linux">Zoom Download Center</a> selecting in Linux Type: "Other Linux OS".</p>
+
+<p>Note: Debian users can install the version for Linux Type "Debian", but that type of installation requires installation of <code>ibus</code> packages. <code>ibus-daemon</code> and <code>ibus</code> services are always running in background on every system start. The killing <code>ibus*</code> results in issues. For example, in case of using Openbox, the exit from Openbox session stops working, the windows are frozen after unlocking screen using <code>dm-tool lock</code>. Therefore, I prefer to use Zoom version for "Other Linux OS" that doesn't require <code>ibus</code> "staff".</p>
+
+<p><strong>2.</strong> Install needed for <code>zoom</code> package:</p>
+
+<p><code># apt install libxcb-xtest0</code></p>
+
+<p><strong>3.</strong> Unpack <code>zoom*.tar.gz</code></p>
+
+<p>
+<code>$ su -</code><br />
+<code># cd /opt</code><br />
+<code># cp /path/to/zoom.tar.gz .</code><br />
+<code># tar xf zoom.tar.gz</code><br />
+<code># chown -R root:root zoom</code><br />
+<code># rm zoom.tar.gz</code>
+</p>
+
+<p><strong>4.</strong> Create executable shell script <code>$HOME/bin/zoom</code>:</p>
+
+<pre>
+#!/bin/bash
+cd /opt/zoom
+./zoom &
+</pre>
+
+<p>To start simply type <code>zoom</code> in terminal.</p>
+
+
+<h2 id="zoom_links">Zoom Links</h2>
+
+
+
+<p><a href="https://support.zoom.us/hc/en-us/sections/201214205-Release-Notes">Release Notes - Zoom Help Center</a></p>
+
+<p><a href="https://support.zoom.us/hc/en-us/articles/205759689">New updates for Linux - Zoom Help Center</a></p>
+
+
+<div id="footer">
+<hr />
+Last modified: 18 February 2021
+</div>
+
+</body>
+</html>

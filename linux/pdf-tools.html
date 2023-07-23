@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>PDF Tools</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">PDF Tools</span>
+</div>
+
+<h1>PDF Tools</h1>
+
+<p>
+• <a href="#find_text">Find Text</a><br />
+• <a href="#merge">Merge</a><br />
+• <a href="#compare">Compare</a><br />
+• <a href="#save_web_page_as_pdf">Save Web Page as PDF</a><br />
+• <a href="#pdf_info">Change/View PDF Info</a><br />
+• <a href="#ocr_pdf">Convert Scanned PDF to Searchable PDF (OCR)</a><br />
+• <a href="#reduce_size_of_pdf_file">Reduce Size of PDF File</a><br />
+• <a href="#editors">Editors</a>
+</p>
+
+<h2 id="find_text">Find Text</h2>
+
+<p>Find text (for example, "Important") in pdf-files recursively and show page number:</p>
+
+<p><code>$ pdfgrep -n -r --include "*.pdf" "Important"</code> </p>
+
+
+<h2 id="merge">Merge</h2>
+
+<p>Merge three pdf files together:</p>
+
+<p><code>$ pdftk file1.pdf file2.pdf file3.pdf cat output newfile.pdf</code></p>
+
+<p>Combine selected pages of two pdf files into a new document:</p>
+
+<p><code>$ pdftk A=file1.pdf B=file2.pdf cat A1-3 B1-5 A4 output newfile.pdf</code></p>
+
+
+<h2 id="compare">Compare</h2>
+
+<p><code>diffpdf</code> compares two PDF files textually or visually.</p>
+
+<p><code>$ diffpdf file1.pdf file2.pdf</code></p>
+
+
+<h2 id="save_web_page_as_pdf">Save Web Page as PDF</h2>
+
+<p><code><a href="https://wkhtmltopdf.org/">wkhtmltopdf</a></code> can save web page to PDF file preserving formatting and hyperlinks.</p>
+
+<p>Some features (headers, margins and etc.) require a patched Qt.
+Most Linux distributions provide <code>wkhtmltopdf</code> without those features
+[<a href="https://wkhtmltopdf.org/downloads.html#why-do-you-have-static-builds-with-patched-qt">FAQ</a>].
+The <a href="https://wkhtmltopdf.org/downloads.html">binary versions</a> for major Linux distributions, Windows and macOS with all features are provided by developers.</p>
+
+<p>An example of using <code>wkhtmltopdf</code>:</p>
+
+<p><code>$ wkhtmltopdf -s A3 -L 25mm -R 25mm --default-header --header-font-size 10 --header-spacing 5 http://example.com/ example.pdf</code></p>
+
+<p>Firefox <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=454059">Bug #454059</a> - Creating PDF of web page: hyperlinks are lost. Opened on 2008-09-07.</p>
+
+
+<h2 id="pdf_info">Change/View PDF Info</h2>
+
+<p><code>exiftool</code> can list and edit meta information. To view the tags:</p>
+
+<p><code>$ exiftool file.pdf</code></p>
+
+<p>To change the title of <code>file.pdf</code>:</p>
+
+<p><code>$ exiftool -overwrite_original -Title="Title of PDF Document" file.pdf</code></p>
+
+<p>The writable tags are <code>Author</code>, <code>Creator</code>, <code>Keywords</code> ("keyword1;keyword2"), <code>Producer</code>, <code>Subject</code> and <code>Title</code> [<a href="https://exiftool.org/TagNames/PDF.html">PDF Tags - exiftool.org</a>].</p>
+
+
+<h2 id="ocr_pdf">Convert Scanned PDF to Searchable PDF (OCR)</h2>
+
+<p><code>$ convert -density 300 scanned-pdf.pdf converted-png.png</code></p>
+
+<p>If pdf document has 2 pages, then 2 png files will be created: <code>converted-png-0.png</code> and <code>converted-png-1.png</code>.</p>
+
+<p>OCR png files by <a href="https://github.com/tesseract-ocr/"><code>tesseract</code></a> setting proper language ("<code>-l deu</code>" in case of German text)</p>
+
+<p>
+<code>$ tesseract converted-png-0.png new-pdf-page1 -l deu pdf</code><br />
+<code>$ tesseract converted-png-1.png new-pdf-page2 -l deu pdf</code>
+</p>
+
+<p>Merge pages</p>
+
+<p><code>pdftk new-pdf-page1.pdf new-pdf-page2.pdf cat output new-pdf.pdf</code></p>
+
+
+<h2 id="reduce_size_of_pdf_file">Reduce Size of PDF File</h2>
+
+<p>The size of pdf file can be reduced</p>
+
+<p><code>$ gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dColorImageDownsampleType=/Bicubic -dColorImageResolution=300 -dPDFSETTINGS=/screen -sOutputFile=fileout.pdf filein.pdf</code></p>
+
+<p><code>-dPDFSETTINGS</code> options [<a href="http://milan.kupcevic.net/ghostscript-ps-pdf/">Milan Kupcevic</a>]:</p>
+
+<p>
+<code>/screen</code>: &nbsp; screen-view-only quality, 72 dpi images;<br />
+<code>/ebook</code>: &nbsp; low quality, 150 dpi images;<br />
+<code>/printer</code>: &nbsp; high quality, 300 dpi images;<br />
+<code>/prepress</code>: &nbsp; high quality, color preserving, 300 dpi images.
+</p>
+
+<h2 id="editors">Editors</h2>
+
+<p>&laquo;<a href="https://code-industry.net/free-pdf-editor/">Master PDF Editor</a> is a proprietary application to edit PDF documents on Linux, Windows and macOS. It can create, edit (insert text or images), annotate, view, encrypt, and sign PDF documents. With version 5, Master PDF Editor has removed some features from its free to use version, like editing or adding text, inserting images, and more - when using such tools, the application adds a big watermark to the PDF document unless users buy the full version.&raquo; [<a href="https://www.linuxuprising.com/2019/04/download-master-pdf-editor-4-for-linux.html">linuxuprising.com</a>]</p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 26 June 2021
+</div>
+</body>
+</html>

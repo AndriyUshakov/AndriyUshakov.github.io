@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>SSD</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">SSD</span>
+</div>
+
+<h1>SSD</h1>
+
+<h2>Trim</h2>
+
+<p>To discard unused blocks on a mounted file system</p>
+
+<p>
+<code># fstrim -v /</code><br />
+<code># fstrim -v /var</code><br />
+<code># fstrim -v /home</code>
+</p>
+
+<h2 id="issue_of_samsung_ssds">Issues of Samsung SSDs</h2>
+
+<p><a href="https://bugzilla.kernel.org/show_bug.cgi?id=203475">203475: Samsung 860 EVO queued TRIM issues - Kernel.org Bugzilla</a></p>
+
+<p><a href="https://bugzilla.kernel.org/show_bug.cgi?id=201693">201693: Samsung 860 EVO NCQ Issue with AMD SATA Controller - Kernel.org Bugzilla</a></p>
+
+<p>Recommended the following "fix":</p>
+
+<p><code># echo 1 > /sys/block/sda/device/queue_depth</code></p>
+
+<p><code># echo max_performance > /sys/class/scsi_host/host*/link_power_management_policy</code></p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 14 February 2021
+</div>
+</body>
+</html>

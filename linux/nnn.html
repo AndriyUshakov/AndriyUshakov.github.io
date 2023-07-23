@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>nnn Terminal File Manager</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Note on nnn">
+	<meta name="keywords" content="nnn, terminal file manager, shortcuts, start options, custom commands, bookmarks">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">nnn</span>
+</div>
+
+
+<h1>nnn</h1>
+
+<p><a href="https://github.com/jarun/nnn">nnn</a> is a terminal file manager</p>
+
+
+<h2 id="shortcuts">Shortcuts</h2>
+
+<p><code>d</code> &nbsp; detail mode toggle</p>
+
+<p><code>t,u</code> &nbsp; show size of directories and sort by size</p>
+
+<p><code>.</code> &nbsp; toggle hidden files</p>
+
+
+<h2 id="start_options">Start Options</h2>
+
+<p>To start <code>nnn</code> in detailed mode with shown hidden files</p>
+
+<p><code>$ export NNN_OPTS="dH"</code></p>
+
+
+<h2 id="custom_commands">Custom Commands</h2>
+
+<p><code>$ export NNN_PLUG='p:!less $nnn'</code></p>
+
+<p><code>Alt</code> is used with plugin keys.</p>
+
+<p>To open file using <code>less</code> (preview file): <code>Alt</code>+<code>p</code></p>
+
+
+<h2 id="bookmarks">Bookmarks</h2>
+
+<p><code>$ export NNN_BMS='d:~/Documents;D:~/Downloads'</code></p>
+
+<p>The bookmarks are listed in the help and config screen (key <code>?</code>).</p>
+
+<p><code>b</code>,<code>D</code> &nbsp; changes directory to <code>~/Downloads</code></p>
+
+
+<h2 id="referencies">Referencies</h2>
+
+<p><a href="https://github.com/jarun/nnn/wiki">nnn Wiki</a></p>
+
+<div id="footer">
+<hr />
+Last Modified: 23 July 2022
+</div>
+</body>
+</html>

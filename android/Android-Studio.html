@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Android Studio</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="android-index.html"><img src="../img/Android.svg" width="16" height="16" alt="Android"/> Android</a></span>
+	<span class="tb0">Android Studio</span>
+</div>
+
+<h1>Android Studio</h1>
+
+<h2>Install</h2>
+
+<p><a href="https://developer.android.com/studio">Android Studio</a> can be easily installed. The installation process for Windows, Mac and <a href="https://developer.android.com/studio/install#linux">Linux</a> is officially provided. The list of required packages for a 64-bit version of Ubuntu and Fedora is <a href="https://developer.android.com/studio/install#64bit-libs">available</a>.</p>
+
+<p>For Debian several <code>i386</code> libraries are <a href="https://wiki.debian.org/Multiarch/HOWTO#Installing_Android_SDK_compat_libraries">needed</a>. I have installed the following packages:</p>
+
+<p><code># dpkg --add-architecture i386<br />
+# apt update<br />
+# apt install libc6-i386 libstdc++6:i386 zlib1g:i386 libncurses5:i386 libbz2-1.0:i386</code></p>
+
+<p>KVM is recommended to <a href="https://developer.android.com/studio/run/emulator-acceleration#vm-linux-kvm">install</a> to use the hardware acceleration features in the Android Emulator.</p>
+
+<p><code># apt install bridge-utils qemu-kvm libvirt-clients libvirt-daemon-system</code> </p>
+
+<p>To launch installation execute:</p>
+
+<p><code>$ android-studio/bin/studio.sh</code></p>
+
+<p>After adding a virtual device in Studio, the <a href="https://developer.android.com/studio/run/emulator">emulator</a> can be started from the <a href="https://developer.android.com/studio/run/emulator-commandline#starting">command line</a> without starting Android Studio and AVD Manager.</p>
+<p>As for me, without making special tests, the virtual device in Android Emulator was running smoother than the <a href="https://www.android-x86.org/">Android-x86</a> in VirtualBox.</p>
+
+<div id="footer">
+<hr />
+Last modified: 17 December 2019
+</div>
+</body>
+
+</html>

@@ -1,0 +1,725 @@
+<html lang="en">
+<head>
+	<title>Stripping down Samsung stock ROM (Galaxy Note 3)</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../../main.css" type="text/css" media="screen"/>
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../../index.html">Home</a></span>
+	<span class="tb1"><a href="../../software/software-index.html">Software</a></span>
+	<span class="tb1"><a href="../android-index.html">Android</a></span>
+	<span class="tb0">Stripping&nbsp;down&nbsp;Stock&nbsp;ROM</span>
+</div>
+
+<h1>Stripping down Samsung Stock ROM<br />
+<span style="font-size: smaller">unbranded international Galaxy Note 3 (SM-N9005, KitKat 4.4.2, <a href="http://www.sammobile.com/firmwares/download/34126/N9005XXUGNG1_N9005DBTGNG1_DBT.zip/">N9005XXUGNG1</a>)</span></h1>
+
+<p><a href="#kept_packages">Kept Packages</a> / <a href="#removed_packages">Removed Packages</a> / <a href="#deleted_files">Deleted Files</a></p>
+
+<p>What can be done if you not using many pre-installed apps/features?
+The "extra" features take a storage space, memory and consume some battery energy.
+Possibly, they can be a source of security/privacy issues.</p>
+
+<p>The adjusting system is a highly individual process.
+My list of kept and removed packages is shown below.
+<em>No boot loops</em>, <em>no any forced closes</em> (application crashes) have been noted.</p>
+
+<p>The packages are sorted by name of apk file. The chosen format is following:</p>
+<ul>
+<li>[<strong>Title of application</strong>] - [<code>Name of apk file with full path</code>] - [Package name]</li>
+</ul>
+
+
+<h2 id="kept_packages">Kept Packages</h2>
+
+<ul>
+<li><strong>BadgeProvider</strong> - <code>/system/app/BadgeProvider.apk</code> - com.sec.android.provider.badge</li>
+
+<li><strong>CapabilityManagerService</strong> - <code>/system/app/CapabilityManagerService.apk</code> - com.sec.android.service.cm</li>
+
+<li><strong>Certificate Installer</strong> - <code>/system/app/CertInstaller.apk</code> - com.android.certinstaller</li>
+
+<li><strong>ClipboardSaveService</strong> - <code>/system/app/ClipboardSaveService.apk</code> - com.samsung.clipboardsaveservice</li>
+
+<li><strong>Package Access Helper</strong> - <code>/system/priv-app/DefaultContainerService.apk</code> - com.android.defcontainer</li>
+
+<li><strong>External Storage</strong> - <code>/system/priv-app/ExternalStorageProvider.apk</code> - com.android.externalstorage</li>
+
+<li><strong>Screen write</strong> - <code>/system/app/FlashAnnotate.apk</code> - com.sec.spen.flashannotate</li>
+
+<li><strong>FlashAnnotateSvc</strong> - <code>/system/app/FlashAnnotateSvc.apk</code> - com.sec.spen.flashannotatesvc</li>
+
+<li><strong>Android System</strong> - <code>/system/framework/framework-res.apk</code> - android</li>
+
+<li><strong>Fused Location</strong> - <code>/system/priv-app/FusedLocation.apk</code> - com.android.location.fused</li>
+
+<li><strong>Adapt Sound</strong> - <code>/system/priv-app/Hearingdro.apk</code> - com.sec.hearingadjust</li>
+
+<li><strong>Task manager</strong> - <code>/system/app/JobManager.apk</code> - com.sec.android.app.controlpanel</li>
+
+<li><strong>KeyguardTestActivity</strong> - <code>/system/priv-app/Keyguard.apk</code> - com.android.keyguard</li>
+
+<li><strong>KeyguardBackupRestore</strong> - <code>/system/app/KeyguardBackupRestore.apk</code> - com.sec.android.app.keyguardbackuprestore</li>
+
+<li><strong>LogsProvider</strong> - <code>/system/priv-app/LogsProvider.apk</code> - com.sec.android.provider.logsprovider</li>
+
+<li>(noname) - <code>/system/app/minimode-res.apk</code> - com.sec.android.app.minimode.res</li>
+
+<li><strong>MTP application</strong> - <code>/system/priv-app/MtpApplication.apk</code> - com.samsung.android.MtpApplication</li>
+
+<li>(unknown) - <code>/system/app/MultiWindowTrayService.apk</code> - com.sec.android.app.FlashBarService</li>
+
+<li><strong>Package installer</strong> - <code>/system/app/PackageInstaller.apk</code> - com.android.packageinstaller</li>
+
+<li><strong>Photo Editor</strong> - <code>/system/priv-app/PhotoRetouching_FHD_H.apk</code> - com.sec.android.mimage.photoretouching</li>
+
+<li><strong>PopupuiReceiver</strong> - <code>/system/app/PopupuiReceiver.apk</code> - com.sec.android.app.popupuireceiver</li>
+
+<li><strong>SamsungSans</strong> - <code>/system/app/SamsungSans.apk</code> - com.monotype.android.font.samsungsans</li>
+
+<li><strong>SapaMonitor</strong> - <code>/system/app/SapaMonitor.apk</code> - com.samsung.android.sdk.professionalaudio.utility.jammonitor</li>
+
+<li><strong>Calendar Storage</strong> - <code>/system/priv-app/SecCalendarProvider.apk</code> - com.android.providers.calendar</li>
+
+<li><strong>Contacts</strong> - <code>/system/priv-app/SecContacts_OSup.apk</code> - com.android.contacts<br />
+receiver: PackageIntentReceiver <span class="tbrg">disabled</span></li>
+
+<li><strong>Contacts Storage</strong> - <code>/system/priv-app/SecContactsProvider.apk</code> - com.android.providers.contacts<br />
+receiver: PackageIntentReceiver <span class="tbrg">disabled</span></li>
+
+<li><strong>Download Manager</strong> - <code>/system/priv-app/SecDownloadProvider.apk</code> - com.android.providers.downloads</li>
+
+<li><strong>Downloads</strong> - <code>/system/app/SecDownloadProviderUi.apk</code> - com.android.providers.downloads.ui</li>
+
+<li><strong>HTML Viewer</strong> - <code>/system/app/SecHTMLViewer.apk</code> - com.android.htmlviewer</li>
+
+<li><strong>TouchWiz Home</strong> - <code>/system/priv-app/SecLauncher4.apk</code> - com.sec.android.app.launcher <span class="tbry">frozen</span></li>
+
+<li><strong>Phone</strong> - <code>/system/priv-app/SecPhone.apk</code> - com.android.phone</li>
+
+<li><strong>Settings</strong> - <code>/system/priv-app/SecSettings.apk</code> - com.android.settings</li>
+
+<li><strong>Settings Storage</strong> - <code>/system/priv-app/SecSettingsProvider.apk</code> - com.android.providers.settings</li>
+
+<li><strong>Dialer Storage</strong> - <code>/system/app/SecTelephonyProvider.apk</code> - com.android.providers.telephony</li>
+
+<li><strong>SecWallpaperChooser</strong> - <code>/system/priv-app/SecWallpaperChooser.apk</code> - com.sec.android.app.wallpaperchooser</li>
+
+<li><strong>SetDefaultLauncher</strong> - <code>/system/app/SetDefaultLauncher.apk</code> - com.sec.setdefaultlauncher</li>
+
+<li><strong>SettingSearchProvider</strong> - <code>/system/app/SettingSearchProvider.apk</code> - com.sec.providers.settingsearch</li>
+
+<li><strong>Shell</strong> - <code>/system/priv-app/Shell.apk</code> - com.android.shell</li>
+
+<li><strong>S Note</strong> - <code>/system/app/SNote3.apk</code> - com.samsung.android.snote</li>
+
+<li>(noname) - <code>/system/app/SPenSdk3.apk</code> - com.samsung.android.sdk.spenv10</li>
+
+<li><strong>System UI</strong> - <code>/system/priv-app/SystemUI.apk</code> - com.android.systemui</li>
+
+<li>(noname) - <code>/system/framework/twframework-res.apk</code> - touchwiz<br />
+TimaService, TimaServiceEventReceiver <span class="tbrg">disabled</span>, build.prop: <code>ro.config.tima=0</code></li>
+
+<li><strong>USBSettings</strong> - <code>/system/app/USBSettings.apk</code> - com.sec.usbsettings</li>
+
+<li><strong>User Dictionary</strong> - <code>/system/app/UserDictionaryProvider.apk</code> - com.android.providers.userdictionary</li>
+
+<li><strong>Direct pen input</strong> - <code>/system/app/WritingBuddyService.apk</code> - com.samsung.android.writingbuddyservice</li>
+</ul>
+
+<h2 id="removed_packages">Removed Packages</h2>
+
+<ul>
+<li><strong>Virtual Tour Viewer</strong> - <code>/system/priv-app/3DTourViewer_FHD_H.apk</code> - com.sec.android.app.tourviewer</li>
+
+<li><strong>Interaction control</strong> - <code>/system/app/AccessControl.apk</code> - com.samsung.android.app.accesscontrol</li>
+
+<li><strong>Weather</strong> - <code>/system/app/AccuweatherPhone2013.apk</code> - com.sec.android.widgetapp.ap.hero.accuweather</li>
+
+<li><strong>Alarm</strong> - <code>/system/app/AlarmWidget.apk</code> - com.sec.android.widgetapp.alarmwidget</li>
+
+<li><strong>Screen Mirroring</strong> - <code>/system/app/AllShareCastPlayer.apk</code> - com.sec.allsharecastplayer</li>
+
+<li><strong>AllShare ControlShare Service</strong> - <code>/system/app/AllshareControlShare.apk</code> - com.sec.android.allshare.service.controlshare</li>
+
+<li><strong>AllShare FileShare Service</strong> - <code>/system/app/AllshareFileShare.apk</code> - com.sec.android.allshare.service.fileshare</li>
+
+<li><strong>Wi-Fi Direct</strong> - <code>/system/app/AllshareFileShareClient.apk</code> - com.sec.android.app.FileShareClient</li>
+
+<li><strong>Wi-Fi Direct share</strong> - <code>/system/app/AllshareFileShareServer.apk</code> - com.sec.android.app.FileShareServer</li>
+
+<li><strong>Nearby devices</strong> - <code>/system/app/AllshareMediaServer.apk</code> - com.sec.android.nearby.mediaserver</li>
+
+<li><strong>Nearby Service</strong> - <code>/system/app/AllshareMediaShare.apk</code> - com.sec.android.allshare.service.mediashare</li>
+
+<li><strong>Animated photo</strong> - <code>/system/app/AnimatedScene_fhd.apk</code> - com.arcsoft.burstshoteditor.animatedphoto</li>
+
+<li><strong>Animated photo</strong> - <code>/system/priv-app/AnimatedScene.apk</code> - com.arcsoft.picmovie</li>
+
+<li><strong>ANT HAL Service</strong> - <code>/system/app/AntHalService.apk</code> - com.dsi.ant.server</li>
+
+<li><strong>ANT+ Plugins</strong> - <code>/system/app/ANTPlusPlugins.apk</code> - com.dsi.ant.plugins.antplus</li>
+
+<li><strong>ANT Radio Service</strong> - <code>/system/app/ANTRadioService.apk</code> - com.dsi.ant.service.socket</li>
+
+<li><strong>Search Applications Provider</strong> - <code>/system/app/ApplicationsProvider.apk</code> - com.android.providers.applications</li>
+
+<li><strong>Assistant menu</strong> - <code>/system/app/AssistantMenu.apk</code> - com.samsung.android.app.assistantmenu</li>
+
+<li><strong>Automation Test</strong> - <code>/system/priv-app/AutomationTest_FB.apk</code> - com.sec.android.app.DataCreate</li>
+
+<li><strong>AutoPreconfig</strong> - <code>/system/priv-app/AutoPreconfig.apk</code> - com.sec.android.AutoPreconfig</li>
+
+<li>(noname) - <code>/system/priv-app/BackupRestoreConfirmation.apk</code> - com.android.backupconfirm</li>
+
+<li><strong>BandService</strong> - <code>/system/app/BandService.apk</code> - com.sec.android.band</li>
+
+<li><strong>Basic Daydreams</strong> - <code>/system/app/BasicDreams.apk</code> - com.android.dreams.basic</li>
+
+<li>(noname) - <code>/system/app/BCService.apk</code> - com.sec.bcservice</li>
+
+<li><strong>Beaming Service</strong> - <code>/system/app/BeamService.apk</code> - com.mobeam.barcodeService</li>
+
+<li><strong>Best Face</strong> - <code>/system/priv-app/BestFace.apk</code> - com.arcsoft.picturesbest.app</li>
+
+<li><strong>Bloomberg+</strong> - <code>/system/app/Bloomberg.apk</code> - com.bloomberg.android.plus</li>
+
+<li><strong>Bluetooth Share</strong> - <code>/system/app/Bluetooth.apk</code> - com.android.bluetooth</li>
+
+<li><strong>BluetoothTest</strong> - <code>/system/app/BluetoothTest.apk</code> - com.sec.android.app.bluetoothtest</li>
+
+<li><strong>BlurbCheckout</strong> - <code>/system/app/Blurb.apk</code> - com.blurb.checkout</li>
+
+<li><strong>Google Play Books</strong> - <code>/system/app/Books.apk</code> - com.google.android.apps.books</li>
+
+<li><strong>KNOX</strong> - <code>/system/app/Bridge.apk</code> - com.sec.knox.bridge</li>
+
+<li>(noname) - <code>/system/app/BrowserProviderProxy.apk</code> - com.android.browser.provider</li>
+
+<li><strong>BurstShotEdit</strong> - <code>/system/app/BurstShotEdit_fhd.apk</code> - com.arcsoft.burstshoteditor</li>
+
+<li><strong>Easy chart</strong> - <code>/system/app/ChartBuilder.apk</code> - com.samsung.android.chartbuilder</li>
+
+<li><strong>ChatON</strong> - <code>/system/app/ChatON_MARKET.apk</code> - com.sec.chaton</li>
+
+<li><strong>ChocoEUKor</strong> - <code>/system/app/ChocoEUKor.apk</code> - com.monotype.android.font.chococooky</li>
+
+<li><strong>Chrome</strong> - <code>/system/app/Chrome.apk</code> - com.android.chrome</li>
+
+<li><strong>Clock</strong> - <code>/system/app/ClockPackage_OSup.apk</code> - com.sec.android.app.clockpackage</li>
+
+<li><strong>CloudAgent</strong> - <code>/system/priv-app/CloudAgent.apk</code> - com.sec.android.cloudagent</li>
+
+<li><strong>Collage</strong> - <code>/system/priv-app/Collage_fhdh.apk</code> - com.sec.android.app.collage</li>
+
+<li><strong>Colour adjustment</strong> - <code>/system/app/ColorBlind.apk</code> - com.samsung.android.app.colorblind</li>
+
+<li><strong>HRS Hotels</strong> - <code>/data/app/com.hrs.android.apk</code> - com.hrs.android</li>
+
+<li><strong>LocationServices</strong> - <code>/system/app/com.qualcomm.location.apk</code> - com.qualcomm.location</li>
+
+<li>(noname) - <code>/system/priv-app/ConfigUpdater.apk</code> - com.google.android.configupdater</li>
+
+<li><strong>IndexService</strong> - <code>/system/priv-app/ContentSearch.apk</code> - com.samsung.indexservice</li>
+
+<li><strong>Context Service</strong> - <code>/system/priv-app/ContextProvider_H.apk</code> - com.samsung.android.providers.context</li>
+
+<li><strong>CoolEUKor</strong> - <code>/system/app/CoolEUKor.apk</code> - com.monotype.android.font.cooljazz</li>
+
+<li><strong>CSC</strong> - <code>/system/priv-app/CSC.apk</code> - com.samsung.sec.android.application.csc</li>
+
+<li><strong>MyBoard</strong> - <code>/data/app/de.falkemedia.myboard.apk</code> - de.falkemedia.myboard</li>
+
+<li><strong>kaufDA</strong> - <code>/data/app/de.kaufda.android.apk</code> - de.kaufda.android</li>
+
+<li><strong>Lieferheld</strong> - <code>/data/app/de.lieferheld.android.apk</code> - de.lieferheld.android</li>
+
+<li><strong>cewe smartphoto</strong> - <code>/data/app/de.worldiety.photiety.cewe.smartphoto.de.apk</code> - de.worldiety.photiety.cewe.smartphoto.de</li>
+
+<li><strong>Zalando</strong> - <code>/data/app/de.zalando.mobile.apk</code> - de.zalando.mobile</li>
+
+<li><strong>DeviceKeystring</strong> - <code>/system/priv-app/DeviceKeystring.apk</code> - com.sec.android.app.factorykeystring</li>
+
+<li><strong>DeviceTest</strong> - <code>/system/priv-app/DeviceTest.apk</code> - com.sec.factory</li>
+
+<li><strong>Clock (Digital)</strong> - <code>/system/app/DigitalClock.apk</code> - com.sec.android.widgetapp.digitalclock</li>
+
+<li><strong>DirectConnectManager</strong> - <code>/system/app/DirectConnect.apk</code> - com.sec.android.directconnect</li>
+
+<li><strong>DirectShareManager</strong> - <code>/system/priv-app/DirectShareManager.apk</code> - com.sec.android.directshare</li>
+
+<li><strong>Documents</strong> - <code>/system/app/DocumentsUI.apk</code> - com.android.documentsui</li>
+
+<li><strong>Drive</strong> - <code>/system/app/Drive.apk</code> - com.google.android.apps.docs</li>
+
+<li><strong>Dropbox</strong> - <code>/system/app/Dropbox.apk</code> - com.dropbox.android</li>
+
+<li><strong>DropboxOOBE</strong> - <code>/system/priv-app/DropboxOOBE.apk</code> - com.sec.android.cloudagent.dropboxoobe</li>
+
+<li><strong>DSMForwarding</strong> - <code>/system/priv-app/DSMForwarding.apk</code> - com.sec.dsm.phone</li>
+
+<li><strong>SMLawmo</strong> - <code>/system/priv-app/DSMLawmo.apk</code> - com.sec.dsm.system</li>
+
+<li><strong>Dual Clock (Digital)</strong> - <code>/system/app/DualClockDigital.apk</code> - com.sec.android.widgetapp.dualclockdigital</li>
+
+<li><strong>Favourite Contacts</strong> - <code>/system/app/EasyFavoritesContactsWidget.apk</code> - com.sec.android.widgetapp.easyfavoritescontactswidget</li>
+
+<li><strong>TouchWiz easy home</strong> - <code>/system/priv-app/EasyLauncher.apk</code> - com.sec.android.app.easylauncher</li>
+
+<li><strong>EasyOneHand</strong> - <code>/system/app/EasyOneHand.apk</code> - com.sec.android.easyonehand</li>
+
+<li><strong>Easy settings</strong> - <code>/system/app/EasySettings.apk</code> - com.sec.android.easysettings</li>
+
+<li><strong>Enterprise Sim Pin Service</strong> - <code>/system/app/EdmSimPinService.apk</code> - com.sec.enterprise.mdm.services.simpin</li>
+
+<li><strong>Enterprise SysScope Service</strong> - <code>/system/app/EdmSysScopeService.apk</code> - com.sec.enterprise.mdm.services.sysscope</li>
+
+<li><strong>Enterprise VPN Services</strong> - <code>/system/app/EdmVpnServices.apk</code> - com.sec.enterprise.mdm.services.vpn</li>
+
+<li><strong>ELM Agent</strong> - <code>/system/app/ELMAgent.apk</code> - com.sec.esdk.elm</li>
+
+<li><strong>EnterprisePermissions</strong> - <code>/system/app/EnterprisePermissions.apk</code> - com.sec.enterprise.permissions</li>
+
+<li><strong>Eraser</strong> - <code>/system/priv-app/Eraser.apk</code> - com.arcsoft.demo.piclear</li>
+
+<li><strong>Evernote</strong> - <code>/system/app/Evernote_H.apk</code> - com.evernote</li>
+
+<li><strong>Camera Test</strong> - <code>/system/app/FactoryCamera_FB.apk</code> - com.sec.factory.camera</li>
+
+<li><strong>Filter Installer</strong> - <code>/system/app/FilterInstaller.apk</code> - com.samsung.android.app.filterinstaller</li>
+
+<li><strong>FilterManager</strong> - <code>/system/app/FilterManager.apk</code> - com.sec.android.app.filtermanager</li>
+
+<li><strong>FilterProvider</strong> - <code>/system/app/FilterProvider.apk</code> - com.samsung.android.provider.filterprovider</li>
+
+<li><strong>FixmoISA</strong> - <code>/system/app/FixmoISA.apk</code> - com.fixmo.isa</li>
+
+<li><strong>Flipboard</strong> - <code>/system/app/Flipboard.apk</code> - flipboard.app</li>
+
+<li><strong>Remote controls</strong> - <code>/system/priv-app/FmmDM.apk</code> - com.fmm.dm</li>
+
+<li><strong>Remote controls</strong> - <code>/system/priv-app/FmmDS.apk</code> - com.fmm.ds</li>
+
+<li><strong>Software update</strong> - <code>/system/priv-app/FotaClient.apk</code> - com.sec.android.fotaclient</li>
+
+<li><strong>FWUpgrade</strong> - <code>/system/app/FWUpgrade.apk</code> - com.sec.android.fwupgrade</li>
+
+<li><strong>S Finder</strong> - <code>/system/priv-app/GalaxyFinder.apk</code> - com.samsung.android.app.galaxyfinder</li>
+
+<li>(noname) - <code>/system/app/GearManagerStub.apk</code> - com.samsung.android.app.watchmanagerstub</li>
+
+<li><strong>GestureService</strong> - <code>/system/app/GestureService.apk</code> - com.samsung.android.app.gestureservice</li>
+
+<li><strong>GlanceViewMk</strong> - <code>/system/app/GlanceView.apk</code> - com.sec.android.app.GlanceView</li>
+
+<li><strong>Gmail</strong> - <code>/system/app/Gmail2.apk</code> - com.google.android.gm</li>
+
+<li><strong>Maps</strong> - <code>/system/app/GMS_Maps.apk</code> - com.google.android.apps.maps</li>
+
+<li><strong>Google Play services</strong> - <code>/system/priv-app/GmsCore.apk</code> - com.google.android.gms</li>
+
+<li>(noname) - <code>/system/priv-app/GolfShotViewer_H.apk</code> - com.stri.golfviewer</li>
+
+<li><strong>Google Backup Transport</strong> - <code>/system/priv-app/GoogleBackupTransport.apk</code> - com.google.android.backuptransport</li>
+
+<li><strong>Google Calendar Sync</strong> - <code>/system/app/GoogleCalendarSyncAdapter.apk</code> - com.google.android.syncadapters.calendar</li>
+
+<li><strong>Google Contacts Sync</strong> - <code>/system/app/GoogleContactsSyncAdapter.apk</code> - com.google.android.syncadapters.contacts</li>
+
+<li><strong>Market Feedback Agent</strong> - <code>/system/priv-app/GoogleFeedback.apk</code> - com.google.android.feedback</li>
+
+<li><strong>Google Account Manager</strong> - <code>/system/priv-app/GoogleLoginService.apk</code> - com.google.android.gsf.login</li>
+
+<li><strong>Google Partner Setup</strong> - <code>/system/priv-app/GooglePartnerSetup.apk</code> - com.google.android.partnersetup</li>
+
+<li><strong>Google Search</strong> - <code>/system/app/GoogleSearchWidget2.apk</code> - com.sec.android.googlesearchwidget</li>
+
+<li><strong>Google Services Framework</strong> - <code>/system/priv-app/GoogleServicesFramework.apk</code> - com.google.android.gsf</li>
+
+<li><strong>Group Play</strong> - <code>/system/priv-app/GroupPlay_25.apk</code> - com.samsung.groupcast</li>
+
+<li><strong>Hangouts</strong> - <code>/system/app/Hangouts.apk</code> - com.google.android.talk</li>
+
+<li>(noname) - <code>/system/priv-app/hrs_and_samDePhone12_keysource.apk</code> - b2b.hrs.android.lib</li>
+
+<li><strong>HwModuleTest</strong> - <code>/system/priv-app/HwModuleTest.apk</code> - com.sec.android.app.hwmoduletest</li>
+
+<li><strong>Idea Sketch</strong> - <code>/system/app/IdeaSketch_H.apk</code> - com.samsung.sec.sketch</li>
+
+<li><strong>INDIServiceManager</strong> - <code>/system/app/INDI_Server.apk</code> - com.samsung.scrc.idi.server</li>
+
+<li><strong>Input Devices</strong> - <code>/system/priv-app/InputDevices.apk</code> - com.android.inputdevices</li>
+
+<li><strong>InteractiveKeyguardTutorial</strong> - <code>/system/app/InteractiveKeyguardTutorial.apk</code> - com.sec.android.app.interactivekeyguardtutorial</li>
+
+<li><strong>Help</strong> - <code>/system/app/InteractiveTutorial.apk</code> - com.samsung.helphub</li>
+
+<li><strong>Key Chain</strong> - <code>/system/app/KeyChain.apk</code> - com.android.keychain</li>
+
+<li>(noname) - <code>/system/app/KeyguardSPlannerWidget.apk</code> - com.sec.android.app.keyguard</li>
+
+<li><strong>USB settings</strong> - <code>/system/priv-app/Kies.apk</code> - com.sec.android.Kies</li>
+
+<li><strong>KLMS Agent</strong> - <code>/system/priv-app/KLMSAgent.apk</code> - com.samsung.klmsagent</li>
+
+<li><strong>Knox Notification Manager</strong> - <code>/system/app/KNOXAgent.apk</code> - com.sec.knox.seandroid</li>
+
+<li>(noname) - <code>/system/app/KnoxAttestationAgent.apk</code> - com.sec.enterprise.knox.attestation</li>
+
+<li><strong>KnoxMigrationAgent</strong> - <code>/system/app/KnoxMigrationAgent.apk</code> - com.sec.knox.containeragent</li>
+
+<li><strong>KNOX SetupWizardClient</strong> - <code>/system/app/KnoxSetupWizardClient.apk</code> - com.sec.knox.knoxsetupwizardclient</li>
+
+<li><strong>KNOX</strong> - <code>/system/app/KnoxSetupWizardStub.apk</code> - com.sec.knox.setupwizardstub</li>
+
+<li><strong>KNOX Store</strong> - <code>/system/app/KNOXStore.apk</code> - com.sec.knox.store</li>
+
+<li><strong>LocalFOTA</strong> - <code>/system/app/LocalFOTA.apk</code> - com.LocalFota</li>
+
+<li><strong>Google Play Newsstand</strong> - <code>/system/app/Magazines.apk</code> - com.google.android.apps.magazines</li>
+
+<li><strong>My Magazine</strong> - <code>/system/priv-app/MagazineHome.apk</code> - sstream.app</li>
+
+<li><strong>MDMApp</strong> - <code>/system/app/MDMApp.apk</code> - com.samsung.android.mdm</li>
+
+<li><strong>Picasa Uploader</strong> - <code>/system/app/MediaUploader.apk</code> - com.google.android.apps.uploader</li>
+
+<li><strong>Mobile Print</strong> - <code>/system/app/MobilePrint3.apk</code> - com.sec.android.app.mobileprint</li>
+
+<li><strong>MobilePrintSvc_CUPS_Backend</strong> - <code>/system/app/MobilePrintSvc_CUPS_Backend.apk</code> - com.siso.app.genericprintservice</li>
+
+<li><strong>MobilePrintSvc_CUPS</strong> - <code>/system/app/MobilePrintSvc_CUPS.apk</code> - com.siso.app.generic</li>
+
+<li><strong>EpsonPrintService</strong> - <code>/system/app/MobilePrintSvc_Epson.apk</code> - com.epson.mobilephone.samsungprintservice</li>
+
+<li><strong>HP Print Service Plugin</strong> - <code>/system/app/MobilePrintSvc_HP.apk</code> - com.hp.android.printservice</li>
+
+<li><strong>Samsung Print Service Plugin</strong> - <code>/system/app/MobilePrintSvc_Samsung.apk</code> - com.sec.app.samsungprintservice</li>
+
+<li><strong>Mopria WFDS Test Plugin</strong> - <code>/system/app/MobilePrintSvc_WFDS.apk</code> - com.sec.android.wfds.printplugin</li>
+
+<li><strong>Mobile tracker</strong> - <code>/system/app/MobileTrackerEngineTwo.apk</code> - com.sec.android.app.mt</li>
+
+<li><strong>Google Play Music</strong> - <code>/system/app/Music2.apk</code> - com.google.android.music</li>
+
+<li><strong>Multimedia UI Service Layer</strong> - <code>/system/app/MusicCommonUtility.apk</code> - com.sec.android.mmapp</li>
+
+<li><strong>MusicFX</strong> - <code>/system/priv-app/MusicFX.apk</code> - com.android.musicfx</li>
+
+<li><strong>Music</strong> - <code>/system/app/MusicPlayerWT.apk</code> - com.sec.android.app.music</li>
+
+<li><strong>Share music</strong> - <code>/system/app/MusicLiveShare2.apk</code> - com.sec.android.app.mediasync</li>
+
+<li><strong>Nfc Service</strong> - <code>/system/app/NfcNci.apk</code> - com.android.nfc</li>
+
+<li><strong>NFC Test</strong> - <code>/system/app/NfcTest.apk</code> - com.sec.android.app.nfctest</li>
+
+<li><strong>Bubbles</strong> - <code>/system/priv-app/NoiseField.apk</code> - com.android.noisefield</li>
+
+<li><strong>Communication notifications</strong> - <code>/system/app/NotificationWidget.apk</code> - com.sec.android.widgetapp.notificationwidget</li>
+
+<li><strong>OMACP</strong> - <code>/system/priv-app/OmaCP.apk</code> - com.wsomacp</li>
+
+<li><strong>OM Customize</strong> - <code>/system/priv-app/Omc.apk</code> - com.sec.android.omc</li>
+
+<li><strong>One Time Init</strong> - <code>/system/priv-app/OneTimeInitializer.apk</code> - com.android.onetimeinitializer</li>
+
+<li><strong>PacProcessor</strong> - <code>/system/app/PacProcessor.apk</code> - com.android.pacprocessor</li>
+
+<li><strong>PageBuddyNotiSvc</strong> - <code>/system/priv-app/PageBuddyNotiSvc2.apk</code> - com.sec.android.pagebuddynotisvc</li>
+
+<li><strong>Sensitivity test</strong> - <code>/system/app/PanningTryActually.apk</code> - com.sec.android.motions.settings.panningtutorial</li>
+
+<li>(noname) - <code>/system/app/Panorama360Viewer_H.apk</code> - com.sec.android.gallery3d.panorama360view</li>
+
+<li>(noname) - <code>/system/app/PartnerBookmarksProvider.apk</code> - com.android.providers.partnerbookmarks</li>
+
+<li><strong>Remote Controls</strong> - <code>/system/priv-app/PCWClientS18.apk</code> - com.sec.pcw.device</li>
+
+<li><strong>WatchON</strong> - <code>/system/app/Peel.apk</code> - tv.peel.samsung.app</li>
+
+<li><strong>Perso</strong> - <code>/system/app/Personalization.apk</code> - com.sec.android.app.personalization</li>
+
+<li><strong>Phase beam</strong> - <code>/system/priv-app/PhaseBeam.apk</code> - com.android.phasebeam</li>
+
+<li><strong>RilNotifier</strong> - <code>/system/priv-app/PhoneErrService.apk</code> - com.sec.app.RilErrorNotifier</li>
+
+<li><strong>Google Play Store</strong> - <code>/system/priv-app/Phonesky.apk</code> - com.android.vending</li>
+
+<li><strong>Photo Screensavers</strong> - <code>/system/app/PhotoTable.apk</code> - com.android.dreams.phototable</li>
+
+<li><strong>Drama</strong> - <code>/system/priv-app/PicAction.apk</code> - com.arcsoft.picaction.app</li>
+
+<li><strong>PickupTutorial</strong> - <code>/system/app/PickUpTutorial.apk</code> - com.samsung.pickuptutorial</li>
+
+<li><strong>Scrapbook</strong> - <code>/system/priv-app/Pinboard.apk</code> - com.samsung.android.app.pinboard</li>
+
+<li><strong>Play Games</strong> - <code>/system/app/PlayGames.apk</code> - com.google.android.play.games</li>
+
+<li><strong>Google+</strong> - <code>/system/app/PlusOne.apk</code> - com.google.android.apps.plus</li>
+
+<li><strong>POLARIS Office Viewer 5</strong> - <code>/system/app/PolarisViewer5.apk</code> - com.infraware.polarisviewer5</li>
+
+<li><strong>Preconfig</strong> - <code>/system/app/Preconfig.apk</code> - com.sec.android.Preconfig</li>
+
+<li><strong>Application installer</strong> - <code>/system/app/PreloadInstaller.apk</code> - com.sec.android.preloadinstaller</li>
+
+<li><strong>ProxyHandler</strong> - <code>/system/priv-app/ProxyHandler.apk</code> - com.android.proxyhandler</li>
+
+<li><strong>Action memo</strong> - <code>/system/app/QuickMemoCover.apk</code> - com.samsung.android.covermemo</li>
+
+<li><strong>Action Memo</strong> - <code>/system/app/QuickMemoWidget.apk</code> - com.sec.android.quickmemowidget</li>
+
+<li><strong>RakeIn</strong> - <code>/system/app/RakeIn.apk</code> - com.sec.android.app.rakein</li>
+
+<li><strong>RCPComponents</strong> - <code>/system/app/RCPComponents.apk</code> - com.samsung.knox.rcp.components</li>
+
+<li><strong>MyScript Resource Manager</strong> - <code>/system/app/ResourceManager.apk</code> - com.visionobjects.resourcemanager</li>
+
+<li><strong>ringtonebackup</strong> - <code>/system/app/ringtoneBR.apk</code> - com.sec.android.app.ringtoneBR</li>
+
+<li><strong>RootPA</strong> - <code>/system/app/RootPA.apk</code> - com.gd.mobicore.pa</li>
+
+<li><strong>RoseEUKor</strong> - <code>/system/app/RoseEUKor.apk</code> - com.monotype.android.font.rosemary</li>
+
+<li><strong>S Translator</strong> - <code>/system/priv-app/S_Translator_CSLi_STUB.apk</code> - com.sec.android.app.translator</li>
+
+<li><strong>S Voice</strong> - <code>/system/priv-app/S-Voice_Android_phone.apk</code> - com.vlingo.midas</li>
+
+<li><strong>samsung_preinstall</strong> - <code>/system/priv-app/samsung_preinstall_03_10.apk</code> - com.zalando.samsung.provider</li>
+
+<li><strong>Samsung Apps</strong> - <code>/system/priv-app/SamsungApps_H.apk</code> - com.sec.android.app.samsungapps</li>
+
+<li><strong>Samsung Apps Widget</strong> - <code>/system/app/SamsungAppsWidget.apk</code> - com.sec.android.widget.samsungapps</li>
+
+<li><strong>Samsung Billing</strong> - <code>/system/priv-app/SamsungBilling.apk</code> - com.sec.android.app.billing</li>
+
+<li><strong>Camera</strong> - <code>/system/app/SamsungCamera2.apk</code> - com.sec.android.app.camera</li>
+
+<li><strong>Samsung Camera Filter</strong> - <code>/system/app/SamsungCameraFilter.apk</code> - com.sec.android.filter</li>
+
+<li><strong>Samsung Content Agent</strong> - <code>/system/app/SamsungContentsAgent.apk</code> - com.sec.android.app.SamsungContentsAgent</li>
+
+<li><strong>Samsung Hub</strong> - <code>/system/app/SamsungHub.apk</code> - com.sec.everglades</li>
+
+<li><strong>SamsungHub Updater</strong> - <code>/system/app/SamsungHubUpdater_fHD.apk</code> - com.sec.everglades.update</li>
+
+<li><strong>Samsung keyboard</strong> - <code>/system/app/SamsungIME.apk</code> - com.sec.android.inputmethod</li>
+
+<li><strong>Samsung Link</strong> - <code>/system/priv-app/SamsungLink18.apk</code> - com.sec.pcw</li>
+
+<li><strong>Samsung account</strong> - <code>/system/priv-app/Samsungservice_H.apk</code> - com.osp.app.signin</li>
+
+<li><strong>Samsung text-to-speech engine</strong> - <code>/system/app/SamsungTTS.apk</code> - com.samsung.SMT</li>
+
+<li><strong>Samsung Video</strong> - <code>/system/priv-app/SamsungVideo_H.apk</code> - com.samsung.everglades.video</li>
+
+<li><strong>Samsung WatchON Video</strong> - <code>/system/app/SamsungWatchON.apk</code> - com.sec.yosemite.phone</li>
+
+<li><strong>Active Apps Manager</strong> - <code>/system/app/SamsungWidget_ActiveApplication.apk</code> - com.sec.android.widgetapp.activeapplicationwidget</li>
+
+<li><strong>Internet</strong> - <code>/system/app/SBrowser.apk</code> - com.sec.android.app.sbrowser</li>
+
+<li>(noname) - <code>/system/app/SBrowserTry.apk</code> - com.sec.android.app.sbrowsertry</li>
+
+<li><strong>Backup</strong> - <code>/system/priv-app/sCloudBackupApp.apk</code> - com.samsung.android.scloud.backup</li>
+
+<li><strong>Samsung Cloud Data Relay</strong> - <code>/system/priv-app/sCloudDataRelay.apk</code> - com.samsung.android.scloud.auth</li>
+
+<li><strong>Samsung Syncadapters</strong>- <code>/system/priv-app/sCloudDataSync.apk</code> - com.samsung.android.scloud.sync</li>
+
+<li><strong>Samsung Cloud Quota</strong> - <code>/system/priv-app/sCloudQuotaApp.apk</code> - com.samsung.android.scloud.quota</li>
+
+<li><strong>Samsung Calendar SyncAdapter</strong> - <code>/system/priv-app/sCloudSyncCalendar.apk</code> - com.samsung.android.scloud.proxy.calendar</li>
+
+<li><strong>Samsung Contact SyncAdapter</strong> - <code>/system/priv-app/sCloudSyncContacts.apk</code> - com.samsung.android.scloud.proxy.contacts</li>
+
+<li><strong>Samsung SBrowser SyncAdapter</strong> - <code>/system/priv-app/sCloudSyncSBrowser.apk</code> - com.samsung.android.scloud.proxy.sbrowser</li>
+
+<li><strong>Samsung SNote3 SyncAdapter</strong> - <code>/system/priv-app/sCloudSyncSNote3.apk</code> - com.samsung.android.scloud.proxy.snote3</li>
+
+<li><strong>Samsung Link Platform Connectivity</strong> - <code>/system/app/SCONE_Android_ProxyService.apk</code> - com.sec.msc.nts.android.proxy</li>
+
+<li><strong>Factory Mode</strong> - <code>/system/app/SCParser.apk</code> - com.sec.android.app.parser</li>
+
+<li><strong>Calculator</strong> - <code>/system/app/SecCalculator2.apk</code> - com.sec.android.app.popupcalculator</li>
+
+<li><strong>Email</strong> - <code>/system/app/SecEmail_J.apk</code> - com.android.email</li>
+
+<li><strong>Exchange Services</strong> - <code>/system/app/SecExchange.apk</code> - com.android.exchange</li>
+
+<li>(noname) - <code>/system/app/SecFactoryPhoneTest.apk</code> - com.sec.phone</li>
+
+<li><strong>Gallery</strong> - <code>/system/priv-app/SecGallery2013.apk</code> - com.sec.android.gallery3d</li>
+
+<li><strong>Kids Mode</strong> - <code>/system/app/SecKidsModeInstaller.apk</code> - com.sec.kidsplat.installer</li>
+
+<li><strong>Live Wallpaper Picker</strong> - <code>/system/priv-app/SecLiveWallpapersPicker.apk</code> - com.android.wallpaper.livepicker</li>
+
+<li><strong>Media Storage</strong> - <code>/system/priv-app/SecMediaProvider.apk</code> - com.android.providers.media</li>
+
+<li><strong>Messages</strong> - <code>/system/priv-app/SecMms.apk</code> - com.android.mms</li>
+
+<li><strong>My Files</strong> - <code>/system/priv-app/SecMyFiles2.apk</code> - com.sec.android.app.myfiles</li>
+
+<li><strong>Action memo</strong> - <code>/system/app/SecQuickMemo.apk</code> - com.samsung.android.quickmemo</li>
+
+<li><strong>Action Memo</strong> - <code>/system/app/SecQuickMemoApp.apk</code> - com.sec.android.quickmemo</li>
+
+<li><strong>Safety assistance</strong> - <code>/system/priv-app/SecSafetyAssurance.apk</code> - com.sec.android.app.safetyassurance</li>
+
+<li><strong>Samsung SetupWizard</strong> - <code>/system/app/SecSetupWizard2013.apk</code> - com.sec.android.app.SecSetupWizard</li>
+
+<li><strong>SecurityManagerService</strong> - <code>/system/app/SecurityManagerService.apk</code> - com.sec.android.service.sm</li>
+
+<li><strong>Security Storage</strong> - <code>/system/app/SecurityProviderSEC.apk</code> - com.sec.android.providers.security</li>
+
+<li><strong>Video</strong> - <code>/system/priv-app/SecVideoListUpg.apk</code> - com.samsung.everglades.video</li>
+
+<li><strong>Video Player</strong> - <code>/system/priv-app/SecVideoPlayerUpg.apk</code> - com.sec.android.app.videoplayer</li>
+
+<li><strong>SensorService</strong> - <code>/system/priv-app/SensorService2_5.apk</code> - com.sec.android.service.health.sensor</li>
+
+<li><strong>Service mode</strong> - <code>/system/priv-app/serviceModeApp_FB.apk</code> - com.sec.android.app.servicemodeapp</li>
+
+<li><strong>Service mode RIL</strong> - <code>/system/app/ServiceModeApp_RIL.apk</code> - com.sec.android.RilServiceModeApp</li>
+
+<li><strong>Setup Wizard</strong> - <code>/system/priv-app/SetupWizard.apk</code> - com.google.android.setupwizard</li>
+
+<li>(noname) - <code>/system/priv-app/SharedStorageBackup.apk</code> - com.android.sharedstoragebackup</li>
+
+<li><strong>ShareShotService</strong> - <code>/system/app/ShareShotService.apk</code> - com.samsung.shareshot</li>
+
+<li><strong>Share Video</strong> - <code>/system/priv-app/ShareVideo.apk</code> - com.sec.android.app.mv.player</li>
+
+<li><strong>Manage accessibility</strong> - <code>/system/app/SharingAccessibilitySettings.apk</code> - com.samsung.android.app.shareaccessibilitysettings</li>
+
+<li><strong>S Health</strong> - <code>/system/priv-app/SHealth2_5.apk</code> - com.sec.android.app.shealth</li>
+
+<li><strong>Settings</strong> - <code>/system/app/SignatureLock.apk</code> - com.sec.android.signaturelock</li>
+
+<li><strong>SilentLogging</strong> - <code>/system/app/SilentLog.apk</code> - com.sec.modem.settings</li>
+
+<li><strong>Favourite Apps</strong> - <code>/system/priv-app/SimpleWidget.apk</code> - com.sec.android.SimpleWidget</li>
+
+<li><strong>SketchBook for Galaxy</strong> - <code>/system/priv-app/SketchBookStub.apk</code> - com.adsk.sketchbookhd.galaxy.oem</li>
+
+<li><strong>SmartcardManager</strong> - <code>/system/app/SmartcardManager.apk</code> - com.sec.smartcard.manager</li>
+
+<li><strong>SmartcardService</strong> - <code>/system/app/SmartcardService.apk</code> - org.simalliance.openmobileapi.service</li>
+
+<li><strong>SmartClipProvider</strong> - <code>/system/app/SmartClipProvider.apk</code> - com.samsung.android.provider.smartclip</li>
+
+<li>(noname) - <code>/system/app/SmartClipService.apk</code> - com.sec.android.app.SmartClipService</li>
+
+<li><strong>Business card recognition</strong> - <code>/system/app/SNameCard.apk</code> - com.sec.android.app.bcocr</li>
+
+<li><strong>SNS</strong> - <code>/system/priv-app/SNS.apk</code> - com.sec.android.app.sns3</li>
+
+<li><strong>SoundAlive</strong> - <code>/system/priv-app/SoundAlive.apk</code> - com.sec.android.app.soundalive</li>
+
+<li><strong>SPenKeeper</strong> - <code>/system/app/SPenKeeper.apk</code> - com.sec.android.app.SPenKeeper</li>
+
+<li><strong>Security policy updates</strong> - <code>/system/priv-app/SPDClient.apk</code> - com.policydm</li>
+
+<li><strong>S Planner</strong> - <code>/system/app/SPlanner_2013.apk</code> - com.android.calendar</li>
+
+<li><strong>S Planner Widget</strong> - <code>/system/app/SPlannerWidget_2013.apk</code> - com.sec.android.widgetapp.SPlannerAppWidget</li>
+
+<li><strong>Samsung Push Service</strong> - <code>/system/priv-app/SPPPushClient_Prod.apk</code> - com.sec.spp.push</li>
+
+<li><strong>Print Spooler</strong> - <code>/system/app/SPrintSpooler.apk</code> - com.android.printspooler</li>
+
+<li><strong>SIM Toolkit</strong> - <code>/system/app/Stk.apk</code> - com.android.stk</li>
+
+<li><strong>Story Album</strong> - <code>/system/priv-app/StoryAlbumStubActivationUpgrade.apk</code> - com.samsung.android.app.episodes</li>
+
+<li><strong>Story Album Widget</strong> - <code>/system/priv-app/StoryAlbumWidget.apk</code> - com.samsung.android.app.storyalbumwidget</li>
+
+<li><strong>Street View</strong> - <code>/system/app/Street.apk</code> - com.google.android.street</li>
+
+<li>(noname) - <code>/system/app/SViewCoverService.apk</code> - com.sec.android.sviewcover</li>
+
+<li><strong>Software update</strong> - <code>/system/priv-app/SyncmlDM.apk</code> - com.wssyncmldm</li>
+
+<li><strong>SyncmlDS</strong> - <code>/system/priv-app/SyncmlDS.apk</code> - com.smlds</li>
+
+<li><strong>SysScope</strong> - <code>/system/app/SysScope.apk</code> - com.sec.android.app.sysscope</li>
+
+<li><strong>Tags</strong> - <code>/system/priv-app/Tag.apk</code> - com.android.apps.tag</li>
+
+<li><strong>TalkBack</strong> - <code>/system/app/talkback.apk</code> - com.google.android.marvin.talkback</li>
+
+<li><strong>Tasks provider</strong> - <code>/system/app/TasksProvider.apk</code> - com.sec.android.providers.tasks</li>
+
+<li><strong>TcpdumpService</strong> - <code>/system/app/TcpdumpService.apk</code> - com.sec.tcpdumpservice</li>
+
+<li><strong>TetheringAutomation</strong> - <code>/system/app/TetheringAutomation.apk</code> - com.sec.automation</li>
+
+<li>(noname) - <code>/system/app/TimeService.apk</code> - com.qualcomm.timeservice</li>
+
+<li><strong>Travel Wallpaper</strong> - <code>/system/app/TravelService.apk</code> - com.samsung.android.service.travel</li>
+
+<li><strong>Trim</strong> - <code>/system/priv-app/TrimApp_phone_J.apk</code> - com.lifevibes.trimapp</li>
+
+<li><strong>TripAdvisor</strong> - <code>/system/priv-app/TripAdvisor_Stub.apk</code> - com.tripadvisor.tripadvisor</li>
+
+<li><strong>New enrolment</strong> - <code>/system/app/UniversalMDMClient.apk</code> - com.sec.enterprise.knox.cloudmdm.smdms</li>
+
+<li><strong>Google Search</strong> - <code>/system/priv-app/Velvet.apk</code> - com.google.android.googlequicksearchbox</li>
+
+<li><strong>Video clips</strong> - <code>/system/app/VideoEditor_Lite_H.apk</code> - com.sec.android.app.storycam</li>
+
+<li><strong>Google Play Movies</strong> - <code>/system/app/Videos.apk</code> - com.google.android.videos</li>
+
+<li><strong>Voice Recorder</strong> - <code>/system/app/VoiceNote4H.apk</code> - com.sec.android.app.voicenote</li>
+
+<li><strong>VpnDialogs</strong> - <code>/system/priv-app/VpnDialogs.apk</code> - com.android.vpndialogs</li>
+
+<li>(noname) - <code>/system/priv-app/WallpaperCropper.apk</code> - com.android.wallpapercropper</li>
+
+<li><strong>Unified Daemon_EUR</strong> - <code>/system/app/WeatherWidgetDaemon.apk</code> - com.sec.android.daemonapp</li>
+
+<li><strong>User Manual</strong> - <code>/system/app/WebManual.apk</code> - com.sec.android.widgetapp.webmanual</li>
+
+<li>(error) - <code>/system/app/WfdBroker.apk</code> - com.sec.android.app.wfdbroker</li>
+
+<li><strong>WlanTest</strong> - <code>/system/app/WlanTest.apk</code> - com.sec.android.app.wlantest</li>
+
+<li><strong>wssyncmlnps</strong> - <code>/system/priv-app/wssyncmlnps.apk</code> - com.wssnps</li>
+
+<li><strong>Yahoo! Finance</strong> - <code>/system/app/YahoostockPhone2013.apk</code> - com.sec.android.widgetapp.ap.yahoostock.stockclock</li>
+
+<li><strong>YouTube</strong> - <code>/system/app/YouTube.apk</code> - com.google.android.youtube</li>
+</ul>
+
+<h2 id="deleted_files">Deleted Files</h2>
+
+<pre>
+# mount -o rw,remount /system
+# cd /system/container
+# rm ContainerAgent2.apk KnoxPackageVerifier.apk KnoxPackageVerifier.odex KnoxSecureHandler.apk KnoxSwitcher.apk ShortcutSms.apk
+# rm -r resources/
+# rm -r /system/etc/secure_storage/com.sec.knox.seandroid/
+# rm -r /system/etc/secure_storage/com.sec.knox.store/
+# rm /system/preloadedsso/kioskdefault.apk
+# rm /system/preloadedkiosk/samsungsso.apk_
+# rm /system/preloadedkiosk/ssoservice.apk_
+# mount -o ro,remount /system
+</pre>
+
+
+
+<div id="footer">
+<hr />
+Last modified: 3 April 2016
+</div>
+</body>
+
+</html>
+
+

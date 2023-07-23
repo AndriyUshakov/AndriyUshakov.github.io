@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ZSH Shortcuts</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb1"><a href="zsh.html">zsh</a></span>
+	<span class="tb0"><code>Shortcuts</code></span>
+</div>
+
+<h1><code>zsh</code> Shortcuts</h1>
+
+<p>
+<a href="#line_editor">Line Editor</a><br />
+&nbsp; &nbsp; <a href="#movement">Movement</a><br />
+&nbsp; &nbsp; <a href="#remove">Remove</a><br />
+&nbsp; &nbsp; <a href="#modify">Modify</a><br />
+&nbsp; &nbsp; <a href="#undo">Undo</a><br />
+<a href="#command_history">Command_History</a>
+</p>
+
+
+<h2 id="line_editor">Line Editor</h2>
+
+<h3 id="movement">Movement</h3>
+
+<dl>
+	<dt><code>Alt</code>+<code>b</code> or <code>Esc</code>,<code>b</code> : <code>backward-word</code></dt>
+	<dd>move to the beginning of the previous word</dd>
+
+	<dt><code>Alt</code>+<code>f</code> or <code>Esc</code>,<code>f</code> : <code>forward-word</code></dt>
+	<dd>move forward one word</dd>
+
+	<dt><code>Ctrl</code>+<code>a</code> : <code>beginning-of-line</code></dt>
+	<dd>move to the beginning of the line</dd>
+
+	<dt><code>Ctrl</code>+<code>e</code> : <code>end-of-line</code></dt>
+	<dd>move to the end of the line</dd>
+</dl>
+
+<h3 id="remove">Remove</h3>
+
+<dl>
+	<dt><code>Ctrl</code>+<code>w</code> or <code>Ctrl</code>+<code>Alt</code>+<code>h</code> : <code>backward-kill-word</code></dt>
+	<dd>kill the word left from the cursor</dd>
+
+	<dt><code>Alt</code>+<code>d</code> or <code>Esc</code>,<code>d</code> : <code>kill-word</code></dt>
+	<dd>kill the word right from the cursor</dd>
+</dl>
+
+<dl>
+	<dt><code>Ctrl</code>+<code>u</code> : <code>kill-whole-line</code></dt>
+	<dd>kill the current line</dd>
+
+	<dt><code>Ctrl</code>+<code>k</code> : <code>kill-line</code></dt>
+	<dd>kill from the cursor to the end of the line</dd>
+
+	<dt><code>✘</code> : <code>backward-kill-line</code></dt>
+	<dd>kill from the cursor to the end of the line</dd>
+</dl>
+
+
+<h3 id="modify">Modify</h3>
+
+<dl>
+	<dt><code>Alt</code>+<code>l</code> or <code>Esc</code>,<code>l</code> : <code>down-case-word</code></dt>
+	<dd>convert the current word to all lowercase and move cursor to the end of word</dd>
+
+	<dt><code>Alt</code>+<code>u</code> or <code>Esc</code>,<code>u</code> : <code>up-case-word</code></dt>
+	<dd>convert the current word to all caps and move cursor to the end of word</dd>
+
+	<dt><code>Alt</code>+<code>c</code> or <code>Esc</code>,<code>c</code> : <code>capitalize-word</code></dt>
+	<dd>capitalize the current word and move cursor to the end of word</dd>
+
+	<dt><code>Ctrl</code>+<code>t</code> : <code>transpose-chars</code></dt>
+	<dd>exchange left and right to the cursor characters. If cursor is at the end of line, then exchange
+two last characters</dd>
+
+	<dt><code>Alt</code>+<code>t</code> or <code>Esc</code>,<code>t</code> : <code>transpose-words</code></dt>
+	<dd>exchange the current word with the one before it</dd>
+
+</dl>
+
+
+<h3 id="undo">Undo</h3>
+
+<dl>
+	<dt><code>Ctrl</code>+<code>x</code>,<code>u</code> or <code>Ctrl</code>+<code>Alt</code>+<code>_</code> : <code>undo</code></dt>
+	<dd>undo the last text modification</dd>
+</dl>
+
+
+<h2 id="command_history">Command History</h2>
+
+<dl>
+	<dt><code>Ctrl</code>+<code>r</code> : <code>history-incremental-search-backward</code></dt>
+	<dd>Search in the command history backward</dd>
+
+	<dt><code>Ctrl</code>+<code>p</code> : <code>up-line-or-history</code></dt>
+	<dd>move to the previous event in the history list</dd>
+
+	<dt><code>Ctrl</code>+<code>n</code> : <code>down-line-or-history</code></dt>
+	<dd>move to the next event in the history list</dd>
+
+	<dt><code>Alt</code>+<code>p</code> : <code>history-search-backward</code></dt>
+	<dd>search backward in the history for a line with the string in the buffer</dd>
+
+	<dt><code>Alt</code>+<code>n</code> : <code>history-search-forward</code></dt>
+	<dd>search forward in the history for a line with the string in the buffer</dd>
+
+	<dt><code>Ctrl</code>+<code>g</code> or <code>Ctrl</code>+<code>Alt</code>+<code>g</code> : <code>send-break</code></dt>
+	<dd>abort the search</dd>
+
+</dl>
+
+<h2 id="references">References</h2>
+
+<p>
+<a href="http://zsh.sourceforge.net/Doc/">The Z Shell Manual</a><br />
+</p>
+
+<div id="footer">
+<hr />
+Last Modified: 13 February 2021
+</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>RPM Usage</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0"><code>rpm</code></span>
+</div>
+
+<h1>RPM Usage</h1>
+
+<p>Preferred method to manage packages in Fedora is <code>yum</code>. <code>rpmreaper</code> is an useful tool to analyse package dependencies.</p>
+
+<h2>Query</h2>
+
+<p><code>$ rpm -qf &lang;file&rang;</code><br />
+query package <em>owning file</em> (file has to be with a full path).</p>
+
+<p><code>$ rpm -qp --changelog http://server/package.rpm</code><br />
+show <em>change log</em> of the package.</p>
+
+<p><code>$ rpm -ql &lang;package&rang;</code><br />
+list <em>content</em> of the package .</p>
+
+<p><code>$ rpm -q --whatrequires &lang;package&rang;</code><br />
+show packages that <em>require</em> this package.</p>
+
+<p><code>$ rpm -qa -last | tac</code><br />
+list all installed packages <em>sorted by time</em> (install time).</p>
+
+<p><code>$ rpm -qa --queryformat '%10{size} %{name}-%{version}\n' | sort -n</code><br />
+list all installed packages <em>sorted by size</em>.</p>
+
+<p><code>$ rpm -qa | grep &lang;pattern&rang;</code><br />
+list packages <em>filtered</em> according to the pattern.</p>
+
+<h2>Instal, Uninstall, Test</h2>
+
+<p><code># rpm -Uvh &lang;package&rang;</code><br />
+<code>-U</code> &nbsp; <em>install</em> package, remove older one if such exists; &nbsp; <code>-v</code> &nbsp; verbose; &nbsp; <code>-h</code> &nbsp; show hashing marks during installation (or <code>--percent</code>). &nbsp; <code>--oldpackage</code> &nbsp; install older package.</p>
+
+<p><code># rpm -e &lang;package&rang;</code><br />
+<em>remove</em> package</p>
+
+<p><code># rpm -U --test &lang;package&rang;</code><br />
+<em>test</em> package installation, do not install. Nothing will be printed if the test was passed without any problems. 
+</p>
+
+<h2>List, Extract RPM without Installing</h2>
+
+<p><code>$ rpmls &lang;path-to-rpm&rang;</code> &nbsp; <em>list</em> content of rpm. <code>rpmdevtools</code> has to be installed.</p>
+
+<p><code>$ rpm2cpio &lang;path-to-rpm&rang; | cpio -iumdv</code></p>
+
+<p>or, if you have installed <code>rpmdevtools</code></p>
+
+<p><code>$ rpmdev-extract &lang;path-to-rpm&rang;</code><br />
+<em>extract</em> all files from rpm into current directory.</p>
+
+<h2>Additional Info</h2>
+
+<p><a href="http://www.rpm.org/max-rpm/">Edward C. Bailey, Taking the Red Hat Package Manager to the Limit</a></p>
+
+<div id="footer">
+<hr />
+Last Modified: 27 July 2013
+</div>
+
+</body>
+</html>

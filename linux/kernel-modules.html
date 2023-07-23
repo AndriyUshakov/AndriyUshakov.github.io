@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Kernel Modules</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="How to disable kernel modules or change parameters of modules">
+	<meta name="keywords" content="Linux, kernel modules">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">Kernel Modules</span>
+</div>
+
+<h1>Kernel Modules</h1>
+
+<h2 id="disable_modules">Disable Module</h2>
+
+<p>Create a configuration file for a blacklist and add the kernel modules to the list.</p>
+
+<p><code># vim /etc/modprobe.d/blacklist.conf</code></p>
+
+<p>
+<code># Blacklist firewire</code><br />
+<code>blacklist firewire_ohci</code><br />
+<code>install firewire_ohci /bin/false</code>
+</p>
+
+<p><a href="https://wiki.archlinux.org/index.php/Kernel_module#Blacklisting">Kernel module - ArchWiki</a></p>
+
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_monitoring_and_updating_the_kernel/managing-kernel-modules_managing-monitoring-and-updating-the-kernel#kernel-module-dependencies_managing-kernel-modules">Managing kernel modules | Red Hat Customer Portal</a></p>
+
+<p>Update initramfs:</p>
+
+<p><code># update-initramfs -k all -u</code></p>
+
+
+<h2 id="load_kernel_module">Load Kernel Module</h2>
+
+<p>To check the temperature of the hard drive(s), for instance, via terminal tool <code>sensors</code>, the kernel module <code>drivetemp</code> has to be loaded.
+</p>
+
+<p><code># echo drivetemp &gt; /etc/modules-load.d/drivetemp.conf</code></p>
+
+
+<h2 id="settings_of_kernel_modules">Settings of Kernel Modules</h2>
+
+<h3>Battery Charging Thresholds of Thinkpad Laptops</h3>
+
+<p><code>tp_smapi</code> is a set of kernel modules allowing adjustment of charging thresholds for Thinkpad laptops.</p>
+
+<p><code>
+	# echo 30 &gt; /sys/devices/platform/smapi/BAT0/start_charge_thresh<br />
+	# echo 90 &gt; /sys/devices/platform/smapi/BAT0/stop_charge_thresh
+</code></p>
+
+<p><a href="https://wiki.archlinux.org/index.php/Tp_smapi">tp_smapi - ArchWiki</a></p>
+
+<h3>Power Management of Intel HDA Sound Card</h3>
+
+<p><code># echo 5 &gt; /sys/module/snd_hda_intel/parameters/power_save</code><br />
+set a timeout of 5 seconds after that the device goes into the sleep mode.</p>
+
+<div id="footer">
+<hr />
+Last Modified: 2022-09-07
+</div>
+
+</body>
+</html>

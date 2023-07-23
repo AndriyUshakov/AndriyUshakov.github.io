@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Debian Package Management</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0"><code>apt</code></span>
+</div>
+
+<h1>Debian Package Management</h1>
+
+<ul class="bull">
+<li><a href="#update_database">Update Database</a></li>
+<li><a href="#install">Install</a></li>
+<li><a href="#list_updates">List Updates</a></li>
+<li><a href="#upgrade_specific_package">Upgrade a Specific Package</a></li>
+<li><a href="#restart_daemons_after_library_upgrades">Restart Daemons after Library Upgrades</a></li>
+<li><a href="#changelog">Changelog</a></li>
+<li><a href="#list_bugs">List Bugs</a></li>
+<li><a href="#find_package">Find Package</a></li>
+<li><a href="#show_dependensies">Show Dependencies</a></li>
+<li><a href="#show_versions">Show Versions</a></li>
+<li><a href="#list_content_of_package">List Content of Package</a></li>
+<li><a href="#find_file_owner">Find File Owner</a></li>
+<li><a href="#searching_for_files">Searching for Files</a></li>
+<li><a href="#count_installed_packages">Count Installed Packages</a></li>
+<li><a href="#list_installed_packages_sorted_by_size">List Installed Packages Sorted by Size</a></li>
+<li><a href="#aptitude_pending_actions">aptitude Pending Actions</a></li>
+<li><a href="#install_history">Install History</a></li>
+<li><a href="#configuration_files">Configuration Files</a></li>
+<li><a href="#clean_local_cache">Clean Cache</a></li>
+<li><a href="#download_package_source">Download Package Source</a></li>
+<li><a href="#info_on_locally_saved_deb-file">Info on Locally Saved deb-File</a></li>
+<li><a href="#manually_download_an_older_package">Older Packages</a></li>
+<li><a href="#essential_packages">Essential Packages</a></li>
+<li><a href="#additional_info">Additional Info</a></li>
+</ul>
+
+<p><code><a href="https://wiki.debian.org/Apt">apt</a></code> tools (<code>apt</code>, <code>apt-get</code>, <code>apt-cache</code> and etc.) are fast, <code><a href="https://www.debian.org/doc/manuals/aptitude/rn01re01.en.html">aptitude</a></code> has some additional useful features.</p>
+
+
+<h2 id="update_database">Update Database</h2>
+
+<p><code># apt-get update</code><br />
+update information about the packages from apt sources (<code>/etc/apt/sources.list</code>).
+</p>
+
+
+<h2 id="install">Install</h2>
+
+<p><code># apt-get -s install  &lang;package&rang;</code><br />
+simulate package installation.</p>
+
+<p>Note:<br />
+<code>apt-get</code> asks for confirmation only when it needs to install packages which weren't specified on the command line.</p>
+
+<p><code># apt-get --no-install-recommends install &lang;pattern&rang;</code></p>
+
+
+<h2 id="list_updates">List Updates</h2>
+
+<p>List available updates:</p>
+
+<p><code>$ apt list --upgradable</code> &nbsp; or<br />
+<code>$ aptitude search '~U'</code> &nbsp; or<br />
+<code>$ apt-show-versions -u</code></p>
+
+
+<h2 id="upgrade_specific_package">Upgrade a Specific Package</h2>
+
+<p>If the package was installed automatically, <code># apt install &lang;package&rang;</code> marks the package as installed manually. To upgrade the package and do not change the status (auto/manual):</p>
+
+<p><code># apt install --upgrade</code></p>
+
+
+<h2 id="restart_daemons_after_library_upgrades">Restart Daemons after Library Upgrades</h2>
+
+<p>Package <code>needrestart</code> checks which daemons need to be restarted after library upgrades</p>
+
+
+<h2 id="changelog">Changelog</h2>
+
+<p><code>$ apt changelog &lang;package&rang;</code> </p>
+
+
+<h2 id="list_bugs">List Bugs</h2>
+
+<p>To list critical bugs (critical, grave and serious):</p>
+
+<p><code>$ apt-listbugs list &lang;package&rang;</code> </p>
+
+
+<h2 id="find_package">Find Package</h2>
+
+<p><code>$ apt list --installed &lang;pattern&rang;</code></p>
+
+<p><code>$ dpkg --get-selections &lang;pattern&rang;</code> </p>
+
+<p>Look for packages with following &lang;pattern&rang; in package names:<br />
+<code>$ dpkg --list &lang;pattern&rang;</code></p>
+
+<p>Find packages named <code>file</code> :<br />
+<code>$ aptitude search '?exact-name(file)'</code> </p>
+
+<p>Find installed packages containing the keyword in their description:<br />
+<code>$ aptitude search ~i~d&lang;keyword&rang;</code> </p>
+
+<p>Look for obsolete packages (installed packages that are not included in any repository):<br />
+<code>$ aptitude search ~o</code></p>
+
+<p>List manually installed packages:<br />
+<code>$ aptitude search '?installed ?not(?automatic)'</code></p>
+
+<p>Find installed packages from <code>contrib</code> and <code>non-free</code> repositories:<br />
+<code>$ aptitude search '~i ~scontrib/.*' '~i ~snon-free/.*'</code></p>
+
+<p>If you installed several multimedia packages from <a href="http://www.deb-multimedia.org/">deb-multimedia.org</a> (unofficial) repository, to list that packages:<br />
+<code>$ aptitude search ~i"?origin(multimedia)"</code></p>
+
+
+<h2 id="show_dependensies">Show Dependencies</h2>
+
+<p><code>$ aptitude why &lang;package&rang;</code> <br />
+search for packages that require the given <code>package</code>.</p>
+
+<p><code>$ apt-cache  --installed --important rdepends &lang;package&rang;</code></p>
+
+<p>Note:<br />
+<code>apt-cache</code> <code>depends</code>/<code>rdepends</code> without options lists dependencies of any package (installed and not installed). The packages are listed without showing information about their state.</p>
+
+<p>For recursive dependencies: <br /> 
+<code>$ apt-rdepends -r --state-follow=Installed --state-show=Installed &lang;package&rang;</code> </p>
+
+<p>To find the dependencies of installed package: <br /> 
+<code>$ apt-cache --installed depends  &lang;package&rang;</code></p>
+
+
+<h2 id="show_versions">Show Versions</h2>
+
+<p><code>$ apt-show-versions -a &lang;package&rang;</code><br />
+list available versions.</p>
+
+
+<h2 id="list_content_of_package">List Content of Package</h2>
+
+<p>Show list of files (installed packages only):<br />
+<code>$ dpkg --listfiles &lang;package&rang;</code></p>
+
+<p>List content of any package:<br />
+<code>$ apt-file list &lang;package&rang;</code></p>
+
+<p>List files of local deb-file:<br />
+<code>$ dpkg -c &lang;path-to-deb-file&rang;</code></p>
+
+
+<h2 id="find_file_owner">Find File Owner</h2>
+
+<p>Search for installed package owning file:<br />
+<code>$ dpkg -S &lang;file&rang;</code></p>
+
+
+<h2 id="searching_for_files">Searching for Files</h2>
+
+<p>To update information about the contents of <strong>all</strong> available packages:<br />
+<code>$ apt-file	update</code></p>
+
+<p>Search for <strong>any</strong> known file:<br />
+<code>$ apt-file search &lang;file&rang;</code></p>
+
+
+<h2 id="count_installed_packages">Count Installed Packages</h2>
+
+<p><code>$ dpkg --get-selections | wc -l</code></p>
+
+
+<h2 id="list_installed_packages_sorted_by_size">List Installed Packages Sorted by Size</h2>
+
+<p><code>$ dpkg-query -W --showformat='${Installed-Size;10}\t${Package}\n' | sort -k1,1n</code></p>
+
+
+<h2 id="aptitude_pending_actions">aptitude Pending Actions</h2>
+
+<p>To check if <code>aptitude</code> has some pending actions:<br />
+<code>$ aptitude search '?or(?action(install), ?action(upgrade), ?action(downgrade), ?action(remove), ?action(purge))'</code></p>
+
+<p>To cancel all pending actions:<br />
+<code># aptitude keep-all</code></p>
+
+<p>To remove only some packages from the pending list:<br />
+<code># aptitude keep &lang;packages&rang;</code></p>
+
+
+<h2 id="install_history">Install History</h2>
+
+<p><code>/var/log/apt/history.log</code></p>
+
+
+<h2 id="configuration_files">Configuration Files of Removed Packages</h2>
+
+<p>Removing packages (<code>apt remove</code>) keeps configuration files, that is useful for the case: if you reinstall them, you do not need to redo the configuration again. If you prefer to remove configuration files, to find all packages in the "config-state":</p>
+
+<p><code># aptitude search ~c</code></p>
+
+<p>Or, if you have installed <code>dctrl-tool</code>:</p>
+
+<p><code>$ grep-status -n -sPackage -FStatus config-files</code></p>
+
+<p>To list configuration files of <code>package</code> :</p>
+
+<p><code>$ dpkg-query --showformat='${Conffiles}\n' --show &lang;package&rang;</code> </p>
+
+<p>To remove all configuration files:</p>
+
+<p><code># aptitude purge ~c</code> </p>
+
+<p><a href="https://raphaelhertzog.com/2011/01/31/debian-cleanup-tip-1-get-rid-of-useless-configuration-files/">Get rid of useless configuration files</a></p>
+
+
+<h2 id="clean_local_cache">Clean Local Cache</h2>
+
+<p><code>apt</code> maintains a local cache of downloaded/installed .deb packages at <code>/var/lib/apt/cache/</code>.
+To remove the packages which can no longer be downloaded from the cache:</p>
+
+<p><code># apt autoclean</code></p>
+
+<p><a href="https://wiki.debian.org/AptCLI#Delete_cached_package_files">Delete cached package files - Debian Wiki</a></p>
+
+
+<h2 id="download_package_source">Download Package Source</h2>
+
+<p>To be able to download the package sources, a repository including sources has to be added into <code>/etc/apt/sources.list</code>:</p>
+
+<p><code>deb-src http://ftp.debian.org/debian/ <em>unstable</em> main contrib non-free
+</code></p>
+
+<p>To download the source:</p>
+
+<p><code>$ apt-get --download-only source &lang;package-name&rang;</code></p>
+
+
+<h2 id="info_on_locally_saved_deb-file">Info on Locally Saved DEB-File</h2>
+
+<p>To view information on locally saved deb-file:<br />
+<code>$ dpkg -I &lang;path-to-deb-file&rang;</code></p>
+
+
+<h2 id="manually_download_an_older_package">Manually Download an Older Package</h2>
+
+<p>Some older versions of packages can be manually downloaded from <a href="http://deb.debian.org/debian/pool/">Debian Pool</a>.</p>
+
+
+<h2 id="essential_packages">Essential Packages</h2>
+
+<p>The packages having priority <code>essential</code> are absolutely necessary for the proper functioning of the system. They can not be removed [<a href="https://www.debian.org/doc/manuals/debian-faq/pkg-basics.en.html#priority">Debian FAQ</a>]. To list them:</p>
+
+<p><code>$ dpkg-query -Wf '${Package;-40}${Essential}\n' | grep yes</code></p>
+
+
+<h2 id="additional_info">Additional Info</h2>
+
+<ul class="bull">
+	<li><a href="https://www.debian.org/distrib/packages">Online search package names or package contents - Debian Packages</a></li>
+	<li><a href="https://www.debian.org/doc/manuals/debian-reference/ch02.en.html">Debian Reference, Chapter 2: Debian package management - Osamu Aoki</a></li>
+	<li><a href="https://debian-handbook.info/browse/stable/sect.apt-get.html">The Debian Administrator's Handbook</a></li>
+	<li><a href="https://wiki.debian.org/Aptitude">Aptitude - Debian Wiki</a></li>
+	<li><a href="https://www.debian.org/doc/manuals/aptitude/ch02s04s05.en.html">aptitude user's manual: search term reference - Debian Manuals</a></li>
+</ul>
+
+
+<div id="footer">
+<hr />
+Last modified: 2022-08-16
+</div>
+
+</body>
+</html>

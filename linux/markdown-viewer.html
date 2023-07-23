@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Markdown Viewer</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="../software/Firefox.html"><img src="../img/Firefox.png" width="16" height="16" alt="Firefox"/> Firefox</a></span>
+	<span class="tb0">Markdown Viewer</span>
+</div>
+
+<h1>Markdown Viewer</h1>
+
+<p>To open local Markdown files in Firefox (Debian 9) with <a href="https://addons.mozilla.org/en-US/firefox/addon/markdown-viewer-webext/">Markdown Viewer</a> (v.1.3.0), you need to create a new MIME type.</p>
+
+<p><code>~/.local/share/mime/packages/text-markdown.xml</code>:
+
+<textarea readonly rows="8" cols="75">
+<?xml version="1.0"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+  <mime-type type="text/plain">
+    <glob pattern="*.md"/>
+    <glob pattern="*.mkd"/>
+    <glob pattern="*.markdown"/>
+  </mime-type>
+</mime-info>
+</textarea></p>
+
+<p>Then run:</p>
+
+<p><code>$ update-mime-database ~/.local/share/mime</code>.</p>
+
+<h2>References</h2>
+
+<p><a href="https://superuser.com/questions/696361/how-to-get-the-markdown-viewer-addon-of-firefox-to-work-on-linu">How to get the Markdown Viewer addon of Firefox to work on Linux?</a></p>
+
+<div id="footer">
+<hr />
+Last modified: 10 March 2018
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>APK Tools</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="android-index.html"><img src="../img/Android.svg" width="16" height="16" alt="Android"/> Android</a></span>
+	<span class="tb0">APK Tools</span>
+</div>
+
+<h1>APK Tools</h1>
+
+
+<h2><code>aapt</code></h2>
+
+<p><a href="https://developer.android.com/studio/command-line/aapt2"><code>aapt</code></a> (Android Asset Packaging Tool) allows to view, create and update apk/jar files.</p>
+
+<p>To install <code>aapt</code>:</p>
+
+<p><code>$ apt install aapt</code></p>
+
+<p>To print information extracted from the APK's manifest:</p>
+
+<p><code>$ aapt dump badging <em>application.apk</em></code></p>
+
+<p><a href="https://elinux.org/Android_aapt">Android aapt - eLinux.org</a></p>
+
+
+<h2>Set Variables of Android Environment </h2>
+
+<p><code>$ export JAVA_HOME=$HOME/android-studio/jre</code></p>
+
+<p><code>$ export PATH=$HOME/Android/Sdk/tools/bin:$HOME/Android/Sdk/build-tools/<i>29.0.2</i>:$HOME/android-studio/jre/bin:$PATH</code></p>
+
+
+<h2 id="<code>apkanalyzer</code>"><code>apkanalyzer</code></h2>
+
+<p><code>$ apkanalyzer apk summary <i>apk-file</i></code></p>
+
+<p><code>$ apkanalyzer manifest print <i>apk-file</i></code></p>
+
+<p><a href="https://developer.android.com/studio/command-line/apkanalyzer">apkanalyzer | Android Developers</a></p>
+
+
+<h2 id="signature_verification">Signature Verification</h2>
+
+<p><code>$ keytool -printcert -jarfile <i>apk-file</i></code></p>
+
+<p><code>$ jarsigner -verify -verbose -certs <i>apk-file</i></code></p>
+
+<p><code>$ apksigner verify --verbose --print-certs <i>apk-file</i></code></p>
+
+<p><a href="https://developer.android.com/studio/command-line/apksigner">apksigner | Android Developers</a></p>
+
+
+<h2 id="apk_info">APK Info</h2>
+
+<p><a href="https://github.com/appknox/pyaxmlparser">apkinfo</a> is a tool to display information about an apk file.</p>
+
+<p><a href="https://github.com/Enyby/APK-Info">APK-info</a> is a MS Windows tool to get detailed info about an apk file. <a href="https://forum.xda-developers.com/t/apk-info-reworked.3614970/">APK-Info at XDA Developers Forums</a></p>
+
+
+<div id="footer">
+<hr />
+Last modified: 01 March 2021
+</div>
+</body>
+
+</html>

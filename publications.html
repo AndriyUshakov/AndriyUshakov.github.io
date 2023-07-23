@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Publications</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="main.css" type="text/css">
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		jQuery.expr[':'].regex = function(elem, index, match) {
+			var matchParams = match[3].split(','),
+				validLabels = /^(data|css):/,
+				attr = {
+					method: matchParams[0].match(validLabels) ? 
+						matchParams[0].split(':')[0] : 'attr',
+					property: matchParams.shift().replace(validLabels,'')
+				},
+				regexFlags = 'ig',
+				regex = new RegExp(matchParams.join('').replace(/^\s+|\s+$/g,''), regexFlags);
+				return regex.test(jQuery(elem)[attr.method](attr.property));
+		};
+
+		function divHideAll(){
+			$("#list").children().hide();
+		}
+
+		function divShowAll(){
+			$("#list").children().show();
+		}
+
+		function divShow18(){
+			$("#list").children().hide();
+			$("div:regex(id,2018)").show();
+			$("div:regex(id,2019)").show();
+			$("div:regex(id,2020)").show();
+		}
+
+		function divShow17(){
+			$("#list").children().hide();
+			$("div:regex(id,2017)").show();
+		}
+
+		function divShow16(){
+			$("#list").children().hide();
+			$("div:regex(id,2016)").show();
+		}
+
+		function divShow15(){
+			$("#list").children().hide();
+			$("div:regex(id,2015)").show();
+		}
+
+		function divShow14(){
+			$("#list").children().hide();
+			$("div:regex(id,14)").show();
+		}
+
+		function divShow13(){
+			$("#list").children().hide();
+			$("div:regex(id,13)").show();
+		}
+
+		function divShow12(){
+			$("#list").children().hide();
+			$("div:regex(id,12)").show();
+		}
+
+		function divShow11(){
+			$("#list").children().hide();
+			$("div:regex(id,11)").show();
+		}
+
+		function divShowSource(){
+			$("#list").children().hide();
+			$("div:regex(id,...source-)").show();
+		}
+
+	</script>
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="index.html"><img src="img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb0"><img src="img/book.svg" width="16" height="16" alt="Book"/> Publications</span>
+	<span class="tb1"><a href="aboutme.html"><img src="img/man.svg" width="16" height="16" alt="Man"/> About Me</a></span>
+</div>
+
+<div id="main">
+
+<h1>Publications and Talks</h1>
+
+<div id="filters" style="line-height: 1.3em;">
+	<p>Apply filter:<br />
+	<span class="tbrounded"><a href="#" onclick="divShowAll()">&nbsp;Show All&nbsp;</a></span>
+	<span class="tbrounded"><a href="#" onclick="divShow18()">&nbsp;2020-2018&nbsp;</a></span>
+	<span class="tbrounded"><a href="#" onclick="divShow17()">&nbsp;2017&nbsp;</a></span>
+	<span class="tbrounded"><a href="#" onclick="divShow16()">&nbsp;2016&nbsp;</a></span>
+	<span class="tbrounded"><a href="#" onclick="divShow15()">&nbsp;2015&nbsp;</a></span>
+<!--
+	<span class="tbrounded"><a href="#" onclick="divShow14()">&nbsp;2014&nbsp;</a></span>
+	<span class="tbrounded"><a href="#" onclick="divShow13()">&nbsp;2013&nbsp;</a></span>
+	<span class="tbrounded"><a href="#" onclick="divShow12()">&nbsp;2012&nbsp;</a></span>
+	<span class="tbrounded"><a href="#" onclick="divShow11()">&nbsp;2011&nbsp;</a></span>
+-->
+	<span class="tbrounded"><a href="#" onclick="divShowSource()">&nbsp;e<sup>+</sup>&nbsp;source&nbsp;</a></span>
+	</p>
+</div>
+
+
+<div id="list">
+
+<div id="2022-source-ipac-mopotk012">
+<ul><li>
+S. Habet, Y. Roblin, R.&nbsp;M.&nbsp;Bodenstein, S.&nbsp;A.&nbsp;Bogacz, J.&nbsp;Grames, A.&nbsp;Hofler, R.&nbsp;Kazimi, F.&nbsp;Lin, M.&nbsp;Poelker, A.&nbsp;Seryi, R.&nbsp;Suleiman, A.&nbsp;Sy, D.&nbsp;Turner, A.&nbsp;Ushakov, C.&nbsp;A.&nbsp;Valerio-Lizarraga, E.&nbsp;Voutier
+<br />
+<strong>Concept of a polarized positron source for CEBAF</strong>
+<br />
+<em><a href="https://www.ipac22.org/">13<sup>th</sup> International Particle Accelerator Conference (IPAC'22)</a></em>,
+Bangkok, Thailand, 12-17 June 2022,
+<a href="https://accelconf.web.cern.ch/ipac2022/papers/mopotk012.pdf">MOPOTK012 <img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2022-source-ipac-wepopt054">
+<ul><li>
+F. Alharthi, L. Bandiera, I.&nbsp;Chaikovska, R.&nbsp;Chehab, J.&nbsp;Diefenbach, O.&nbsp;Khomyshyn, D.&nbsp;Klekots, W.&nbsp;Lauth, A.&nbsp;Mazzolari, V.&nbsp;Mytrochenko, S.&nbsp;Ogur, M.&nbsp;Romagnoni, P.&nbsp;Sievers, M.&nbsp;Soldani, A.&nbsp;I. Sytov, A.&nbsp;Ushakov, S.&nbsp;Wallon, Y.&nbsp;Zhao
+<br />
+<strong>Target studies for the FCC-ee positron source</strong>
+<br />
+<em><a href="https://www.ipac22.org/">13<sup>th</sup> International Particle Accelerator Conference (IPAC'22)</a></em>,
+Bangkok, Thailand, 12-17 June 2022,
+<a href="https://accelconf.web.cern.ch/ipac2022/papers/wepopt054.pdf">WEPOPT054 <img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2022-source-Iryna">
+<ul><li>
+I. Chaikovska, R. Chehab, V.&nbsp;Kubytskyi, S.&nbsp;Ogur, A.&nbsp;Ushakov, A.&nbsp;Variola, P.&nbsp;Sievers, P.&nbsp;Musumeci, L.&nbsp;Bandiera, Y.&nbsp;Enomoto, Mark&nbsp;J.&nbsp;Hogan, P.&nbsp;Martyshkin
+<br />
+<strong>Positron sources: from conventional to advanced accelerator concepts-based colliders</strong>
+<br />
+<em><a href="https://iopscience.iop.org/journal/1748-0221">Journal of Instrumentation</a></em>,
+Vol. 17 (2022)
+<a href="https://iopscience.iop.org/article/10.1088/1748-0221/17/05/P05015/pdf">P05015
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2022-source-talk-oleron">
+<ul><li>
+A. Ushakov, E. Voutier, C.&nbsp;Le&nbsp;Galliard, S.&nbsp;Habet
+<br />
+<strong>Conceptual design of a high power target for the Jefferson Lab positron source</strong>
+<br />
+<em><a href="https://indico.in2p3.fr/event/25992/">Assemblée Générale du GDR QCD</a></em>,
+23-25 May 2022, Île d'Oléron, France
+<a href="https://indico.in2p3.fr/event/25992/contributions/107938/attachments/70742/100413/Ushakov-Target-JLab-e%2BSource.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2021-source-talk-fr-ua">
+<ul><li>
+A. Ushakov, R. Bodenstein, J.&nbsp;Grames, S.&nbsp;Habet, M.&nbsp;Stefani, E.&nbsp;Voutier
+<br />
+<strong>Simulations of polarized positron source at Jefferson Lab</strong>
+<br />
+<em><a href="https://indico.ijclab.in2p3.fr/event/7323/">French-Ukrainian Workshop - Instrumentation Developments for High Energy Physics</a></em>,
+27-29 October 2021, IJCLab, Orsay, France
+<a href="https://indico.ijclab.in2p3.fr/event/7323/contributions/23536/attachments/17483/22955/Ushakov-JLab-Positron-Source.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2021-source-ipac">
+<ul><li>
+K. Alharbi, A. Alrashdi, S.&nbsp;Riemann, G.&nbsp;Moortgat-Pick, A.&nbsp;Ushakov, P.&nbsp;Sievers<br />
+<strong>Design of photon masks for the ILC positron source</strong>
+<br />
+<em><a href="https://www.ipac21.org">12<sup>th</sup> International Particle Accelerator Conference (IPAC'21)</a></em>,
+24-28 May 2021, Campinas, Brazil,
+<a href="https://accelconf.web.cern.ch/ipac2021/papers/thpab041.pdf">THPAB041 <img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2020-source-talk-awlc">
+<ul><li>
+G. Moortgat-Pick, S. Riemann, P.&nbsp;Sievers and A.&nbsp;Ushakov
+<br />
+<strong>Undulator positron source summary</strong>
+<br />
+<em><a href="https://conf.slac.stanford.edu/awlc2020/">Americas Workshop on Linear Colliders 2020 (AWLC 2020)</a></em>,
+19-22 October 2020, SLAC National Accelerator Laboratory, USA
+<a href="https://agenda.linearcollider.org/event/8622/contributions/46659/attachments/36003/55963/undulator-status.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2020-source-paper-lcws19-manuel">
+<ul><li>
+M. Formela, N. Hamann, K.&nbsp;Floettmann, G.&nbsp;Moortgat-Pick, S.&nbsp;Riemann and A.&nbsp;Ushakov
+<br />
+<strong>Plasma lenses: possible alternative OMD at the ILC</strong>
+<br />
+<em>Talk presented at <a href="http://epx.phys.tohoku.ac.jp/LCWS2019/">the International Workshop on Future Linear Colliders (LCWS2019)</a></em>,
+Sendai, Japan, 28 October - 1 November 2019,
+<a href="https://arxiv.org/abs/2003.03138">arXiv:2003.03138</a>
+<a href="https://arxiv.org/pdf/2003.03138">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2020-source-paper-lcws19-sr">
+<ul><li>
+S. Riemann, P. Sievers, G.&nbsp;Moortgat-Pick and A.&nbsp;Ushakov
+<br />
+<strong>Updated status of the undulator-based ILC positron source</strong>
+<br />
+<em>Talk presented at <a href="http://epx.phys.tohoku.ac.jp/LCWS2019/">the International Workshop on Future Linear Colliders (LCWS2019)</a></em>,
+Sendai, Japan, 28 October - 1 November 2019,
+<a href="https://arxiv.org/abs/2002.10919">arXiv:2002.10919</a>
+<a href="https://arxiv.org/pdf/2002.10919">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2020-source-paper-lcws19-ka">
+<ul><li>
+K. Alharbi, S. Riemann, A.&nbsp;Alrashdi, G.&nbsp;Moortgat-Pick and A.&nbsp;Ushakov
+<br />
+<strong>Energy deposition due to secondary particles in the helical undulator wall at ILC-250GeV</strong>
+<br />
+<em>Talk presented at <a href="http://epx.phys.tohoku.ac.jp/LCWS2019/">the International Workshop on Future Linear Colliders (LCWS2019)</a></em>,
+Sendai, Japan, 28 October - 1 November 2019,
+<a href="https://arxiv.org/abs/2001.08024">arXiv:2001.08024</a>
+<a href="https://arxiv.org/pdf/2001.08024">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2019-source-paper-lcws18">
+<ul><li>
+F. Dietrich, G. Moortgat-Pick, S.&nbsp;Riemann, P.&nbsp;Sievers and A.&nbsp;Ushakov
+<br />
+<strong>Status of the undulator-based ILC positron source</strong>
+<br />
+<em>Talk presented at <a href="https://agenda.linearcollider.org/event/7889/">the International Workshop on Future Linear Colliders (LCWS2018)</a></em>,
+University of Texas, Arlington, USA, 22-26 October 2018,
+<a href="https://arxiv.org/abs/1902.07744">arXiv:1902.07744</a>
+<a href="https://arxiv.org/pdf/1902.07744">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2018-source-talk-lcws18">
+<ul><li>
+A. Ushakov, S. Riemann, G. Moortgat-Pick, K.&nbsp;Alharbi, K.&nbsp;Aulenbacher, S.&nbsp;Heidrich, P.&nbsp;Heil, Y.&nbsp;Tamashevich
+<br />
+<strong>Status of material load experiments at MAMI in Mainz</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7889/">International Workshop on Future Linear Colliders (LCWS2018)</a></em>,
+University of Texas, Arlington, USA, 22-26 October 2018
+<a href="https://agenda.linearcollider.org/event/7889/contributions/42693/attachments/33785/51856/Ushakov-LCWS18.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2018-source-talk-lcws18-sr">
+<ul><li>
+S. Riemann, G. Moortgat-Pick and A.&nbsp;Ushakov
+<br />
+<strong>Status of the undulator-based positron source</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7889/">International Workshop on Future Linear Colliders (LCWS2018)</a></em>,
+University of Texas, Arlington, USA, 22-26 October 2018
+<a href="https://agenda.linearcollider.org/event/7889/contributions/42694/attachments/33767/51917/SRiemann-LCWS18-Undulator-source.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2018-source-talk-posipol18">
+<ul><li>
+A. Ushakov, S. Riemann and G. Moortgat-Pick
+<br />
+<strong>Acceptable peak temperature and thermal stress in Ti6Al4V target of ILC positron source</strong>
+<br />
+<em><a href="https://indico.cern.ch/event/727621/">POSIPOL 2018 Workshop</a></em>,
+3-5 September 2018, CERN, Geneva, Switzerland
+<a href="https://indico.cern.ch/event/727621/contributions/3109101/attachments/1709300/2755120/Ushakov-POSIPOL18.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2018-source-talk-posipol18-sr">
+<ul><li>
+S. Riemann, F. Dietrich, G. Moortgat-Pick, A.&nbsp;Ushakov, P.&nbsp;Sievers
+<br />
+<strong>Status of the target for the undulator-based positron source</strong>
+<br />
+<em><a href="https://indico.cern.ch/event/727621/">POSIPOL 2018 Workshop</a></em>,
+3-5 September 2018, CERN, Geneva, Switzerland
+<a href="https://indico.cern.ch/event/727621/contributions/3109102/attachments/1709387/2755738/SRiemann-Posipol2018.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2018-source-talk-alcw18">
+<ul><li>
+A. Ushakov
+<br />
+<strong>Positron yield calculations for the undulator based source at 250 GeV CM energy</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7826/">Asian Linear Collider Workshop (ALCW2018)</a></em>,
+28 May - 1 June 2018, Fukuoka, Japan
+<a href="https://agenda.linearcollider.org/event/7826/contributions/41436/attachments/33054/50352/Ushakov-ALCW18.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2018-source-talk-lcws17">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick and S.&nbsp;Riemann
+<br />
+<strong>Undulator-based positron source at 250&nbsp;GeV CM energy with different optical matching devices: pulsed flux concentrator and quarter wave transformer</strong>
+<br />
+<a href="https://arxiv.org/abs/1801.08465">arXiv:1801.08465</a>,
+<em>Talk presented at the <a href="https://agenda.linearcollider.org/event/7645/">International Workshop on Future Linear Colliders (LCWS2017)</a></em>,
+23-27 October 2017, Strasbourg, France
+<a href="https://agenda.linearcollider.org/event/7645/contributions/40012/attachments/32382/49171/Ushakov-LCWS17.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2018-source-talk-lcws17SR">
+<ul><li>
+S. Riemann, F. Dietrich, G. Moortgat-Pick, P.&nbsp;Sievers, A.&nbsp;Ushakov
+<br />
+<strong>The ILC positron target cooled by thermal radiation</strong>
+<br />
+<a href="https://arxiv.org/abs/1801.10565">arXiv:1801.10565</a>,
+<em>Talk presented at the <a href="https://agenda.linearcollider.org/event/7645/">International Workshop on Future Linear Colliders (LCWS2017)</a></em>,
+23-27 October 2017, Strasbourg, France
+<a href="https://arxiv.org/pdf/1801.10565">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-talk-kek">
+<ul><li>
+A. Ushakov, M. Kuriki, T. Takahashi, T.&nbsp;Omori and P.&nbsp;Sievers
+<br />
+<strong>Radiation shielding for target area of conventional positron source</strong>
+<br />
+<em>Weekly Meeting of the ILC Positron Source Group in Japan</em>, 7 December 2017, KEK, Japan
+<a href="talks/Ushakov-KEK-20171207.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-talk-itako">
+<ul><li>
+A. Ushakov, M. Kuriki, T. Takahashi, T.&nbsp;Omori and P.&nbsp;Sievers
+<br />
+<strong>Shielding in target area of conventional positron source</strong>
+<br />
+<em>Itako Linear Collider Workshop</em>,
+27-28 November 2017, Itako, Japan
+<a href="http://home.hiroshima-u.ac.jp/~mkuriki/2017Itako/AUshakov_Shielding.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-talk-lcws">
+<ul><li>
+W. Hillert, G. Moortgat-Pick, A. Ushakov, A.&nbsp;Prudnikava, Y.&nbsp;Tamashevich, S.&nbsp;Riemann, A.&nbsp;Ignatenko, D.&nbsp;Lott, K.&nbsp;Aulenbacher, T.&nbsp;Beiser, P.&nbsp;Heil and V.&nbsp;Tioukine<br />
+<strong>Target Material Tests at Facilities in Hamburg</strong>
+<br />
+<em><a href="https://indico.desy.de/indico/event/18681/">11th Annual Helmholtz Alliance Workshop on "Physics at the Terascale"</a></em>,
+27-29 November 2017, DESY, Hamburg
+<a href="https://indico.desy.de/indico/event/18681/session/9/contribution/192/material/slides/0.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-talk-posipol">
+<ul><li>
+A. Ushakov
+<br />
+<strong>ILC undulator-based positron source with quarter wave transformer at 250&nbsp;GeV CM energy</strong>
+<br />
+<em><a href="https://indico.inp.nsk.su/event/9/">12th International Workshop POSIPOL-2017</a></em>,
+18-21 September 2017, Budker Institute of Nuclear Physics, Novosibirsk, Russia
+<a href="https://indico.inp.nsk.su/event/9/material/slides/11.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-talk-awlc">
+<ul><li>
+A. Ushakov
+<br />
+<strong>Energy deposition in flux concentrator by undulator photons at 250&nbsp;GeV center-of-mass energy</strong>
+<br />
+<em><a href="https://portal.slac.stanford.edu/sites/conf_public/AWLC17/Pages/default.aspx">Americas Workshop on Linear Colliders 2017 (AWLC17)</a></em>,
+26-30 June 2017, SLAC National Accelerator Lab, Menlo Park, USA
+<a href="https://agenda.linearcollider.org/event/7507/contributions/39361/attachments/31714/47802/Ushakov-AWLC17.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-ipac-tupab002">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, A.&nbsp;Prudnikava, Y.&nbsp;Tamashevich, K.&nbsp;Aulenbacher, T.&nbsp;Beiser, P.&nbsp;Heil, V.&nbsp;Tioukine, A.&nbsp;Ignatenko, S.&nbsp;Riemann<br />
+<strong>Material tests for the ILC positron source</strong>
+<br />
+<em><a href="https://ipac17.org/">8<sup>th</sup> International Particle Accelerator Conference (IPAC'17)</a></em>,
+Copenhagen, Denmark, 14-19 May 2017,
+<a href="http://jacow.org/ipac2017/papers/tupab002.pdf">TUPAB002 <img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>,
+<a href="talks/IPAC2017.pdf">poster <img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-ipac-tupab003">
+<ul><li>
+P. Heil, T. Beiser, K.&nbsp;Aulenbacher, G.&nbsp;Moortgat, A.&nbsp;Ushakov, S.&nbsp;Riemann, A.&nbsp;Ignatenko
+<br />
+<strong>High energy density irradiation with the MAMI linac</strong>
+<br />
+<em><a href="https://ipac17.org/">8<sup>th</sup> International Particle Accelerator Conference (IPAC'17)</a></em>,
+Copenhagen, Denmark, 14-19 May 2017,
+<a href="http://jacow.org/ipac2017/papers/tupab003.pdf">TUPAB003
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-talk-positron-wg-6">
+<ul><li>
+A. Ushakov
+<br />
+<strong>Impact of photon collimators in undulator on PEDD in FC at 125 GeV e<sup>-</sup></strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7644/">Positron Working Group Meeting</a></em>,
+18 May 2017
+<a href="https://agenda.linearcollider.org/event/7644/contributions/39035/attachments/31611/47631/Ushakov-Positron_WG-20170518.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-talk-staging-miniws">
+<ul><li>
+A. Ushakov
+<br />
+<strong>250 GeV CM design issues</strong>
+<br />
+<em><a href="https://kds.kek.jp/indico/event/24127/">Staging Mini-Workshop</a></em>,
+5 - 7 April 2017, KEK, Japan
+<a href="https://kds.kek.jp/indico/event/24127/contribution/13/material/slides/0.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2017-source-talk-positron-wg-2">
+<ul><li>
+A. Ushakov
+<br />
+<strong>e<sup>+</sup> yield and PEDD in FC at 125 GeV e<sup>-</sup>, TDR and compact dog-leg for undulator e<sup>+</sup> source</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7573/">Positron Working Group Meeting</a></em>,
+15 March 2017 
+<a href="https://agenda.linearcollider.org/event/7573/contributions/38619/attachments/31296/47220/Ushakov-20170315-PositronWG.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-lcws-crwg">
+<ul><li>
+A. Ushakov, S. Riemann, P.&nbsp;Sievers, T.&nbsp;Omori
+<br />
+<strong>Solid and gas photon dump</strong>
+<br />
+<em><a href="http://lcws2016.sgk.iwate-u.ac.jp/">International Workshop on Future Linear Colliders (LCWS2016)</a></em>,
+5 - 9 December 2016, Morioka, Iwate, Japan
+<a href="https://agenda.linearcollider.org/event/7371/contributions/38114/attachments/30947/46321/Ushakov-LCWS-20161207-Photon-Dump.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-lcws-source">
+<ul><li>
+A. Ushakov, S. Riemann, P.&nbsp;Sievers, T.Omori
+<br />
+<strong>Is the solid/Ar-gas photon dump possible?</strong>
+<br />
+<em><a href="http://lcws2016.sgk.iwate-u.ac.jp/">International Workshop on Future Linear Colliders (LCWS2016)</a></em>,
+5 - 9 December 2016, Morioka, Iwate, Japan
+<a href="https://agenda.linearcollider.org/event/7371/contributions/38152/attachments/30828/46129/Ushakov-LCWS16-Ar-C-PhotonDump.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-lcws-Alexandr">
+<ul><li>
+F. Dietrich, A. Ignatenko, G.&nbsp;Moortgat-Pick, S.&nbsp;Riemann, A.&nbsp;Ushakov
+<br />
+<strong>ILC target experiment at MAMI</strong>
+<br />
+<em><a href="http://lcws2016.sgk.iwate-u.ac.jp/">International Workshop on Future Linear Colliders (LCWS2016)</a></em>,
+5 - 9 December 2016, Morioka, Iwate, Japan 
+<a href="https://agenda.linearcollider.org/event/7371/contributions/38149/attachments/30838/46143/Ignatenko_LCWS2016.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-posipol">
+<ul><li>
+A. Ushakov, S. Riemann
+<br />
+<strong>Update of ILC positron source parameters</strong>
+<br />
+<em><a href="https://posipol2016.lal.in2p3.fr/">POSIPOL 2016 Workshop</a></em>,
+14 - 16 September 2016, Laboratoire de l’Accélérateur Linéaire (LAL), University Paris-Sud, Orsay, France
+<a href="https://indico.lal.in2p3.fr/event/3288/session/11/contribution/35/material/slides/0.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-ecfa">
+<ul><li>
+A. Ushakov, S. Riemann, G.&nbsp;Moortgat-Pick
+<br />
+<strong>Radiation at photon dump of undulator-based e<sup>+</sup> source</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7014/">European Linear Collider Workshop 2016 (ECFALC2016)</a></em>,
+30 May - 5 June 2016, Santander, Spain
+<a href="https://agenda.linearcollider.org/event/7014/contributions/34633/attachments/29960/44797/Ushakov-PhotonDump-ECFALC16.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-ecfa-Peter">
+<ul><li>
+P. Sievers, A. Ushakov, S.&nbsp;Riemann
+<br />
+<strong>Window and dump for the ILC-photon beam</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7014/">European Linear Collider Workshop 2016 (ECFALC2016)</a></em>,
+30 May - 5 June 2016, Santander, Spain
+<a href="https://agenda.linearcollider.org/event/7014/contributions/34699/attachments/29997/44853/Beam_Window_and_Beam_Dump_for_the_ILC-Photon.pptx">
+<img src="img/ppt.png" width="16" height="16" alt="[pptx]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-ecfa-Alexandr">
+<ul><li>
+F. Dietrich, A. Ignatenko, G.&nbsp;Moortgat-Pick, S.&nbsp;Riemann, A.&nbsp;Ushakov
+<br />
+<strong>Target material tests with the electron beam at the microtron in Mainz</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7014/">European Linear Collider Workshop 2016 (ECFALC2016)</a></em>,
+30 May - 5 June 2016, Santander, Spain
+<a href="https://agenda.linearcollider.org/event/7014/contributions/34703/attachments/30197/45131/Ignatenko_ECFA_v1-7.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-ecfa-Sabine">
+<ul><li>
+F. Dietrich, A. Ignatenko, S.&nbsp;Riemann, G.&nbsp;Moortgat-Pick, A.&nbsp;Ushakov, P.&nbsp;Sievers
+<br />
+<strong>Status: Cooling of the ILC e+ target by thermal radiation</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7014/">European Linear Collider Workshop 2016 (ECFALC2016)</a></em>,
+30 May - 5 June 2016, Santander, Spain
+<a href="https://agenda.linearcollider.org/event/7014/contributions/34704/attachments/30189/45126/RIEMANN_Sabine_ECFA16_radCooling_5.pptx">
+<img src="img/ppt.png" width="16" height="16" alt="[pptx]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-kek">
+<ul><li>
+A. Ushakov
+<br />
+<strong>Radiation levels in target area of undulator-based positron source</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/7062/">Joint Workshop of CRWG, CFS and Positron</a></em>,
+19 - 20 April 2016, KEK, Japan
+<a href="https://agenda.linearcollider.org/event/7062/contributions/35012/attachments/28553/43053/TargetShielding-Ushakov.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2016-source-talk-dpg">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, S.&nbsp;Riemann, A.&nbsp;Ignatenko, F.&nbsp;Dietrich, K.&nbsp;Aulenbacher, V.&nbsp;Tyukin, P.&nbsp;Heil
+<br />
+<strong>Stress evaluation at the ILC positron source</strong>
+<br />
+<em><a href="https://hamburg16.dpg-tagungen.de/">DPG Spring Meeting of the Matter and Cosmos Section</a></em>,
+29 February - 4 March 2016, University of Hamburg
+<a href="https://bib-pubdb1.desy.de/record/316381/files/Ushakov-DPG16.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2015-source-talk-lcws">
+<ul><li>
+A. Ushakov, S. Riemann, G.&nbsp;Moortgat-Pick<br />
+<strong>Radiation levels in target area of undulator-based positron source</strong>
+<br />
+<em><a href="http://lcws15.triumf.ca/index.html">International Workshop on Future Linear Colliders (LCWS2015)</a></em>,
+Whistler B.C. Canada, 02-06 November 2015
+<a href="https://agenda.linearcollider.org/event/6662/contributions/32763/attachments/26948/41086/Ushakov-LCWS15.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2015-source-talk-posipol">
+<ul><li>
+A. Ushakov, S. Riemann, F.&nbsp;Dietrich, P.&nbsp;Sievers, G.&nbsp;Moortgat-Pick
+<br />
+<strong>Update on target simulations of the undulator based e<sup>+</sup> source</strong>
+<br />
+<em><a href="https://www.cockcroft.ac.uk/events/posipol2015/index.html">POSIPOL 2015 Workshop</a></em>,
+Cockcroft Institute, UK, 2-4 September 2015
+<a href="https://bib-pubdb1.desy.de/record/292727/files/ushakov-posipol2015.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2015-source-eps-hep">
+<ul><li>
+G. Moortgat-Pick, A. Ushakov, O.&nbsp;Adeyemi, F.&nbsp;Dietrich, K.&nbsp;Flöttmann, S.&nbsp;Riemann
+<br />
+<strong>The ILC positron source</strong>
+<br />
+<em><a href="https://eps-hep2015.eu/">European Physical Society Conference on High Energy Physics (EPS-HEP 2015)</a></em>,
+Vienna, Austria, 22-29 July 2015
+<a href="https://indico.cern.ch/event/356420/session/12/contribution/677/attachments/1132036/1618360/source-eps.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2015-source-ipac">
+<ul><li>
+A. Ushakov, F. Dietrich, S.&nbsp;Riemann, T.&nbsp;Rublack, P.&nbsp;Sievers
+<br />
+<strong>Radiative cooled target for the ILC polarized positron source</strong>
+<br />
+<em><a href="https://www.jlab.org/conferences/ipac2015/index.php">6th International Particle Accelerator Conference (IPAC15)</a></em>,
+Richmond, VA, USA, 3-8 May 2015,
+<a href="http://jacow.org/ipac2015/papers/tupwa048.pdf">TUPWA048
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2015-source-talk-alcw">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, F.&nbsp;Dietrich, S.&nbsp;Riemann, P.&nbsp;Sievers<br />
+<strong>Considerations of material stress under cyclic Load: KEKB experiment for damage	of Ti extraction window
+</strong>
+<br />
+<em><a href="http://www-conf.kek.jp/alcw2015/index.html">Asian Linear Collider Workshop (ALCW2015)</a></em>,
+20-24 April 2015, KEK Tsukuba, Japan
+<a href="https://agenda.linearcollider.org/event/6557/session/9/contribution/147/material/slides/0.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2015-source-talk-alcw-Sabine">
+<ul><li>
+F. Dietrich, S. Riemann, P.&nbsp;Sievers, A.&nbsp;Ushakov
+<br />
+<strong>Radiative cooling of the ILC positron target</strong>
+<br />
+<em><a href="http://www-conf.kek.jp/alcw2015/index.html">Asian Linear Collider Workshop (ALCW2015)</a></em>,
+20-24 April 2015, KEK Tsukuba, Japan
+<a href="https://agenda.linearcollider.org/event/6557/session/9/contribution/146/material/slides/1.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2015-source-talk-ansys-usermeeting">
+<ul><li>
+A. Ushakov, F. Dietrich, S.&nbsp;Riemann
+<br />
+<strong>Thermal stress induced in solid targets by electron or photon beams</strong>
+<br />
+<em><a href="https://indico.desy.de/indico/event/10966/">2<sup>nd</sup> ANSYS Users Meeting at DESY</a></em>,
+12 February 2015, DESY Hamburg
+<a href="talks/Ansys-User-Meeting-150212.pdf"><img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2014-source-collimator-arxiv">
+<ul><li>
+S. Riemann, F. Staufenbiel, G.&nbsp;Moortgat-Pick, A.&nbsp;Ushakov
+<br />
+<strong>Photon collimator system for the ILC positron source</strong>
+<br />
+<em>DESY Report</em>:
+<a href="http://www-library.desy.de/cgi-bin/showprep.pl?DESY14-232">DESY 14-232</a>,
+Nov 2014, 22 pp.,
+<a href="https://arxiv.org/abs/1412.2498">arXiv:1412.2498</a>
+<a href="https://arxiv.org/pdf/1412.2498">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2014-source-talk-posipol">
+<ul><li>
+A. Ushakov, S. Riemann, P.&nbsp;Sievers
+<br />
+<strong>Simulations for the photon target cooled by radiation</strong>
+<br />
+<em><a href="http://atfweb.kek.jp/posipol/2014/">POSIPOL 2014 Workshop</a></em>, 27-29 August 2014, Ichinoseki, Japan
+<a href="https://kds.kek.jp/event/15241/contributions/24529/attachments/20194/24260/Ushakov-POSIPOL2014.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2014-source-talk-awlc">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, S.&nbsp;Riemann, F.&nbsp;Staufenbiel
+<br />
+<strong>Optimizing source parameters</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/6301/">Americas Workshop on Linear Colliders 2014 (AWLC14)</a></em>,
+12-16 May 2014, Fermilab, Batavia, IL, USA
+<a href="https://agenda.linearcollider.org/event/6301/session/29/contribution/253/material/slides/0.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2014-source-talk-eucard">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, S.&nbsp;Riemann, F.&nbsp;Staufenbiel
+<br />
+<strong>ILC polarized positron source at center-of-mass energies of 250 GeV and 1 TeV</strong>
+<br />
+<em><a href="https://indico.mitp.uni-mainz.de/event/18/">EUCARD Workshop "Spin Optimization at Lepton Accelerators"</a></em>,
+12-13 February 2014, Mainz
+<a href="https://indico.mitp.uni-mainz.de/event/18/contributions/1025/attachments/803/861/Ushakov_EUCARD2_13Feb2014.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2013-source-talk-lcws-Wtarget">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, S.&nbsp;Riemann, F.&nbsp;Staufenbiel, P.&nbsp;Sievers
+<br />
+<strong>Simulations of undulator-based positron source with tungsten-alloy target</strong>
+<br />
+<em><a href="http://www.icepp.s.u-tokyo.ac.jp/lcws13/">International Workshop on Future Linear Colliders (LCWS13)</a></em>, 
+11-15 November 2013, The University of Tokyo, Japan
+<a href="https://agenda.linearcollider.org/event/6000/contributions/27762/attachments/23047/35885/Ushakov-LCWS13-source-Wtarget.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2013-source-talk-lcws-120GeV">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, S.&nbsp;Riemann, F.&nbsp;Staufenbiel
+<br />
+<strong>Simulations of the undulator based e<sup>+</sup> source at 120 GeV</strong>
+<br />
+<em><a href="http://www.icepp.s.u-tokyo.ac.jp/lcws13/">International Workshop on Future Linear Colliders (LCWS13)</a></em>, 
+11-15 November 2013, The University of Tokyo, Japan
+<a href="https://agenda.linearcollider.org/event/6000/contributions/27691/attachments/22986/35804/Ushakov-LCWS13-source-120GeV.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2013-source-talk-posipol">
+<ul><li>
+A. Ushakov
+<br />
+<strong>Geant4 simulations of conventional positron source</strong>
+<br />
+<em><a href="https://indico.fnal.gov/event/ANLHEP114/">POSIPOL 2013 Workshop</a></em>,
+4-6 September 2013, Argonne National Laboratory, USA
+<a href="https://indico.fnal.gov/event/ANLHEP114/session/15/contribution/16/material/0/0.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2013-source-talk-ecfa">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, S.&nbsp;Riemann, F.&nbsp;Staufenbiel
+<br />
+<strong>Simulations of positron source at 120 GeV</strong>
+<br />
+<em><a href="https://lc2013.desy.de/">European Linear Collider Workshop ECFA LC2013</a></em>,
+27-31 May 2013, DESY, Hamburg
+<a href="https://agenda.linearcollider.org/event/5840/contributions/26212/attachments/21657/33960/Ushakov-ECFA2013.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2013-source-ipac">
+<ul><li>
+A. Ushakov, V.S. Kovalenko, G.A.&nbsp;Moortgat-Pick, S.&nbsp;Riemann, F.&nbsp;Staufenbiel
+<br />
+<strong>Simulations of the ILC positron source at low energies</strong>
+<br />
+<em><a href="http://www.ipac13.org/">4th International Particle Accelerator Conference (IPAC13)</a></em>,
+Shanghai, China, 12-17 May 2013,
+<a href="http://accelconf.web.cern.ch/ipac2013/papers/tupme003.pdf">TUPME003
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2013-source-ipac-friedrich">
+<ul><li>
+F. Staufenbiel, S. Riemann, O.S.&nbsp;Adeyemi, V.S.&nbsp;Kovalenko, G.A.&nbsp;Moortgat-Pick, A.&nbsp;Ushakov
+<br />
+<strong>Simulation of stress in positron targets for future linear colliders</strong>
+<br />
+<em><a href="http://www.ipac13.org/">4th International Particle Accelerator Conference (IPAC13)</a></em>,
+Shanghai, China, 12-17 May 2013,
+<a href="http://accelconf.web.cern.ch/ipac2013/papers/tupme006.pdf">TUPME006
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2013-spin-ipac-dr">
+<ul><li>
+V. Kovalenko, G.A.&nbsp;Moortgat-Pick, A.&nbsp;Ushakov, S.&nbsp;Riemann, A.&nbsp;Wolski
+<br />
+<strong>Spin tracking at the International Linear Collider</strong>
+<br />
+<em><a href="http://www.ipac13.org/">4th International Particle Accelerator Conference (IPAC13)</a></em>,
+Shanghai, China, 12-17 May 2013,
+<a href="http://accelconf.web.cern.ch/ipac2013/papers/tupme004.pdf">TUPME004
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2013-source-arxiv-1TeV">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, S.&nbsp;Riemann, W.&nbsp;Liu, W.&nbsp;Gai
+<br />
+<strong>Positron source simulations for ILC 1&nbsp;TeV upgrade</strong>
+<br />
+<em>DESY Report</em>:
+<a href="http://www-library.desy.de/cgi-bin/showprep.pl?DESY13-003">DESY 13-003</a>,
+Jan 2013, 8 pp.,
+<a href="https://arxiv.org/abs/1301.1222">arXiv:1301.1222</a>
+<a href="https://arxiv.org/pdf/1301.1222">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-talk-lcws">
+<ul><li>
+A. Ushakov
+<br />
+<strong>Polarization issues</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/5468/">International Workshop on Future Linear Colliders (LCWS12)</a></em>,
+22-26 October 2012, University of Texas at Arlington, USA
+<a href="https://agenda.linearcollider.org/event/5468/contributions/23962/attachments/19626/31142/Ushakov-LCWS12.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-talk-posipol">
+<ul><li>
+A. Ushakov, G. Moortgat-Pick, S.&nbsp;Riemann, A.&nbsp;Schälicke
+<br />
+<strong>ILC positron source modeling up to 1&nbsp;TeV</strong>
+<br />
+<em><a href="https://indico.desy.de/indico/event/5480/">POSIPOL 2012 Workshop</a></em>, 
+4-6 September 2012, DESY, Zeuthen
+<a href="https://agenda.linearcollider.org/event/5506/contributions/24607/attachments/20200/31904/Ushakov-upto1TeV.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-spin-ipac-dr">
+<ul><li>
+V. Kovalenko , O.S. Adeyemi, L.I.&nbsp;Malysheva, G.A.&nbsp;Moortgat-Pick, A.&nbsp;Ushakov, A.F.&nbsp;Hartin, S.&nbsp;Riemann, F.&nbsp;Staufenbiel<br />
+<strong>Spin tracking simulation of a future International Linear Collider</strong>
+<br />
+<em><a href="https://accelconf.web.cern.ch/ipac2012/index.htm">3rd International Particle Accelerator Conference (IPAC12)</a></em>,
+New Orleans, Louisiana, USA, 20-25 May 2012,
+<a href="http://accelconf.web.cern.ch/ipac2012/papers/TUPPR001.PDF">TUPPR001
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-ipac">
+<ul><li>
+A. Ushakov, O. S. Adeyemi, V.&nbsp;Kovalenko, L.&nbsp;Malysheva, G.&nbsp;Moortgat-Pick, S.&nbsp;Riemann, F.&nbsp;Staufenbiel, A.&nbsp;Hartin
+<br />
+<strong>Simulations of positron polarization in the undulator-based source</strong>
+<br />
+<em><a href="https://accelconf.web.cern.ch/ipac2012/index.htm">3rd International Particle Accelerator Conference (IPAC12)</a></em>,
+New Orleans, Louisiana, USA, 20-25 May 2012, 
+<a href="http://accelconf.web.cern.ch/ipac2012/papers/TUPPR002.PDF">TUPPR002
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>	 
+</div>
+
+<div id="2012-spin-ipac-rotator">
+<ul><li>
+L.I. Malysheva, O.S.&nbsp;Adeyemi, V.&nbsp;Kovalenko, G.&nbsp;Moortgat-Pick, A.&nbsp;Ushakov, S.&nbsp;Riemann, F.&nbsp;Staufenbiel, A.&nbsp;Hartin, B.&nbsp;List, N.&nbsp;Walker
+<br />
+<strong>The design of spin-rotator with a possibility of helicity switching for polarized positron at the ILC</strong>
+<br />
+<em><a href="https://accelconf.web.cern.ch/ipac2012/index.htm">3rd International Particle Accelerator Conference (IPAC12)</a></em>,
+New Orleans, Louisiana, USA, 20-25 May 2012, 
+<a href="http://accelconf.web.cern.ch/ipac2012/papers/TUPPR003.PDF">TUPPR003
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-ipac-wanming">
+<ul><li>
+W. Liu, W. Gai, S.&nbsp;Riemann, A.&nbsp;Ushakov
+<br />
+<strong>On the polarization upgrade of ILC undulator-based positron source</strong>
+<br />
+<em><a href="https://accelconf.web.cern.ch/ipac2012/index.htm">3rd International Particle Accelerator Conference (IPAC12)</a></em>,
+New Orleans, Louisiana, USA, 20-25 May 2012,
+<a href="http://accelconf.web.cern.ch/ipac2012/papers/TUPPR042.PDF">TUPPR042
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-ipac-friedrich">
+<ul><li>
+F. Staufenbiel, S. Riemann, O.S.&nbsp;Adeyemi, V.&nbsp;Kovalenko, L.I.&nbsp;Malysheva, G.&nbsp;Moortgat-Pick, A.&nbsp;Ushakov
+<br />
+<strong>Heat load studies in target and collimator materials for the ILC positron source</strong>
+<br />
+<em><a href="https://accelconf.web.cern.ch/ipac2012/index.htm">3rd International Particle Accelerator Conference (IPAC12)</a></em>,
+New Orleans, Louisiana, USA, 20-25 May 2012,
+<a href="http://accelconf.web.cern.ch/ipac2012/papers/weppd032.pdf">WEPPD032
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-arxiv-friedrich">
+<ul><li>
+F. Staufenbiel, O. S. Adeyemi, V.&nbsp;Kovalenko, G.&nbsp;Moortgat-Pick, L.&nbsp;Malysheva, S.&nbsp;Riemann, A.&nbsp;Ushakov
+<br />
+<strong>Heat load and stress studies for an design of the photon collimator for the ILC positron source</strong>
+<br />
+Feb 2012, 10 pp.,
+<a href="https://arxiv.org/abs/1202.5987">arXiv:1202.5987</a>
+<a href="https://arxiv.org/pdf/1202.5987">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-arxiv-valentyn-pltr">
+<ul><li>
+V. Kovalenko, G.&nbsp;Moortgat-Pick, S.&nbsp;Riemann, A.&nbsp;Ushakov
+<br />
+<strong>Depolarization in the ILC linac-to-ring positron beamline</strong>
+<br />
+<em>DESY Report</em>:
+<a href="http://www-library.desy.de/cgi-bin/showprep.pl?DESY12-017">DESY 12-017</a>,
+Feb 2012, 7&nbsp;pp.,
+<a href="https://arxiv.org/abs/1202.0764">arXiv:1202.0764</a>
+<a href="https://arxiv.org/pdf/1202.0764">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-arxiv">
+<ul><li>
+A. Ushakov, O. S. Adeyemi, G.&nbsp;Moortgat-Pick, F.&nbsp;Staufenbiel, S.&nbsp;Riemann
+<br />
+<strong>Polarized positrons for the ILC - update on simulations</strong>
+<br />
+<em>DESY Report</em>:
+<a href="http://www-library.desy.de/cgi-bin/showprep.pl?DESY12-018">DESY 12-018</a>,
+Feb 2012, 11&nbsp;pp.,
+<a href="https://arxiv.org/abs/1202.0752">arXiv:1202.0752</a>
+<a href="https://arxiv.org/pdf/1202.0752">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-arxiv-valentyn-tracking">
+<ul><li>
+V. Kovalenko, O.S. Adeyemi, A.&nbsp;Hartin, G.&nbsp;Moortgat-Pick, L.&nbsp;Malysheva, S.&nbsp;Riemann, F.&nbsp;Staufenbiel, A.&nbsp;Ushakov
+<br />
+<strong>Spin tracking at the ILC positron source</strong>
+<br />
+<em>DESY Report</em>
+<a href="http://www-library.desy.de/cgi-bin/showprep.pl?DESY12-019">DESY 12-019</a>,
+Feb 2012, 8&nbsp;pp.,
+<a href="https://arxiv.org/abs/1202.0751">arXiv:1202.0751</a>
+<a href="https://arxiv.org/pdf/1202.0751">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2012-source-omorinim">
+<ul><li>
+Tsunehiko Omori, Tohru Takahashi, Sabine Riemann, Wei Gai, Jie Gao, Shin-ichi Kawada, Wanming Liu, Natsuki Okuda, Guoxi Pei, Junji Urakawa, Andriy Ushakov
+<br />
+<strong>A conventional positron source for International Linear Collider</strong>
+<br />
+<em><a href="https://www.sciencedirect.com/journal/nuclear-instruments-and-methods-in-physics-research-section-a-accelerators-spectrometers-detectors-and-associated-equipment">Nuclear Instruments and Methods in Physics Research Section A</a></em> <b>672</b> (2012)
+<a href="https://doi.org/10.1016/j.nima.2011.12.032">52</a>
+</li></ul>
+</div>
+
+<div id="2012-source-omori">
+<ul><li>
+Tsunehiko Omori, Junji Urakawa, Tohru Takahashi, Shin-Ichi Kawada, Sabine Riemann, Wei Gai, Wanming Liu, Jie Gao, Guoxi Pei, Natsuki Okuda, Andriy Ushakov
+<br />
+<strong>The truly conventional positron source for ILC</strong>
+<br />
+In "<em><a href="https://doi.org/10.1142/8435">Polarized Positron 2011: Proceedings of the 6th Annual Workshop, Beijing, China, 28-30 August 2011</a></em>", edited by Wei Gai (Argonne National Lab, USA), World Scientific, December 2012,
+pp. <a href="https://doi.org/10.1142/9789814401043_0010">98-110</a>
+</li></ul>
+</div>
+
+<div id="2012-source-wei">
+<ul><li>
+Wanming Liu, Wei Gai, Sabine Riemann, Andriy Ushakov
+<br />
+<strong>On the Parameters of International Linear Collider Positron Source</strong>
+<br />
+In "<em><a href="https://doi.org/10.1142/8435">Polarized Positron 2011: Proceedings of the 6th Annual Workshop, Beijing, China, 28-30 August 2011</a></em>", edited by Wei Gai (Argonne National Lab, USA), World Scientific, December 2012,
+pp. <a href="https://doi.org/10.1142/9789814401043_0003">32-38</a>
+</li></ul>
+</div>
+
+<div id="2011-source-talk-baselinereview">
+<ul><li>
+A. Ushakov, O. S. Adeyemi, G.&nbsp;Moortgat-Pick, F.&nbsp;Staufenbiel, S.&nbsp;Riemann
+<br />
+<strong>Performance simulations/heat stress/shockwave, etc.</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/5222/">ILC Source/RTML/BDS+MDI Technical Baseline Review</a></em>,
+24-27 October 2011, DESY, Hamburg
+<a href="https://agenda.linearcollider.org/event/5222/contributions/22370/attachments/18362/29497/Ushakov-ThermalStress.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2011-source-talk-lcws">
+<ul><li>
+A. Ushakov, O. S. Adeyemi, G.&nbsp;Moortgat-Pick, F.&nbsp;Staufenbiel, S.&nbsp;Riemann
+<br />
+<strong>Depolarization in the ILC linac-to-ring positron beamline</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/5134/">International Workshop on Future linear Colliders (LCWS11)</a></em>,
+26-30 September 2011, Granada, Spain
+<a href="https://agenda.linearcollider.org/event/5134/contributions/21383/attachments/17533/28373/1530_-_Ushakov-lcws11.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2011-source-ipac">
+<ul><li>
+A. Ushakov, O. S. Adeyemi, V. Kovalenko, L.&nbsp;Malysheva, G.&nbsp;Moortgat-Pick, S.&nbsp;Riemann, F.&nbsp;Staufenbiel, A.&nbsp;Hartin, A.&nbsp;Schälicke
+<br />
+<strong>Positron source simulations using Geant4</strong>
+<br />
+<em>International Particle Accelerator Conference (IPAC'11)</em>,
+San Sebastian, Spain, 4‑9 September 2011,
+<a href="https://accelconf.web.cern.ch/ipac2011/papers/tupc006.pdf">TUPC006
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2011-ilc-ipac-femi">
+<ul><li>
+O. S. Adeyemi, V. Kovalenko, L.&nbsp;Malysheva, A.&nbsp;Ushakov, G.&nbsp;Moortgat-Pick, S.&nbsp;Riemann, F.&nbsp;Staufenbiel, A.&nbsp;Schälicke<br />
+<strong>Evolution of pressure in positron source for future linear e+e− collider</strong>
+<br />
+<em>International Particle Accelerator Conference (IPAC'11)</em>,
+San Sebastian, Spain, 4‑9 September 2011,
+<a href="https://accelconf.web.cern.ch/ipac2011/papers/tupc005.pdf">TUPC005
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2011-ilc-ipac-larisa">
+<ul><li>
+L. Malysheva, O.S. Adeyemi, V. Kovalenko, G.&nbsp;A.&nbsp;Moortgat-Pick, A.&nbsp;Ushakov, S.&nbsp;Riemann, F.&nbsp; Staufenbiel, K.&nbsp; Buesser, A.F.&nbsp;Hartin, N.&nbsp;J.&nbsp;Walker<br />
+<strong>The luminosity for the ILC travelling focus regime with offsets and angular scans</strong>
+<br />
+<em>International Particle Accelerator Conference (IPAC'11)</em>,
+San Sebastian, Spain, 4‑9 September 2011,
+<a href="https://accelconf.web.cern.ch/ipac2011/papers/tupc004.pdf">TUPC004
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2011-source-talk-posipol">
+<ul><li>
+A. Ushakov, O.S. Adeyemi, G. Moortgat-Pick, F.&nbsp;Staufenbiel, S.&nbsp;Riemann
+<br />
+<strong>Polarized positrons for the ILC - update on simulations</strong>
+<br />
+<em><a href="http://posipol2011.ihep.ac.cn/index.htm">POSIPOL 2011 Workshop</a></em>,
+28-30 August 2011, IHEP, Beijing, China
+<a href="https://indico.ihep.ac.cn/event/2210/contribution/10/material/slides/0.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2011-source-talk-sourcemeeting">
+<ul><li>
+A. Ushakov, O. S. Adeyemi, G. Moortgat-Pick, F.&nbsp;Staufenbiel, S.&nbsp;Riemann
+<br />
+<strong>Simulations of heat load and induced stress in target of ILC positron source</strong>
+<br />
+<em>ILC Positron Collaboration Meeting</em>,
+27 August 2011, IHEP, Beijing, China
+<a href="talks/Ushakov-ILCPositronMeeting11.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2011-source-talk-lcwa">
+<ul><li>
+O. S. Adeyemi, V. Kovalenko, G. Moortgat-Pick, S.&nbsp;Riemann, A.&nbsp;Schälicke, A.&nbsp;Ushakov
+<br />
+<strong>Undulator-based positron source with photon collimator and QWT</strong>
+<br />
+<em><a href="http://physics.uoregon.edu/~lc/alcpg11/">2011 Linear Collider Workshop of the Americas</a></em>,
+19-23 March 2011, University of Oregon, Eugene, USA
+<a href="https://agenda.linearcollider.org/event/4572/contributions/18265/attachments/14774/24195/Ushakov-ALCPG-2011-03.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2011-source-spin-andreas">
+<ul><li>
+S. Riemann, A. Schälicke, A. Ushakov
+<br />
+<strong>Design and optimization of a polarized positron source for future linear collider using Geant4</strong>
+<br />
+<em>19th International Spin Physics Symposium (SPIN2010)</em>,
+Jülich, 27 September – 2&nbsp;October, 2010, published in
+<em><a href="https://iopscience.iop.org/journal/1742-6596">Journal of Physics: Conference Series</a></em>
+<b>295</b> (2011)
+<a href="https://iopscience.iop.org/article/10.1088/1742-6596/295/1/012154/pdf">012154</a>
+</li></ul>
+</div>
+
+<div id="2011-source-pesp">
+<ul><li>
+A. Ushakov, A. Schälicke, S. Riemann<br />
+<strong>Simulation of polarized positron sources for linear colliders
+</strong>
+<br />
+<em>Workshop on Sources of Polarized Leptons and High Brightness Electron Beams (PESP2010)</em>,
+Bonn, 21-24 September, 2010, published in 
+<em><a href="https://iopscience.iop.org/journal/1742-6596">Journal of Physics: Conference Series</a></em>
+<b>298</b> (2011)
+<a href="https://iopscience.iop.org/article/10.1088/1742-6596/298/1/012021/pdf">012021</a>,<a href="talks/PESP2010.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2011-ilc-pesp-sabine">
+<ul><li>
+S. Riemann, A. Schälicke, A. Ushakov
+<br />
+<strong>Polarized positrons for future linear colliders</strong>
+<br />
+<em>Workshop on Sources of Polarized Leptons and High Brightness Electron Beams (PESP2010)</em>,
+Bonn, 21-24 September, 2010, published in
+<em><a href="https://iopscience.iop.org/journal/1742-6596">Journal of Physics: Conference Series</a></em>
+<b>298</b> (2011)
+<a href="https://iopscience.iop.org/article/10.1088/1742-6596/298/1/012020/pdf">012020</a>
+</li></ul>
+</div>
+
+<div id="2010-source-talk-spinsimtools">
+<ul><li>
+A. Schälicke, S. Riemann, A. Ushakov<br />
+<strong>PPS-Sim. Tools to design and optimize the polarized positron source
+</strong>
+<br />
+<em><a href="https://indico.desy.de/indico/event/3515/">Workshop on Spin Simulation Tools</a></em>,
+9-11 November 2010, DESY, Hamburg
+<a href="https://indico.desy.de/event/3515/contributions/66965/attachments/43589/53661/schaelicke_pps-sim_HH10.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2010-source-talk-iwlc">
+<ul><li>
+A. Ushakov, A. Schälicke, S. Riemann
+<br />
+<strong>Simulations of the polarised positron source with PPS-Sim</strong>
+<br />
+<em><a href="https://espace.cern.ch/LC2010/default.aspx">International Workshop on Linear Colliders (IWLC2010)</a></em>,
+18-22 October 2010, CERN, Geneva, Switzerland
+<a href="https://agenda.linearcollider.org/event/4507/contributions/17499/attachments/14128/23200/Ushakov-iwlc2010.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2010-source-talk-sourcemeeting">
+<ul><li>
+A. Ushakov, A. Schälicke, S. Riemann
+<br />
+<strong>Conventional source simulations</strong>
+<br />
+<em><a href="https://indico.desy.de/indico/event/3061/">7<sup>th</sup> Positron Source Collaboration Meeting</a></em>,
+15-16 July 2010, DESY, Hamburg
+<a href="https://indico.desy.de/event/3061/contributions/64890/attachments/42001/51863/Ushakov-AuxiliarySource.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2010-source-talk-posipol">
+<ul><li>
+A. Ushakov, A. Schälicke, S. Riemann<br />
+<strong>Status of positron source simulation in Zeuthen</strong>
+<br />
+<em>PosiPol 2010 Workshop</em>,
+31 May - 2 June 2010, KEK, Tsukuba, Japan 
+<a href="talks/Ushakov-POSIPOL2010.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2010-source-ipac">
+<ul><li>
+A. Ushakov, S. Riemann, A. Schälicke
+<br />
+<strong>Positron source simulations using Geant4</strong>
+<br />
+<em><a href="https://accelconf.web.cern.ch/IPAC10/">International Particle Accelerator Conference (IPAC'10)</a></em>,
+Kyoto, Japan, 23‑28 May 2010,
+<a href="https://accelconf.web.cern.ch/IPAC10/papers/thpec023.pdf">4095
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2010-fel-report">
+<ul><li>
+A. Ushakov, S. Riemann
+<br />
+<strong>Geant4 simulations for diagnostics elements in the FLASH dump line</strong>
+<br />
+<em>DESY <a href="https://flash.desy.de/reports_publications/tesla_fel_reports/tesla_fel_2010/">TESLA-FEL Report 2010</a></em>,
+<a href="https://flash.desy.de/sites/site_vuvfel/content/e403/e1642/e71562/e71563/infoboxContent71573/TESLA-FEL_Add_2010-02.pdf">TESLA-FEL 2010-02
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2009-source-talk-sourcemeeting-shielding">
+<ul><li>
+A. Ushakov, S. Riemann, A. Schälicke
+<br />
+<strong>Shielding calculations for the target</strong>
+<br />
+<em><a href="https://www.ippp.dur.ac.uk/Workshops/09/SourceMeeting/">6<sup>th</sup> ILC Positron Source Collaboration Meeting</a></em>,
+28-30 October 2009, IPPP, Durham, UK
+<a href="https://conference.ippp.dur.ac.uk/event/283/contributions/872/attachments/835/942/UshakovShielding.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2009-source-talk-sourcemeeting-ppssim">
+<ul><li>
+A. Ushakov, S. Riemann, A. Schälicke
+<br />
+<strong>PPS-Sim simulations of the source with the AMD</strong>
+<br />
+<em><a href="https://www.ippp.dur.ac.uk/Workshops/09/SourceMeeting/">6<sup>th</sup> ILC Positron Source Collaboration Meeting</a></em>,
+28-30 October 2009, IPPP, Durham, UK
+<a href="https://conference.ippp.dur.ac.uk/event/283/contributions/874/attachments/837/945/UshakovAMD.pdf">
+<img src="img/pdf.png" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2009-source-talk-sourcemeeting-ppssim-andreas">
+<ul><li>
+A. Schälicke, A. Ushakov, S. Riemann
+<br />
+<strong>PPS-Sim update</strong>
+<br />
+<em><a href="https://www.ippp.dur.ac.uk/Workshops/09/SourceMeeting/">6<sup>th</sup> ILC Positron Source Collaboration Meeting</a></em>,
+28-30 October 2009, IPPP, Durham, UK
+<a href="https://conference.ippp.dur.ac.uk/event/283/contributions/871/attachments/819/915/Schaelicke.pdf">
+<img src="img/pdf.png" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2009-source-talk-lcwa">
+<ul><li>
+A. Ushakov, S. Riemann, A. Schälicke
+<br />
+<strong>Target shielding studies</strong>
+<br />
+<em><a href="http://physics.unm.edu/LCWA09/">2009 Linear Collider Workshop of the Americas</a></em>,
+29 September - 3 October 2009, Albuquerque, New Mexico, USA 
+<a href="https://agenda.linearcollider.org/event/3461/contributions/12876/attachments/10226/16941/shielding.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2009-source-talk-posipol-lilens">
+<ul><li>
+S. Riemann, A. Schälicke, A. Ushakov
+<br />
+<strong>Lithium lens simulation for ILC positron source</strong>
+<br />
+<em><a href="https://indico.cern.ch/event/53079/">PosiPol 2009 Workshop</a></em>,
+23-26 June 2009, IPNL, Lyon, France
+<a href="https://indico.cern.ch/event/53079/contributions/1203179/attachments/973060/1382677/Ushakov-LiLens.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2009-source-talk-posipol-ppssim">
+<ul><li>
+S. Riemann, A. Schälicke, A. Ushakov<br />
+<strong>Positron source modelling using Geant4</strong>
+<br />
+<em><a href="https://indico.cern.ch/event/53079/">PosiPol 2009 Workshop</a></em>,
+23-26 June 2009, IPNL, Lyon, France
+<a href="https://indico.cern.ch/event/53079/contributions/1203182/attachments/973063/1382683/PPS-Sim.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2009-ilc-pac-stefan">
+<ul><li>
+S. Hesselbach, I.R. Bailey, J.L.&nbsp;Fernandez-Hernando, L.J.&nbsp;Jenner, G.A.&nbsp;Moortgat-Pick, S.&nbsp;Riemann, J.H.&nbsp;Rochford, A.&nbsp;Schälicke, A.&nbsp;Ushakov, L.&nbsp;Zang
+<br />
+<strong>Positron source target survivability studies</strong>
+<br />
+<em><a href="http://www.triumf.info/hosted/PAC09/">Particle Accelerator Conference (PAC09)</a></em>,
+Vancouver, Canada, 4-8 May 2009,
+<a href="https://accelconf.web.cern.ch/PAC2009/papers/mo6rfp061.pdf">MO6RFP061
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>	
+
+<div id="2009-ilc-lcws08">
+<ul><li>
+B.&nbsp;Aurand, I.&nbsp;Bailey, C.&nbsp;Bartels, A.&nbsp;Brachmann, J.&nbsp;Clarke, A.&nbsp;Hartin, J.&nbsp;Hauptman, C.&nbsp;Helebrant, S.&nbsp;Hesselbach, D.&nbsp;Kafer , J.&nbsp;List, W.&nbsp;Lorenzon, I.&nbsp;Marchesini, K.&nbsp;Mönig, K.C.&nbsp;Moffeit, G.&nbsp;Moortgat-Pick, S.&nbsp;Riemann, A.&nbsp;Schälicke, P.&nbsp;Schüler , P.&nbsp;Starovoitov, A.&nbsp;Ushakov, U.&nbsp;Velte, J.&nbsp;Wittschen, M.&nbsp;Woods
+<br />
+<strong>Beam polarization at the ILC: The physics impact and the accelerator solutions</strong>
+<br />
+<em>International Linear Collider Workshop (LCWS08 and ILC08)</em>,
+Chicago, Illinois, USA, 16-20 November 2008,
+<a href="https://arxiv.org/abs/0903.2959">arXiv:0903.2959</a>
+<a href="https://arxiv.org/pdf/0903.2959">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>	
+
+<div id="2009-ilc-lcws08-sabine">
+<ul><li>
+S. Riemann, A. Schälicke, A. Ushakov
+<br />
+<strong>Frequency of positron helicity reversal</strong>
+<br />
+<em>International Linear Collider Workshop (LCWS08 and ILC08)</em>,
+Chicago, Illinois, USA, 16-20 November 2008,
+<a href="https://arxiv.org/abs/0903.2366">arXiv:0903.2366</a>
+<a href="https://arxiv.org/pdf/0903.2366">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2008-source-talk-sourcemeeting-activation">
+<ul><li>
+S. Riemann, A. Schälicke, A. Ushakov, D.&nbsp;Andrienko
+<br />
+<strong>Activation and capture simulations</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/2999/">5<sup>th</sup> ILC Positron Source Collaboration Meeting</a></em>,
+29-31 October 2008, The Cockcroft Institute, Daresbury Laboratory, UK
+<a href="https://agenda.linearcollider.org/event/2999/contributions/10379/attachments/8202/13738/Ushakov-activation.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2008-source-talk-sourcemeeting-performance">
+<ul><li>
+S. Riemann, A. Schälicke, A. Ushakov<br />
+<strong>Positron source performance modelling</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/2679/">EUROTeV Scientific Workshop</a></em>,
+26-28 August 2008, Uppsala University, Sweden
+<a href="https://agenda.linearcollider.org/event/2679/contributions/8837/attachments/6788/11363/Ushakov-source.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2008-ilc-epac-jim">
+<ul><li>
+J. A. Clarke, I. R. Bailey, E. Baynham, V.&nbsp;Bharadwaj, T.&nbsp;W.&nbsp;Bradshaw, A.&nbsp;Brummitt, A. Bungau, F.&nbsp;S.&nbsp;Carr, N.&nbsp;A.&nbsp;Collomb, J.&nbsp;Dainton, R.&nbsp;Dollan, W.&nbsp;Gai, J.&nbsp;Gronberg, A.&nbsp;F.&nbsp;Hartin, S.&nbsp;Hesselbach, K.&nbsp;M.&nbsp;Hock, Y.&nbsp;Ivanyushenkov, L.&nbsp;J.&nbsp;Jenner, K.&nbsp;Laihem, A.&nbsp;Lintern, W.&nbsp;Liu, T. Lohse, O.&nbsp;B.&nbsp;Malyshev, L.&nbsp;I.&nbsp;Malysheva, A.&nbsp;A.&nbsp;Mikhailichenko, G.&nbsp;A.&nbsp;Moortgat-Pick, W. T. Piggott, S.&nbsp;Riemann, J.&nbsp;Rochford, N.&nbsp;C.&nbsp;Ryder, A.&nbsp;Schälicke, D.&nbsp;J.&nbsp;Scott, J. C. Sheppard, A.&nbsp;Ushakov, L.&nbsp;Zang
+<br />
+<strong>The design of the positron source for the International Linear Collider</strong>
+<br />
+<em><a href="http://www.epac08.org/">European Particle Accelerator Conference (EPAC'08)</a></em>,
+Genoa, Italy, 23-27 June 2008,
+<a href="http://accelconf.web.cern.ch/e08/papers/weobg03.pdf">1915
+ <img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2008-ilc-gudrid">
+<ul><li>
+G. Moortgat-Pick, I. R. Bailey, D.&nbsp;P.&nbsp;Barber, E.&nbsp;Baynham, A.&nbsp;Birch, T.&nbsp;Bradshaw, A.&nbsp;Brummitt, S.&nbsp;Carr, J.&nbsp;A.&nbsp;Clarke, P.&nbsp;Cooke, J.&nbsp;B.&nbsp;Dainton, T.&nbsp;Hartin, L.&nbsp;J.&nbsp;Jenner, A.&nbsp;Lintern, L. I. Malysheva, O.&nbsp;B.&nbsp;Malyshev, J.&nbsp;Rochford, S.&nbsp;Riemann, A.&nbsp;Schälicke, P.&nbsp;Schmid, D. J. Scott, A.&nbsp;Ushakov, Y.&nbsp;Ivanyushenkov
+<br />
+<strong>Challenge of polarized beams at future colliders</strong>
+<br />
+<em><a href="https://iopscience.iop.org/journal/1742-6596">Journal of Physics: Conference Series</a></em> 110 (2008)
+<a href="https://iopscience.iop.org/article/10.1088/1742-6596/110/11/112004">112004</a>
+</li></ul>
+</div>
+
+<div id="2008-ilc-exeSummary">
+<ul><li>
+B. Aurand, I. Bailey, C. Bartels, G.&nbsp;Blair, A.&nbsp;Brachmann, J.&nbsp;Clarke, L.&nbsp;Deacon, V.&nbsp;Duginov, A. Ghalumyan, A.&nbsp;Hartin, J.&nbsp;Hauptman, C.&nbsp;Helebrant, S.&nbsp;Hesselbach, D.&nbsp;Kafer, J.&nbsp;List, W. Lorenzon, A.&nbsp;Lyapin, I.&nbsp;Marchesini, R.&nbsp;Melikian, K.&nbsp;Mönig, K.C.&nbsp;Moffeit, G.&nbsp;Moortgat-Pick, N.&nbsp;Muchnoi, V.&nbsp;Nikoghosyan, S.&nbsp;Riemann, A.&nbsp;Sailer, A.&nbsp;Schälicke, H.J.&nbsp;Schreiber, P.&nbsp;Schüler, P.&nbsp;Starovoitov, E.&nbsp;Torrence, A.&nbsp;Ushakov, U.&nbsp;Velte , M.&nbsp;Viti, G.&nbsp;Weiglein, J.&nbsp;Wittschen, M. Woods
+<br />
+<strong>Executive summary of the workshop on polarisation and beam energy measurements at the ILC</strong>
+<br />
+<em><a href="https://indico.desy.de/indico/event/586/">Workshop on Polarization and Energy measurements at the ILC</a></em>,
+Zeuthen, Germany, 9‑11 April 2008,
+<a href="https://arxiv.org/abs/0808.1638">arXiv:0808.1638</a>
+</li></ul>
+</div>
+
+<div id="2008-source-talk-sourcemeetingZ">
+<ul><li>
+S. Riemann, A. Schälicke, A. Ushakov
+<br />
+<strong>Design simulations - Zeuthen</strong>
+<br />
+<em><a href="https://indico.desy.de/indico/event/586/">4<sup>th</sup> ILC Positron Source Collaboration Meeting</a></em>,
+7‑9 April 2008, Zeuthen, Germany 
+<a href="https://agenda.linearcollider.org/event/2639/contributions/8473/attachments/6449/10799/DesignSimulation-Zeuten.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2007-polarimetry-jop">
+<ul><li>
+A. Schälicke, G. Alexander, R. Dollan, K.&nbsp;Laihem, T.&nbsp;Lohse, S.&nbsp;Riemann, P.&nbsp;Starovoitov, A.&nbsp;Ushakov<br />
+<strong>Study on low-energy positron polarimetry</strong>
+<br />
+<em>Pramana - Journal of Physics</em> 69 (2007)
+<a href="https://doi.org/10.1007/s12043-007-0249-4">1171</a>
+</li></ul>
+</div>
+
+<div id="2007-source-talk-sourcemeeting-G4">
+<ul><li>
+H. Lyberis, S. Riemann, A. Schälicke, A.&nbsp;Ushakov
+<br />
+<strong>Geant4 simulations for ILC positron source</strong>
+<br />
+<em>3<sup>rd</sup> ILC Positron Source Collaboration Meeting</em>,
+17-19 September 2007, Argonne National Laboratory, Chicago, USA
+<a href="talks/Ushakov-PositronSourceMeeting07.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2007-source-pac">
+<ul><li>
+A. Ushakov, S. Riemann, A. Schälicke
+<br />
+<strong>Polarized positron production and tracking at the ILC positron source</strong>
+<br />
+<em><a href="https://accelconf.web.cern.ch/p07/">Particle Accelerator Conference (PAC'07)</a></em>,
+Albuquerque, New Mexico, USA, 25-29 June 2007,
+<a href="https://accelconf.web.cern.ch/p07/PAPERS/THPMN017.PDF">2742</a>,
+<a href="talks/PAC07.pdf">talk <img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2007-source-lcws">
+<ul><li>
+A. Ushakov, S. Riemann
+<br />
+<strong>Radiation damage of the ILC positron source target
+</strong>
+<br />
+<em><a href="http://lcws07.desy.de/">International Linear Collider Workshop (LCWS07 and ILC07)</a></em>,
+Hamburg, Germany, 30 May - 3 Jun 2007, 822,
+<a href="https://arxiv.org/abs/0712.2343">arXiv:0712.2343</a>
+<a href="https://arxiv.org/pdf/0712.2343">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+,
+<a href="https://agenda.linearcollider.org/event/1296/contributions/2288/attachments/1595/2635/TargetDamage-Ushakov.pdf">talk 
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2007-source-talk-sourcemeeting">
+<ul><li>
+A. Ushakov, S. Riemann
+<br />
+<strong>Heat deposition and activation of target and capture system</strong>
+<br />
+<em>2<sup>nd</sup> ILC Positron Source R&amp;D Meeting</em>,
+31 January - 2&nbsp;February 2007, IHEP, Beijing, China
+<a href="talks/Ushakov-Beijing07.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2007-source-talk-eulcw">
+<ul><li>
+A. Ushakov, S. Riemann
+<br />
+<strong>Target issues for different undulator parameters</strong>
+<br />
+<em><a href="https://agenda.linearcollider.org/event/1265/">European LC Workshop</a></em>,
+8-9 January 2007, Daresbury Laboratory, UK
+<a href="https://agenda.linearcollider.org/event/1265/contributions/1589/attachments/1036/1739/Ushakov-Daresbury07.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2006-source-talk-ilcw">
+<ul><li>
+A. Ushakov, S. Riemann
+<br />
+<strong>Radiation and target aspects</strong>
+<br />
+<em><a href="http://ific.uv.es/ilc/ECFA-GDE2006/">International Linear Collider Workshop</a></em>,
+6-10 November 2006, Valencia, Spain
+<a href="https://agenda.linearcollider.org/event/1049/contributions/331/attachments/75/128/target_ushakov.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2006-source-talk-sourcemeeting-damage">
+<ul><li>
+A. Ushakov, S. Riemann
+<br />
+<strong>Target damage simulation</strong>
+<br />
+<em>ILC Positron Source Group Meeting</em>,
+27-29 September 2006, Rutherford Appleton Laboratory, Oxford, UK
+<a href="https://bib-pubdb1.desy.de/record/80644/files/damage%5B1%5D.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2006-source-talk-sourcemeeting-activation">
+<ul><li>
+A. Ushakov, S. Riemann
+<br />
+<strong>Positron source activation</strong>
+<br />
+<em>ILC Positron Source Group Meeting</em>,
+27-29 September 2006, Rutherford Appleton Laboratory, Oxford, UK
+<a href="https://bib-pubdb1.desy.de/record/80696/files/activation2%5B1%5D.pdf">
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2006-source-epac">
+<ul><li>
+A. Ushakov, E. Elsen, K. Flöttmann, S.&nbsp;Riemann, K.&nbsp;Sanosyan<br />
+<strong>Radiation levels and activation at the ILC positron source</strong>
+<br />
+<em><a href="https://accelconf.web.cern.ch/e06/">European Particle Accelerator Conference (EPAC'06)</a></em>,
+Edinburgh, UK, 26‑30 June 2006,
+<a href="https://accelconf.web.cern.ch/e06/PAPERS/WEPLS046.PDF">2478</a>,
+<a href="talks/EPAC06.pdf"><img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2006-polarimetry-epac">
+<ul><li>
+K. Laihem, A. Schälicke, S. Riemann, A.&nbsp;Ushakov, R.&nbsp;Dollan, T.&nbsp;Lohse<br />
+<strong>Study on low-energy positron polarimetry</strong>
+<br />
+<em><a href="https://accelconf.web.cern.ch/e06/">European Particle Accelerator Conference (EPAC'06)</a></em>,
+Edinburgh, UK, 26‑30 June 2006,
+<a href="https://accelconf.web.cern.ch/e06/PAPERS/WEPLS045.PDF">2475
+<img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+</div>
+
+<div id="2005-iongun-nima">
+<ul><li>
+A. Jakob, H. Klein, U. Ratzinger, A.&nbsp;Ushakov, K.&nbsp;Volk
+<br />
+<strong>First optical beam profile measurements on an H<sup>&minus;</sup>-source in Frankfurt</strong>
+<br />
+<em><a href="https://www.sciencedirect.com/journal/nuclear-instruments-and-methods-in-physics-research-section-a-accelerators-spectrometers-detectors-and-associated-equipment">Nuclear Instruments and Methods in Physics Research Section A</a></em> 536 (2005)
+<a href="https://doi.org/10.1016/j.nima.2004.07.195">1</a>
+</li></ul>
+</div>
+
+<div id="2004-iongun-gsi">
+<ul><li>
+A. Ushakov, M. Droba, N. Joshi, U.&nbsp;Ratzinger
+<br />
+<strong>High current beams up to 150 keV at Frankfurt</strong>
+<br />
+<em><a href="http://repository.gsi.de/record/53527">GSI Scientific Report 2004</a></em> 320
+</li></ul>
+</div>
+
+<div id="2004-iongun-rsi">
+<ul><li>
+A. Ushakov, K. Volk, H. Klein, U.&nbsp;Ratzinger
+<br />
+<strong>Design studies for a H<sup>&minus;</sup> ion extraction system</strong>
+<br />
+<em><a href="https://aip.scitation.org/journal/rsi">Review of Scientific Instruments</a></em> 75 (2004)
+<a href="https://doi.org/10.1063/1.1695603">1783</a>
+</li></ul>
+</div>
+
+<div id="2003-channeling-pra">
+<ul><li>
+R. A. Carrigan, J. Freudenberger, S. Fritzler, H.&nbsp;Genz, A.&nbsp;Richter, A.&nbsp;Ushakov, A.&nbsp;Zilges, J. P. F.&nbsp;Sellschop<br />
+<strong>Electron channeling radiation experiments at very high electron bunch charges</strong>
+<br />
+<em><a href="https://journals.aps.org/pra/">Physical Review A</a></em> 68 (2003)
+<a href="https://doi.org/10.1103/PhysRevA.68.062901">062901</a>
+</li></ul>
+</div>
+
+<div id="2003-radiation-nimb">
+<ul><li>
+D. Pugachov, J. They, G. Buschhorn, R.&nbsp;Kotthaus, V.&nbsp;L.&nbsp;Morokhovskii, H.&nbsp;Genz, A.&nbsp;Richter, A. Ushakov
+<br />
+<strong>Polarimetry of coherent polarization radiation</strong>
+<br />
+<em><a href="https://www.journals.elsevier.com/nuclear-instruments-and-methods-in-physics-research-section-b-beam-interactions-with-materials-and-atoms">Nuclear Instruments and Methods in Physics Research Section B</a></em> 201 (2003)
+<a href="https://doi.org/10.1016/S0168-583X(02)00950-3">55</a>
+</li></ul>
+</div>
+
+<div id="2003-lebt-gsi">
+<ul><li>
+O. Meusel, A. Jakob, J. Pozimski, U.&nbsp;Ratzinger, A.&nbsp;Ushakov<br />
+<strong>Low energy beam transport development at IAP</strong>
+<br />
+<em><a href="http://repository.gsi.de/record/53528">GSI Scientific Report 2003</a></em> 261
+</li></ul>
+</div>
+
+<div id="2002-lebt-gsi">
+<ul><li>
+O. Meusel, J. Pozimski, U. Ratzinger, A.&nbsp;Ushakov
+<br />
+<strong>Low energy beam transport using Gabor lenses</strong>
+<br />
+<em><a href="http://repository.gsi.de/record/53529">GSI Scientific Report 2002</a></em> 197
+http://repository.gsi.de/record/53529/files/GSI-Report-2003-1.pdf
+</li></ul>
+</div>
+
+<div id="2001-radiatiion-pla">
+<ul><li>
+D. Pugachov, G. Buschhorn, R. Kotthaus, V.&nbsp;L.&nbsp;Morokhovskii, J.&nbsp;They, H.&nbsp;Genz, A.&nbsp;Richter, A.&nbsp;Ushakov
+<br />
+<strong>Polarization properties of coherent polarization radiation of relativistic electrons in a crystal</strong>
+<br />
+<em><a href="https://www.journals.elsevier.com/physics-letters-a">Physics Letters A</a></em> 286 (2001)
+<a href="https://doi.org/10.1016/S0375-9601(01)00337-1">70</a>
+</li></ul>
+</div>
+
+<div id="2000-channeling-inbook">
+<ul><li>
+Richard A. Carrigan, J. Freudenberger, S.&nbsp;Fritzler, H.&nbsp;Genz, A.&nbsp;Richter, A.&nbsp;Ushakov, A.&nbsp;Zilges, J.&nbsp;P.&nbsp;F.&nbsp;Sellschop
+<br />
+<strong>Probing toward the solid state plasma accelerator frontier using channeling radiation measurements at the Fermilab A0 photoinjector</strong>
+<br />
+<em>18<sup>th</sup> Advanced ICFA Beam Dynamics Workshop on Quantum Aspects of Beam Physics, Capri, Italy, 15–20 October 2000</em>, ed. Pisin Chen, World Scientific, May 2002, pp. <a href="https://doi.org/10.1142/9789812777447_0033">424-432</a>.
+<a href="http://lss.fnal.gov/archive/2001/conf/Conf-01-029-E.pdf">FERMILAB-Conf-01/029-E March 2001 <img src="img/pdf.png" width="16" height="16" alt="[pdf]"/></a>
+</li></ul>
+
+</div>
+
+<div id="1998-plasma-tpl">
+<ul><li>
+S. V. Dudin, A. V. Zykov, A. V. Ushakov, V.&nbsp;I.&nbsp;Farenik
+<br />
+<strong>Equilibrium states of an ion-beam plasma with magnetized electrons at low pressures</strong>
+<br />
+<em><a href="https://www.springer.com/journal/11455">Technical Physics Letters</a></em> 24 (1998)
+<a href="https://doi.org/10.1134/1.1262044">180</a>
+</li></ul>
+</div>
+
+<div id="1996-plasma-icops">
+<ul><li>
+S. V. Dudin, A. V. Ushakov, V. I. Farenik
+<br />
+<strong>Features of application of electric probes in crossed non-uniform E and H fields</strong>
+<br />
+<em>Proceedings of the IEEE International Conference on Plasma Science</em> (ICOPS'96), Boston, Massachusetts, USA (1996)
+<a href="https://doi.org/10.1109/PLASMA.1996.550260">117</a>
+</li></ul>
+</div>
+
+<div id="1996-plasma-tpl">
+<ul><li>
+S. V. Dudin, A. V. Zykov, A. V. Ushakov, V.&nbsp;I.&nbsp;Farenik
+<br />
+<strong>Electron distribution function of an ion-beam plasma in nonuniform EH fields</strong>
+<br />
+<em>Technical Physics Letters</em> 22 (1996) 969
+</li></ul>
+</div>
+
+<div id="1995-plasma-icops-probe">
+<ul><li>
+A. V. Ushakov, V. I. Farenik
+<br />
+<strong>Probe measurements of the parameters of the electron component in the accelerators with closed drift of electrons</strong>
+<br />
+<em>Proceedings of the IEEE International Conference on Plasma Science</em> (ICOPS'95), Madison, Wisconsin, USA (1995)
+<a href="https://doi.org/10.1109/PLASMA.1995.532808">225</a>
+</li></ul>
+</div>
+
+<div id="1995-plasma-icops-discharge">
+<ul><li>
+S. V. Dudin, A. V. Zykov, A. V. Ushakov, V.&nbsp;I.&nbsp;Farenik
+<br />
+<strong>About the two regimes of the discharge in crossed EH fields at low pressure</strong>
+<br />
+<em>Proceedings of the IEEE International Conference on Plasma Science</em> (ICOPS'95), Madison, Wisconsin, USA (1995)
+<a href="https://doi.org/10.1109/PLASMA.1995.531588">147</a>
+</li></ul>
+</div>
+
+<div id="1995-plasma-tpl">
+<ul><li>
+S. V. Dudin, A. V. Zykov, A. V. Ushakov
+<br />
+<strong>Electron dynamics in an axially nonuniform EH anode sheath of a low-pressure discharge</strong>
+<br />
+<em>Technical Physics Letters</em> 21 (1995) 54
+</li></ul>
+</div>
+
+<div id="1994-plasma-icops">
+<ul><li>
+S. V. Dudin, A. V. Zykov, A. V. Ushakov
+<br />
+<strong>Dynamics of electrons in anode layer of Hall-type ion source</strong>
+<br />
+<em>Proceedings of the IEEE International Conference on Plasma Science</em> (ICOPS'94), Santa Fe, USA (1994)
+<a href="https://doi.org/10.1109/PLASMA.1994.589011">175</a>
+</li></ul>
+</div>
+
+</div>
+</div>
+
+<div id="footer">
+<hr />
+Last Modified: 1 August 2022
+</div>
+</body>
+</html>

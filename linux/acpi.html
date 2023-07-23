@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>acpi</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">ACPI</span>
+</div>
+
+<h1>ACPI</h1>
+
+<h2 id="brightness">Brightness</h2>
+
+<p><code>$ echo 90 | sudo tee /sys/class/backlight/intel_backlight/brightness</code><br /></p>
+
+<p>The maximal brightness can be found in <code>/sys/class/backlight/intel_backlight/max_brightness</code></p>
+
+<p>Alternatively</p>
+
+<p><code>$ xbacklight -set 2</code></p>
+
+
+<h2>Bluetooth (thinkpad-acpi)</h2>
+
+<p><code># cat /proc/acpi/ibm/bluetooth</code><br />
+<code>status:         enabled</code><br />
+<code>commands:       enable, disable</code></p>
+
+<p><code># echo "disable" &gt; /proc/acpi/ibm/bluetooth</code></p>
+
+<p>Add to <code>/etc/rc.d/rc.local</code>:<br />
+<code>echo 0 &gt; /sys/devices/platform/thinkpad_acpi/bluetooth_enable</code></p>
+
+<p><a href="http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth">How to setup Bluetooth</a></p>
+
+<div id="footer">
+<hr />
+Last Modified: 04 February 2021
+</div>
+
+</body>
+</html>

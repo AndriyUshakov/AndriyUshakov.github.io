@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Find Files and Text</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="How to find files and text in files">
+	<meta name="keywords" content="Linux, shell, find, grep, zgrep">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">Find</span>
+</div>
+
+
+<h1>Find Files and Text</h1>
+
+
+<h2 id="file_files">Find Files</h2>
+
+<p>Find png files recursively (current directory and sub-directories) and sort by path:</p>
+
+<p><code>$ find . -name "*.png" | sort</code></p>
+
+<p>Filter files having "deb" in file name ignoring text case and within current directory:</p>
+
+<p><code>$ find . -maxdepth 1 -type f -iname "*deb*"</code></p>
+
+<p>Count files with "AA" in name:</p>
+
+<p><code>$ find . -maxdepth 1 -type f -name "*AA*" | wc -l</code></p>
+
+
+<p><a href="https://www.binarytides.com/linux-find-command-examples/">25 simple examples of Linux find command - BinaryTides</a></p>
+
+
+<h2 id="find_text">Find Text</h2>
+
+<p>Find "update" in all files recursively and show line number:</p>
+
+<p><code>$ grep -r --color -n "update" *</code></p>
+
+<p>Find "Debian" in txt-files only:</p>
+
+<p><code>$ grep -r --color -n --include="*.txt" "Debian" *</code></p>
+
+<p><code>zgrep</code> can search in <code>gz</code>-files:</p>
+
+<p><code># zgrep -n "firefox" /var/log/apt/history.log*</code></p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 02 March 2021
+</div>
+</body>
+</html>

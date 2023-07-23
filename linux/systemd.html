@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>systemd</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0"><code>systemd</code></span>
+</div>
+
+<h1>systemd</h1>
+
+<p><code>systemd</code> is a system and service manager. <code>systemctl</code> is a main command of <code>systemd</code></p>
+
+<h2>Basics</h2>
+
+<p><code>$ journalctl</code><br />
+list all running services, sockets, etc. (units).</p>
+
+<textarea readonly rows="1" cols="60">
+# systemctl <start|stop|status|enable|disable|...> <unit></textarea>
+
+<h2>Change Runlevel, Shutdown</h2>
+
+<p>
+<code># systemctl isolate graphical.target</code> &nbsp; analog to runlevel5 of SysV<br />
+<code># systemctl isolate multi-user.target</code> &nbsp; ... level3<br />
+<code># systemctl isolate rescue.target</code> &nbsp; ... level1
+</p>
+
+<p>
+<code>$ systemctl poweroff</code><br />
+<code>$ systemctl reboot</code>
+</p>
+
+<h2>Change Display Manager</h2>
+
+<p>
+<code># systemctl disable gdm</code><br />
+<code># systemctl enable xdm</code>
+</p>
+
+<h2>List of Processes</h2>
+
+<p>
+<code>$ systemd-cgls</code><br />
+<code>$ ps xawf -eo pid,user,cgroup,args</code><br />
+tree view of processes belonging to services and logged-in user.
+</p>
+
+<h2>List of Units</h2>
+
+<p>
+<code>$ tree /etc/systemd/</code> &nbsp; currently used units<br />
+<code>$ tree /lib/systemd/</code> &nbsp; all available units
+</p>
+
+<h2>3 Levels of OFF</h2>
+
+<p><code># systemctl <strong>stop</strong></code> <br />
+terminates the running unit.</p>
+
+<p><code># systemctl <strong>disable</strong></code> <br />
+prevents activation of unit on boot, by socket or bus (or by other triggers) activation. Howerver, the unit can be started manually.</p>
+
+<p><code># systemct	<strong>mask</strong></code> <br />
+or<br />
+<code># ln -s /dev/null /etc/systemd/system/example.service</code><br />
+<code># systemctl daemon-reload</code><br />
+disable unit completely (can not be started anymore).</p>
+
+<h2>Analyze Boot-Up Performance</h2>
+
+<p>
+<code>systemd-analyze</code><br />
+or<br />
+<code>journalctl --since=today | grep userspace</code><br />
+show the boot-up time (the time spent in the kernel before userspace has been reached).
+</p>
+
+<p>
+<code>systemd-analyze blame</code><br />
+print a list of all running units, ordered by the time they took to initialize.
+</p>
+
+<h2>References</h2>
+<p>
+&bull; &nbsp; <a href="https://freedesktop.org/wiki/Software/systemd/">freedesktop.org Wiki</a><br />
+&bull; &nbsp; <a href="https://docs.fedoraproject.org/en-US/quick-docs/understanding-and-administering-systemd/index.html">Fedora Docs</a><br />
+&bull; &nbsp; <a href="https://wiki.archlinux.org/index.php/Systemd">Arch Wiki</a><br />
+</p>
+
+<div id="footer">
+<hr />
+Last Modified: 23 January 2021
+</div>
+</body>
+</html>
