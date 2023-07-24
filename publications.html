@@ -30,6 +30,13 @@
 			$("#list").children().show();
 		}
 
+		function divShow23(){
+			$("#list").children().hide();
+			$("div:regex(id,2021)").show();
+			$("div:regex(id,2022)").show();
+			$("div:regex(id,2023)").show();
+		}
+
 		function divShow18(){
 			$("#list").children().hide();
 			$("div:regex(id,2018)").show();
@@ -95,6 +102,7 @@
 <div id="filters" style="line-height: 1.3em;">
 	<p>Apply filter:<br />
 	<span class="tbrounded"><a href="#" onclick="divShowAll()">&nbsp;Show All&nbsp;</a></span>
+	<span class="tbrounded"><a href="#" onclick="divShow23()">&nbsp;2023-2021&nbsp;</a></span>
 	<span class="tbrounded"><a href="#" onclick="divShow18()">&nbsp;2020-2018&nbsp;</a></span>
 	<span class="tbrounded"><a href="#" onclick="divShow17()">&nbsp;2017&nbsp;</a></span>
 	<span class="tbrounded"><a href="#" onclick="divShow16()">&nbsp;2016&nbsp;</a></span>
@@ -111,6 +119,45 @@
 
 
 <div id="list">
+
+<div id="2023-source-talk-lcws23">
+<ul><li>
+A. Ushakov, S. Covrig, J. Grames, S.&nbsp;Habet, C.&nbsp;Le&nbsp;Galliard, E.&nbsp;Voutier
+<br />
+<strong>High power solid target for positron source at CEBAF</strong>
+<br />
+<em>Talk presented at <a href="http://epx.phys.tohoku.ac.jp/LCWS2019/">the International Workshop on Future Linear Colliders (LCWS2023)</a></em>,
+SLAC National Accelerator Laboratory, May 15-19, 2023
+<a href="https://indico.slac.stanford.edu/event/7467/contributions/5582/attachments/2801/7880/Ushakov-LCWS-2023.pptx">
+<img src="img/ppt.png" width="16" height="16" alt="[pptx]"/></a>
+</li></ul>
+</div>
+
+<div id="2023-source-ipac-mopotk012">
+<ul><li>
+A. Ushakov, S. Covrig, J. Grames, S.&nbsp;Habet, C.&nbsp;Le&nbsp;Galliard, E.&nbsp;Voutier
+<br />
+<strong>Evaluation of a high-power target design for positron production at CEBAF</strong>
+<br />
+<em><a href="https://www.ipac22.org/">14<sup>th</sup> International Particle Accelerator Conference (IPAC'23)</a></em>,
+7-12 May 2023, Venice Italy,
+WEPM120,
+<a href="talks/Ushakov-IPAC23">poster <img src="img/ppt.png" width="16" height="16" alt="[pptx]"/></a>
+</li></ul>
+</div>
+
+<div id="2023-source-talk-positronwg">
+<ul><li>
+A. Ushakov (Ce<sup>+</sup>BAF WG)
+<br />
+<strong>Positron target design and fatigue studies</strong>
+<br />
+<em><a href="https://indico.jlab.org/event/680/">Jefferson Lab Positron Working Group Workshop</a></em>,
+University of Virginia, Charlottesville, VA, USA, March 7-8, 2023
+<a href="https://indico.jlab.org/event/680/contributions/12101/attachments/8941/12923/Ushakov-UVA-2023.pptx">
+<img src="img/ppt.png" width="16" height="16" alt="[pptx]"/></a>
+</li></ul>
+</div>
 
 <div id="2022-source-ipac-mopotk012">
 <ul><li>
@@ -1766,7 +1813,7 @@ S. V. Dudin, A. V. Zykov, A. V. Ushakov
 
 <div id="footer">
 <hr />
-Last Modified: 1 August 2022
+Last Modified: 2023-07-23
 </div>
 </body>
 </html>
