@@ -14,53 +14,85 @@
     <span class="tb1"><a href="software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
     <span class="tb0"><img src="../img/taskwarrior.ico" width="16" height="16" alt="Firefox"/> Taskwarrior</span>
 </div>
-    
+
 <h1><a href="https://taskwarrior.org/">Taskwarrior</a></h1>
 
-<p>
-Undo a done task (change status of completed task to pending): <br>
-<code>$ task completed</code> <br>
-Find UUID of the task you want to bring back and <br>
-<code>$ task &lt;UUID&gt; modify status:pending</code><br>
-[<a href="https://tomordonez.com/taskwarrior-task-management/">Tom Ordonez</a>]
-</p>
+<ul class="bull">
+    <li><a href="#howto">HOWTOs</a></li>
+    <ul class="bull">
+        <li><a href="#show-deleted-completed">Show all deleted and completed tasks</a></li>
+        <li><a href="#undo-done">Undo a done task</a></li>
+        <li><a href="#purge-completed">Purge completed/deleted tasks</a></li>
+        <li><a href="#update-overdue-tasks">Update overdue tasks</a></li>
+        <li><a href="#filter-based-on-tags">Filter based on tags</a></li>
+        <li><a href="#recently-added">Recently added</a></li>
+        <li><a href="#check-colors">Check colors</a></li>
+        <li><a href="#list-all-tags">List all tags</a></li>
+    </ul>
+</ul>
 
-<p>
-Update many overdue tasks: <br>
-<code>$ task +OVERDUE mod due:today</code><br>
-[<a href="https://tomordonez.com/taskwarrior-task-management/">Tom Ordonez</a>]    
-</p>
+<h2 id="howtos">HOWTOs</h2>
 
-<p>
-List tasks tagged as work or home: <br>
-<code>$ task tag~work or tag~home list</code>
-</p>
+<h3 id="show-deleted-completed">Show all deleted and completed tasks</h3>
 
-<p>
-Show tasks I added in the last 3 days: <br>
-<code>$ task entry.after:today-3days list</code>
-</p>
+<p>List deleted and completed tasks:</p>
 
-<p>
-List deleted and completed tasks: <br>
-<code>task status:deleted or completed all</code>
-</p>
+<p><code>task status:deleted or status:completed all</code></p>
 
-<p>
-Check colors: <br>
-<code>$ task color legend</code>
-</p>
-    
-<p>
-List all <code>tags</code>: <br>
-<code>$ task _tags</code>
-</p>
+
+<h3 id="undo-done">Undo a done task</h3>
+
+<p>To change the status of completed task to pending [<a href="https://tomordonez.com/taskwarrior-task-management/">Tom Ordonez</a>]:</p>
+
+<p>1. Find UUID of the task you want to bring back</p>
+
+<p><code>task completed</code> </p>
+
+<p>2. Modify status:</p>
+
+<p><code>task &lt;UUID&gt; modify status:pending</code></p>
+
+
+<h3 id="purge-completed">Purge completed/deleted tasks</h3>
+
+<p><a href="https://github.com/isaacs4m/taskwarrior-purge">Script to purge all completed and deleted tasks</a></p>
+
+
+<h3 id="update-overdue-tasks">Update overdue tasks</h3>
+
+<p>Update all overdue tasks [<a href="https://tomordonez.com/taskwarrior-task-management/">Tom Ordonez</a>]:</p>
+
+<p><code>task +OVERDUE mod due:today</code></p>
+
+
+<h3 id="filter-based-on-tags">Filter based on tags</h3>
+
+<p>List tasks tagged as work or home: </p>
+
+<p><code>task tag~work or tag~home list</code></p>
+
+<h3 id="recently-added">Recently added</h3>
+
+<p>Show tasks added in last 3 days: </p>
+
+<p><code>task entry.after:today-3days list</code></p>
+
+
+<h3 id="check-colors">Check colors</h3>
+
+<p><code>task color legend</code></p>
+
+
+<h3 id="list-all-tags">List all tags</h3>
+
+<p><code>task _tags</code></p>
 
 <p>The virtual tags are all upper case. Customs tags can be anything that doesn't intersect with virtual tags, so it's a good idea to keep them lower case, but not required.</p>
 
+
 <div id="footer">
 <hr />
-Last modified: 2023-08-05
+Last modified: 2023-08-06
 </div>
 
 </body>
