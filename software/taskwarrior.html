@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskwarrior</title>
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+<body>
+
+<div id="menutop">
+    <span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+    <span class="tb1"><a href="software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+    <span class="tb0"><img src="../img/taskwarrior.ico" width="16" height="16" alt="Firefox"/> Taskwarrior</span>
+</div>
+    
+<h1><a href="https://taskwarrior.org/">Taskwarrior</a></h1>
+
+<p>
+Undo a done task (change status of completed task to pending): <br>
+<code>$ task completed</code> <br>
+Find UUID of the task you want to bring back and <br>
+<code>$ task &lt;UUID&gt; modify status:pending</code><br>
+[<a href="https://tomordonez.com/taskwarrior-task-management/">Tom Ordonez</a>]
+</p>
+
+<p>
+Update many overdue tasks: <br>
+<code>$ task +OVERDUE mod due:today</code><br>
+[<a href="https://tomordonez.com/taskwarrior-task-management/">Tom Ordonez</a>]    
+</p>
+
+<p>
+List tasks tagged as work or home: <br>
+<code>$ task tag~work or tag~home list</code>
+</p>
+
+<p>
+Show tasks I added in the last 3 days: <br>
+<code>$ task entry.after:today-3days list</code>
+</p>
+
+<p>
+List deleted and completed tasks: <br>
+<code>task status:deleted or completed all</code>
+</p>
+
+<p>
+Check colors: <br>
+<code>$ task color legend</code>
+</p>
+    
+<p>
+List all <code>tags</code>: <br>
+<code>$ task _tags</code>
+</p>
+
+<p>The virtual tags are all upper case. Customs tags can be anything that doesn't intersect with virtual tags, so it's a good idea to keep them lower case, but not required.</p>
+
+<div id="footer">
+<hr />
+Last modified: 2023-08-05
+</div>
+
+</body>
+</html>
