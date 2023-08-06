@@ -84,6 +84,7 @@ textarea {
 	border: none;
 	overflow: auto;
 	margin-bottom: 0px;
+	white-space: pre;
 }
 
 .single {
@@ -113,9 +114,10 @@ p.refN{
 	font-size: 0.95em;
 }
 
+/*
 #main {
-	/*margin-left:150px*/;
 }
+*/
 
 #menu {
 	float:right;
@@ -263,10 +265,6 @@ ul.bull li {
 #container div {
 	float: left;
 	padding-right: 35px;
-}
-
-#container div#bcgrey {
-	/*background-color: #F2F2F2;*/
 }
 
 sub, sup {
