@@ -19,6 +19,17 @@
 
 <h1>Android Debug Bridge (adb)</h1>
 
+<h2>Uninstall App</h2>
+
+<p>1. Find/check the package name:</p>
+
+<p><code>$ adb shell pm list packages | grep &lt;package&gt;</code></p>
+
+<p>2. Uninstall app keeping the data and cache directories after package removal:</p>
+
+<p><code>$ adb shell pm uninstall -k --user 0 &lt;package&gt;</code></p>
+
+
 <h2>Connect to a Device over Wi-Fi</h2>
 
 <p>Start a terminal emulator app on the device.</p>
@@ -76,7 +87,7 @@ emulator-5555 device</span>
 <p><code>$ adb -s emulator-5555 shell</code> </p>
 
 
-<h2>Configure VitualBox for Listening ADB Connections</h2>
+<h2>Configure VirtualBox for Listening ADB Connections</h2>
 
 <p><code>Settings</code> &gt; <code>Network</code> &gt; <code>Advanced</code> &gt; <code>Port Forwarding</code>:</p>
 
@@ -98,7 +109,7 @@ Guest Port: 5555</p>
 
 <div id="footer">
 <hr />
-Last modified: 28 December 2020
+Last modified: 2023-08-06
 </div>
 </body>
 
