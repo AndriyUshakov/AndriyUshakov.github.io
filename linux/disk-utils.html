@@ -24,9 +24,7 @@
 
 <ul class="bull">
 	<li><a href="#information-on-hard-drive">Information on Hard Drive</a></li>
-	<li><a href="#spindown-mechanical-hard-drive">Spindown Mechanical Hard Drive</a></li>
-	<li><a href="#power-management">Power Management</a></li>
-	<li><a href="#acoustic-management">Acoustic Management</a></li>
+	<li><a href="#spindown-hdd">Spindown HDD</a></li>
 	<li><a href="#display_a_progress_bar_during_file_system_check">Display a Progress Bar during File System Check</a></li>
 	<li><a href="#check-filesystem-on-next-reboot">Check Filesystem on Next Reboot</a></li>
 	<li><a href="#temperature-of-hard-drive">Temperature of Hard Drive</a></li>
@@ -39,28 +37,20 @@
 
 <p><code># hdparm -I /dev/sda</code></p>
 
+<p><code># udisksctl info -b /dev/sdb</code></p>
+
 <p><code># fdisk -l</code></p>
 
 <p><code># parted -l</code></p>
 
 
-<h2 id="spindown-mechanical-hard-drive">Spindown Mechanical Hard Drive</h2>
+<h2 id="spindown-hdd">Spindown HDD</h2>
 
-<p>If <code>Eject</code> USB hard drive does not spin HDD down, <code>hdparm</code> or <code>sdparm</code> can help to put drive in standby mode:</p>
+<p>Put drive in standby mode:</p>
 
 <p><code># hdparm -y /dev/sdb</code><br /></p>
 
-<p>Note: to find id of the disk</p>
-
-<p><code># udisksctl info -b /dev/sdb</code></p>
-
-<p>To shut drive down completely (sleep mode):</p>
-
-<p><code># hdparm -Y /dev/sdb</code></p>
-
-<p>Note: after entering the sleep mode, a hard or soft reset is required before the drive can be accessed again.</p>
-
-<p>To wake the drive up, create bash script <code>wakeup-drive</code></p>
+<p>Any read wakes the drive up. To wake the drive up by bash script "<code>wakeup-drive</code>"</p>
 
 <p><code>#!/bin/bash</code><br />
 <code>sudo dd if=/dev/$1 bs=1k count=1 of=/dev/null</code></p>
@@ -69,33 +59,17 @@
 
 <p><code>$ wakeup-drive sdb</code></p>
 
-Any read wakes the drive up.
+<p>To shut drive down completely (sleep mode):</p>
+
+<p><code># hdparm -Y /dev/sdb</code></p>
+
+<p>Note: after entering the sleep mode, a hard or soft reset is required before the drive can be accessed again.</p>
 
 <p><a href="https://lists.debian.org/debian-user/2015/08/msg00125.html">Controlling power settings for external USB disk drives using sdparm - Debian User Mailing List</a></p>
 
 <p>To power off the drive:</p>
 
 <p><code># udisksctl power-off -b /dev/sdb</code></p>
-
-
-
-
-<h2 id="power-management">Power Management</h2>
-
-<p><code># hdparm -B 254 /dev/sda</code><br />
-
-set to the lowest APM mode. "<code>-B 255</code>" set the APM mode
-off. For some drives, even the lowest APM mode unloads the heads
-very aggressively, causing the clicking sounds. Another problem is
-that the drive is rated only for 600,000 unload/load cycles, which
-means that the drive will break in at most a couple of years.</p>
-
-
-<h2 id="acoustic-management">Acoustic Management</h2>
-
-<p><code># hdparm -M 254 /dev/sda</code><br />
-set to the lowest degree of power management.</p>
-
 
 <h2 id="display_a_progress_bar_during_file_system_check">Display a Progress Bar during File System Check</h2>
 
@@ -112,12 +86,14 @@ create a file called "forcefsck" and reboot system.</p>
 
 <h2 id="temperature-of-hard-drive">Temperature of Hard Drive</h2>
 
-<p><code>psensor</code> is a GTK+ application for monitoring hardware sensors (including temperatures of hard drives) and fan speeds.</p>
+<p><code>psensor</code> is a GTK+ application for monitoring hardware sensors (including temperatures of hard drives) and fan speeds. Or</p>
+
+<p><code># smartctl -a /dev/sdb | grep Temp</code></p>
 
 
 <div id="footer">
 <hr />
-Last Modified: 2023-06-25
+Last Modified: 2023-08-11
 </div>
 
 </body>
