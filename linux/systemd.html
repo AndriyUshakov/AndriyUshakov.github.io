@@ -30,7 +30,8 @@ list all running services, sockets, etc. (units).</p>
 <textarea readonly rows="1" cols="60">
 # systemctl <start|stop|status|enable|disable|...> <unit></textarea>
 
-<h2>Change Runlevel, Shutdown</h2>
+
+<h2>Change Runlevel</h2>
 
 <p>
 <code># systemctl isolate graphical.target</code> &nbsp; analog to runlevel5 of SysV<br />
@@ -38,10 +39,21 @@ list all running services, sockets, etc. (units).</p>
 <code># systemctl isolate rescue.target</code> &nbsp; ... level1
 </p>
 
+<h2>Reboot and Power Off</h2>
+
+<p><code># systemctl soft-reboot</code> </p>
+
 <p>
-<code>$ systemctl poweroff</code><br />
-<code>$ systemctl reboot</code>
+	<code>soft-reboot</code> restarts user space components without touching the Linux kernel. The acceleration of the reboot is achieved by excluding relatively long stages such as hardware initialization, bootloader operation, kernel startup, driver initialization, firmware loading, and initrd processing
+	[<a href="https://techplanet.today/post/lennart-poettering-proposed-adding-a-soft-reboot-mode-to-systemd">techplanet</a>].
 </p>
+
+<p><a href="https://www.freedesktop.org/software/systemd/man/systemd-soft-reboot.service.html">systemd-soft-reboot.service - freedesktop.org</a></p>
+
+<p><code>$ systemctl reboot</code></p>
+
+<p><code>$ systemctl poweroff</code></p>
+
 
 <h2>Change Display Manager</h2>
 
@@ -97,12 +109,13 @@ print a list of all running units, ordered by the time they took to initialize.
 <p>
 &bull; &nbsp; <a href="https://freedesktop.org/wiki/Software/systemd/">freedesktop.org Wiki</a><br />
 &bull; &nbsp; <a href="https://docs.fedoraproject.org/en-US/quick-docs/understanding-and-administering-systemd/index.html">Fedora Docs</a><br />
-&bull; &nbsp; <a href="https://wiki.archlinux.org/index.php/Systemd">Arch Wiki</a><br />
+&bull; &nbsp; <a href="https://wiki.archlinux.org/title/Systemd">Arch Wiki</a><br />
 </p>
 
 <div id="footer">
-<hr />
-Last Modified: 23 January 2021
+	<hr />
+	Last Modified: 2023-08-14
 </div>
+
 </body>
 </html>
