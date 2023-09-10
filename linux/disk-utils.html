@@ -24,10 +24,13 @@
 
 <ul class="bull">
 	<li><a href="#information-on-hard-drive">Information on Hard Drive</a></li>
+	<ul class="bull">
+		<li><a href="#temperature">Temperature</a></li>
+		<li><a href="#bytes-written">Terabytes Written</a></li>
+	</ul>
 	<li><a href="#spindown-hdd">Spindown HDD</a></li>
 	<li><a href="#display_a_progress_bar_during_file_system_check">Display a Progress Bar during File System Check</a></li>
 	<li><a href="#check-filesystem-on-next-reboot">Check Filesystem on Next Reboot</a></li>
-	<li><a href="#temperature-of-hard-drive">Temperature of Hard Drive</a></li>
 </ul>
 
 
@@ -43,6 +46,19 @@
 
 <p><code># parted -l</code></p>
 
+
+<h3 id="temperature">Temperature</h3>
+
+<p><code>psensor</code> is a GTK+ application for monitoring hardware sensors (including temperatures of hard drives) and fan speeds. Or</p>
+
+<p><code># smartctl -a /dev/sda | grep Temp</code></p>
+
+
+<h3 id="bytes-written">Terabytes Written</h3>
+
+<p><code># smartctl -A /dev/sda | awk '$0~/LBAs/{ printf "Total Bytes Written: %.1f TB\n", $10 * 512 / 1024^4 }'</code></p>
+
+<p><a href="https://askubuntu.com/questions/865792/how-can-i-monitor-the-tbw-on-my-samsung-ssd">How can I monitor the TBW on my Samsung SSD? - Ask Ubuntu</a></p>
 
 <h2 id="spindown-hdd">Spindown HDD</h2>
 
@@ -82,13 +98,6 @@
 
 <p><code># touch /forcefsck</code><br />
 create a file called "forcefsck" and reboot system.</p>
-
-
-<h2 id="temperature-of-hard-drive">Temperature of Hard Drive</h2>
-
-<p><code>psensor</code> is a GTK+ application for monitoring hardware sensors (including temperatures of hard drives) and fan speeds. Or</p>
-
-<p><code># smartctl -a /dev/sdb | grep Temp</code></p>
 
 
 <div id="footer">
