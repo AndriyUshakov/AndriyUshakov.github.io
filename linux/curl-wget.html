@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>curl/wget</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="../favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="../main.css" type="text/css">
+</head>
+
+<body>
+
+<div id="menutop">
+	<span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+	<span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+	<span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+	<span class="tb0">curl/wget</span>
+</div>
+
+<h1>Command Line Tools for Transferring Data</h1>
+
+<h2>curl</h2>
+
+<p></p><a href="https://curl.se/">curl</a></p>
+
+<p></p><a href="https://everything.curl.dev/">README - Everything curl</a></p>
+
+<p>Get verbose information:</p>
+
+<p><code>$ curl -v -I &lang;URL&rang;</code></p>
+
+<p>Download remote file:</p>
+
+<p><code>$ curl --no-clobber -C -R -O -H "User-Agent:" &lang;URL&rang;</code></p>
+
+<p>
+	<code>--no-clobber</code> : do not overwrite files that already exist,<br>
+	<code>-C</code> : resume getting a partially-downloaded file <br>
+	<code>-O</code> : write output to a file named as the remote file <br>
+	<code>-H "User-Agent:"</code> : send empty User-Agent header. The default header value is 'curl/[version]'.
+</p>
+
+<h2>wget</h2>
+
+<p><a href="https://www.gnu.org/software/wget/">Wget - GNU Project - Free Software Foundation</a></p>
+
+<p><a href="https://www.gnu.org/software/wget/manual/wget.html">Wget Manual</a></p>
+
+<p>Download remote file:</p>
+
+<p><code>$ wget -c --user-agent "" &lang;URL&rang;</code></p>
+
+<p><code>-c</code> : resume getting a partially-downloaded file</p>
+
+<p><a href="https://www.useragents.me/">The Latest and Most Common User Agents List</a></p>
+
+<div id="footer">
+<hr />
+Last Modified: 2023-09-10
+</div>
+
+</body>
+</html>
