@@ -64,7 +64,9 @@ simulate package installation.</p>
 <p>Note:<br />
 <code>apt-get</code> asks for confirmation only when it needs to install packages which weren't specified on the command line.</p>
 
-<p><code># apt-get --no-install-recommends install &lang;pattern&rang;</code></p>
+<p>Install a package without installing recommended packages:</p>
+
+<p><code># apt install --no-install-recommends &lang;package&rang;</code></p>
 
 
 <h2 id="list_updates">List Updates</h2>
@@ -279,7 +281,7 @@ To remove the packages which can no longer be downloaded from the cache:</p>
 
 <div id="footer">
 <hr />
-Last modified: 2022-08-16
+Last modified: 2023-09-16
 </div>
 
 </body>
