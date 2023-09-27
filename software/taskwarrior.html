@@ -26,6 +26,7 @@
         <li><a href="#update-overdue-tasks">Update overdue tasks</a></li>
         <li><a href="#filter-based-on-tags">Filter based on tags</a></li>
         <li><a href="#recently-added">Recently added</a></li>
+        <li><a href="#waiting-tasks">Waiting tasks</a></li>
         <li><a href="#check-colors">Check colors</a></li>
         <li><a href="#list-all-tags">List all tags</a></li>
     </ul>
@@ -46,13 +47,13 @@
 
 <p>To change the status of completed task to pending [<a href="https://tomordonez.com/taskwarrior-task-management/">Tom Ordonez</a>]:</p>
 
-<p>1. Find UUID of the task you want to bring back</p>
+<p>1. Find <a href="https://taskwarrior.org/docs/terminology/#uuid">UUID</a> of the task you want to bring back</p>
 
 <p><code>task completed</code> </p>
 
 <p>2. Modify status:</p>
 
-<p><code>task &lt;UUID&gt; modify status:pending</code></p>
+<p><code>task ⟨UUID⟩ modify status:pending</code></p>
 
 
 <h3 id="purge-completed">Purge completed/deleted tasks</h3>
@@ -80,6 +81,15 @@
 <p><code>task entry.after:today-3days list</code></p>
 
 
+<h3 id="waiting-tasks">Waiting tasks</h3>
+
+<p><code>task ⟨ID⟩ modify wait:⟨date-and/or-time⟩</code></p>
+
+<p>List waiting tasks:</p>
+
+<p><code>task waiting</code></p>
+
+
 <h3 id="check-colors">Check colors</h3>
 
 <p><code>task color legend</code></p>
@@ -94,7 +104,7 @@
 
 <div id="footer">
 <hr />
-Last modified: 2023-08-06
+Last modified: 2023-09-27
 </div>
 
 </body>
