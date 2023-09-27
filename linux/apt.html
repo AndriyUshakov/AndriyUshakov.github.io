@@ -51,36 +51,48 @@
 
 <h2 id="update_database">Update Database</h2>
 
-<p><code># apt-get update</code><br />
-update information about the packages from apt sources (<code>/etc/apt/sources.list</code>).
+<p>Update information about the packages from apt sources (<code>/etc/apt/sources.list</code>):</p>
+
+<p>
+	<code># apt update</code><br>
+	<code># aptitude update</code>
 </p>
 
 
 <h2 id="install">Install</h2>
 
-<p><code># apt-get -s install  &lang;package&rang;</code><br />
-simulate package installation.</p>
+<p>Simulate package installation:</p>
 
-<p>Note:<br />
+<p>
+	<code># apt -s install ⟨package⟩</code><br />
+	<code># aptitude -s install ⟨package⟩</code>
+</p>
+
+<p>Note:
 <code>apt-get</code> asks for confirmation only when it needs to install packages which weren't specified on the command line.</p>
 
 <p>Install a package without installing recommended packages:</p>
 
-<p><code># apt install --no-install-recommends &lang;package&rang;</code></p>
+<p>
+	<code># apt install --no-install-recommends ⟨package⟩</code><br>
+	<code># aptitude install -R ⟨package⟩</code>
+</p>
 
 
 <h2 id="list_updates">List Updates</h2>
 
 <p>List available updates:</p>
 
-<p><code>$ apt list --upgradable</code> &nbsp; or<br />
-<code>$ aptitude search '~U'</code> &nbsp; or<br />
-<code>$ apt-show-versions -u</code></p>
+<p>
+	<code>$ apt list --upgradable</code> &nbsp; or<br />
+	<code>$ aptitude search '~U'</code> &nbsp; or<br />
+	<code>$ apt-show-versions -u</code>
+</p>
 
 
 <h2 id="upgrade_specific_package">Upgrade a Specific Package</h2>
 
-<p>If the package was installed automatically, <code># apt install &lang;package&rang;</code> marks the package as installed manually. To upgrade the package and do not change the status (auto/manual):</p>
+<p>If the package was installed automatically, <code># apt install ⟨package⟩</code> marks the package as installed manually. To upgrade the package and do not change the status (auto/manual):</p>
 
 <p><code># apt install --upgrade</code></p>
 
@@ -92,92 +104,118 @@ simulate package installation.</p>
 
 <h2 id="changelog">Changelog</h2>
 
-<p><code>$ apt changelog &lang;package&rang;</code> </p>
+<p>
+	<code>$ apt changelog ⟨package⟩</code><br>
+	<code>$ aptitude changelog ⟨package⟩</code>
+</p>
 
 
 <h2 id="list_bugs">List Bugs</h2>
 
-<p>To list critical bugs (critical, grave and serious):</p>
+<p>List critical bugs (critical, grave and serious):</p>
 
-<p><code>$ apt-listbugs list &lang;package&rang;</code> </p>
+<p><code>$ apt-listbugs list ⟨package⟩</code></p>
 
 
 <h2 id="find_package">Find Package</h2>
 
-<p><code>$ apt list --installed &lang;pattern&rang;</code></p>
+<p>
+	<code>$ apt list --installed ⟨pattern⟩</code><br>
+	<code>$ dpkg --get-selections ⟨pattern⟩</code>
+</p>
 
-<p><code>$ dpkg --get-selections &lang;pattern&rang;</code> </p>
+<p>Look for packages with following ⟨pattern⟩ in package names:</p>
 
-<p>Look for packages with following &lang;pattern&rang; in package names:<br />
-<code>$ dpkg --list &lang;pattern&rang;</code></p>
+<p><code>$ dpkg --list ⟨pattern⟩</code></p>
 
-<p>Find packages named <code>file</code> :<br />
-<code>$ aptitude search '?exact-name(file)'</code> </p>
+<p>Find packages named <code>file</code>:</p>
 
-<p>Find installed packages containing the keyword in their description:<br />
-<code>$ aptitude search ~i~d&lang;keyword&rang;</code> </p>
+<p><code>$ aptitude search '?exact-name(file)'</code></p>
 
-<p>Look for obsolete packages (installed packages that are not included in any repository):<br />
-<code>$ aptitude search ~o</code></p>
+<p>Find installed packages containing the keyword in their description:</p>
 
-<p>List manually installed packages:<br />
-<code>$ aptitude search '?installed ?not(?automatic)'</code></p>
+<p><code>$ aptitude search ~i~d⟨keyword⟩</code> </p>
 
-<p>Find installed packages from <code>contrib</code> and <code>non-free</code> repositories:<br />
-<code>$ aptitude search '~i ~scontrib/.*' '~i ~snon-free/.*'</code></p>
+<p>Look for obsolete packages (installed packages that are not included in any repository):</p>
 
-<p>If you installed several multimedia packages from <a href="http://www.deb-multimedia.org/">deb-multimedia.org</a> (unofficial) repository, to list that packages:<br />
-<code>$ aptitude search ~i"?origin(multimedia)"</code></p>
+<p><code>$ aptitude search ~o</code></p>
+
+<p>List manually installed packages:</p>
+
+<p><code>$ aptitude search '?installed ?not(?automatic)'</code></p>
+
+<p>Find installed packages from <code>contrib</code> and <code>non-free</code> repositories:</p>
+
+<p><code>$ aptitude search '~i ~scontrib/.*' '~i ~snon-free/.*'</code></p>
+
+<p>If you installed several multimedia packages from <a href="http://www.deb-multimedia.org/">deb-multimedia.org</a> (unofficial) repository, to list that packages:</p>
+
+<p><code>$ aptitude search ~i"?origin(multimedia)"</code></p>
 
 
 <h2 id="show_dependensies">Show Dependencies</h2>
 
-<p><code>$ aptitude why &lang;package&rang;</code> <br />
-search for packages that require the given <code>package</code>.</p>
+<p>Search for installed packages that require the package you specify:</p>
 
-<p><code>$ apt-cache  --installed --important rdepends &lang;package&rang;</code></p>
+<p>
+	<code>$ aptitude -v --show-summary=first-package-and-type why ⟨package⟩</code> <br />
+	<code>$ aptitude search ~i~D⟨package⟩</code><br>
+	<code>$ apt-cache  --installed --important rdepends ⟨package⟩</code>
+</p>
 
-<p>Note:<br />
+<p>Note:
 <code>apt-cache</code> <code>depends</code>/<code>rdepends</code> without options lists dependencies of any package (installed and not installed). The packages are listed without showing information about their state.</p>
 
-<p>For recursive dependencies: <br /> 
-<code>$ apt-rdepends -r --state-follow=Installed --state-show=Installed &lang;package&rang;</code> </p>
+<p>For recursive dependencies: </p> 
 
-<p>To find the dependencies of installed package: <br /> 
-<code>$ apt-cache --installed depends  &lang;package&rang;</code></p>
+<p><code>$ apt-rdepends -r --state-follow=Installed --state-show=Installed ⟨package⟩</code></p>
+
+<p>Find dependencies of installed package:</p>
+
+<p>
+	<code>$ aptitude search ~i~R⟨package⟩</code><br>
+	<code>$ apt-cache --installed depends ⟨package⟩</code>
+</p>
 
 
 <h2 id="show_versions">Show Versions</h2>
 
-<p><code>$ apt-show-versions -a &lang;package&rang;</code><br />
-list available versions.</p>
+<p>List available versions:</p>
+
+<p><code>$ apt-show-versions -a ⟨package⟩</code></p>
 
 
 <h2 id="list_content_of_package">List Content of Package</h2>
 
-<p>Show list of files (installed packages only):<br />
-<code>$ dpkg --listfiles &lang;package&rang;</code></p>
+<p>Show list of files (installed packages only):</p>
 
-<p>List content of any package:<br />
-<code>$ apt-file list &lang;package&rang;</code></p>
+<p><code>$ dpkg --listfiles ⟨package⟩</code></p>
 
-<p>List files of local deb-file:<br />
-<code>$ dpkg -c &lang;path-to-deb-file&rang;</code></p>
+<p>List content of any package:</p>
+
+<p><code>$ apt-file list ⟨package⟩</code></p>
+
+<p>List files of local deb-file:</p>
+
+<p><code>$ dpkg -c ⟨path-to-deb-file⟩</code></p>
 
 
 <h2 id="find_file_owner">Find File Owner</h2>
 
-<p>Search for installed package owning file:<br />
-<code>$ dpkg -S &lang;file&rang;</code></p>
+<p>Search for installed package owning file:</p>
+
+<p><code>$ dpkg -S &lang;file&rang;</code></p>
 
 
 <h2 id="searching_for_files">Searching for Files</h2>
 
-<p>To update information about the contents of <strong>all</strong> available packages:<br />
-<code>$ apt-file	update</code></p>
+<p>To update information about the contents of <strong>all</strong> available packages:</p>
 
-<p>Search for <strong>any</strong> known file:<br />
-<code>$ apt-file search &lang;file&rang;</code></p>
+<code>$ apt-file update</code></p>
+
+<p>Search for <strong>any</strong> known file:</p>
+
+<p><code>$ apt-file search &lang;file&rang;</code></p>
 
 
 <h2 id="count_installed_packages">Count Installed Packages</h2>
@@ -192,14 +230,17 @@ list available versions.</p>
 
 <h2 id="aptitude_pending_actions">aptitude Pending Actions</h2>
 
-<p>To check if <code>aptitude</code> has some pending actions:<br />
-<code>$ aptitude search '?or(?action(install), ?action(upgrade), ?action(downgrade), ?action(remove), ?action(purge))'</code></p>
+<p>To check if <code>aptitude</code> has some pending actions:</p>
 
-<p>To cancel all pending actions:<br />
-<code># aptitude keep-all</code></p>
+<p><code>$ aptitude search '?or(?action(install), ?action(upgrade), ?action(downgrade), ?action(remove), ?action(purge))'</code></p>
 
-<p>To remove only some packages from the pending list:<br />
-<code># aptitude keep &lang;packages&rang;</code></p>
+<p>To cancel all pending actions:</p>
+
+<p><code># aptitude keep-all</code></p>
+
+<p>To remove only some packages from the pending list:</p>
+
+<p><code># aptitude keep ⟨packages⟩</code></p>
 
 
 <h2 id="install_history">Install History</h2>
@@ -217,9 +258,9 @@ list available versions.</p>
 
 <p><code>$ grep-status -n -sPackage -FStatus config-files</code></p>
 
-<p>To list configuration files of <code>package</code> :</p>
+<p>To list configuration files of <code>package</code>:</p>
 
-<p><code>$ dpkg-query --showformat='${Conffiles}\n' --show &lang;package&rang;</code> </p>
+<p><code>$ dpkg-query --showformat='${Conffiles}\n' --show ⟨package⟩</code></p>
 
 <p>To remove all configuration files:</p>
 
@@ -247,13 +288,14 @@ To remove the packages which can no longer be downloaded from the cache:</p>
 
 <p>To download the source:</p>
 
-<p><code>$ apt-get --download-only source &lang;package-name&rang;</code></p>
+<p><code>$ apt-get --download-only source ⟨package-name⟩</code></p>
 
 
 <h2 id="info_on_locally_saved_deb-file">Info on Locally Saved DEB-File</h2>
 
-<p>To view information on locally saved deb-file:<br />
-<code>$ dpkg -I &lang;path-to-deb-file&rang;</code></p>
+<p>To view information on locally saved deb-file:</p>
+
+<p><code>$ dpkg -I ⟨path-to-deb-file⟩</code></p>
 
 
 <h2 id="manually_download_an_older_package">Manually Download an Older Package</h2>
@@ -281,7 +323,7 @@ To remove the packages which can no longer be downloaded from the cache:</p>
 
 <div id="footer">
 <hr />
-Last modified: 2023-09-16
+Last modified: 2023-09-26
 </div>
 
 </body>
