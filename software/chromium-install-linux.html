@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Install ungoogled-chromium</title>
+	<title>Install Ungoogled Chromium</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../main.css" type="text/css">
@@ -17,29 +17,18 @@
 	<span class="tb0">Installation</span>
 </div>
 
-<h1>Installation of Portable Linux 64-bit Ungoogled-Chromium</h1>
+<h1>Install Ungoogled Chromium</h1>
 
-<textarea readonly rows="15" cols="60">
-su -
-cd /opt
-wget https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/80.0.3987.106-1.1
-mv ungoogled-chromium/ ungoogled-chromium.old/
-tar -xf ungoogled-chromium_80.0.3987.106-1.1_linux.tar.xz
-mv ungoogled-chromium_80.0.3987.106-1.1_linux ungoogled-chromium
-cd ungoogled-chromium
-mv chrome_sandbox chrome-sandbox
-chown -R root:root *
-chmod 4755 chrome-sandbox
-cd ..
-rm ungoogled-chromium_80.0.3987.106-1.1_linux.tar.xz
-rm -r ungoogled-chromium.old/
-</textarea>
+<p>Download <a href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/releases/linux_portable/64bit/">Chromium (portable, Linux, 64-bit).</a></p>
 
-<p><a href="https://ungoogled-software.github.io/ungoogled-chromium-binaries/">Binaries of ungoogled-chromium</a></p>
+<p>Extract files from an archive:</p>
+
+<p><code>tar -xf --no-same-owner ungoogled-chromium_⟨version⟩_linux.tar.xz</code></p>
 
 <div id="footer">
 <hr />
-Last Modified: 7 April 2020
+Last Modified: 2023-09-27
 </div>
+
 </body>
 </html>
