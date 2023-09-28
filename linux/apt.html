@@ -92,12 +92,12 @@
 
 <h2 id="upgrade_specific_package">Upgrade a Specific Package</h2>
 
-<p>If the package was installed automatically, <code># apt install ⟨package⟩</code> marks the package as installed manually. To upgrade the package and do not change the status (auto/manual):</p>
-
 <p>
-	<code># apt install --upgrade ⟨package⟩</code> or <br>
-	<code># aptitude install ⟨package⟩</code>
+	If the package was installed automatically, <code>apt install</code> will mark the package as manually installed.
+	To upgrade a package without changing its status (auto/manual):
 </p>
+
+<p><code># aptitude install ⟨package⟩</code></p>
 
 
 <h2 id="restart_daemons_after_library_upgrades">Restart Daemons after Library Upgrades</h2>
