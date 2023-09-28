@@ -19,14 +19,23 @@
 
 <h1>Firefox</h1>
 
-<p>
-<a href="#extensions">Extensions</a>
-&bull; <a href="#configuration">Configuration</a>
-&bull; <a href="#source">Source</a>
-&bull; <a href="#forums">Forums</a>
-&bull; <a href="#help">Help</a>
-&bull; <a href="#alternatives">Alternatives</a>
-</p>
+<ul>
+	<li><a href="#extensions">Extensions</a></li>
+	<ul>
+		<li><a href="#ext-security">Security/Privacy</a></li>
+		<li><a href="#ext-misc">Misc</a></li>
+		<li><a href="#ext-bookmarks">Bookmarks</a></li>
+		<li><a href="#ext-dev">Development</a></li>
+		<li><a href="#ext-info">Info</a></li>
+	</ul>
+	<li><a href="#configuration">Configuration</a></li>
+	<li><a href="#source">Source</a></li>
+	<li><a href="#forums">Forums</a></li>
+	<li><a href="#help">Help</a></li>
+	<li><a href="#set-default-browser">Set Default Browser</a></li>
+	<li><a href="#alternatives">Alternatives</a></li>
+</ul>
+
 
 <h2 id="extensions">Extensions</h2>
 
@@ -274,6 +283,20 @@
 <h2 id="help">Help</h2>
 
 <p><a href="https://support.mozilla.org/en-US/kb/keyboard-shortcuts-perform-firefox-tasks-quickly">Keyboard shortcuts - Firefox Help</a></p>
+
+
+<h2 id="set-default-browser">Set Default Browser (Linux)</h2>
+
+<p><a href="https://librewolf.net/">LibreWolf - A custom version of Firefox, focused on privacy, security and freedom</a></p>
+
+<p>For making LibreWolf your default web browser:</p>
+
+<p>
+	<code># update-alternatives --install /usr/bin/x-www-browser x-www-browser /opt/librewolf/librewolf 80</code><br>
+	<code># update-alternatives --config x-www-browser</code>
+</p>
+
+<p><a href="https://unix.stackexchange.com/questions/584478/how-to-add-browser-to-update-alternatives">Debian - How to add browser to update-alternatives? - Unix & Linux Stack Exchange</a></p>
 
 
 <h2 id="alternatives">Alternatives</h2>
