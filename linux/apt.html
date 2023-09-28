@@ -94,7 +94,10 @@
 
 <p>If the package was installed automatically, <code># apt install ⟨package⟩</code> marks the package as installed manually. To upgrade the package and do not change the status (auto/manual):</p>
 
-<p><code># apt install --upgrade</code></p>
+<p>
+	<code># apt install --upgrade ⟨package⟩</code> or <br>
+	<code># aptitude install ⟨package⟩</code>
+</p>
 
 
 <h2 id="restart_daemons_after_library_upgrades">Restart Daemons after Library Upgrades</h2>
@@ -142,7 +145,10 @@
 
 <p>List manually installed packages:</p>
 
-<p><code>$ aptitude search '?installed ?not(?automatic)'</code></p>
+<p>
+	<code>$ aptitude search '?installed ?not(?automatic)'</code> or <br>
+	<code>$ aptitude search ~i!~M</code>
+</p>
 
 <p>Find installed packages from <code>contrib</code> and <code>non-free</code> repositories:</p>
 
@@ -323,7 +329,7 @@ To remove the packages which can no longer be downloaded from the cache:</p>
 
 <div id="footer">
 <hr />
-Last modified: 2023-09-26
+Last modified: 2023-09-28
 </div>
 
 </body>
