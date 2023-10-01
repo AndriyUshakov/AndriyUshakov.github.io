@@ -24,6 +24,7 @@
 <ul class="bull">
 	<li><a href="#usage">Some Frequently Used Commands</a></li>
 	<ul class="bull">
+		<li><a href="#open_file">Open File</a></li>
 		<li><a href="#cursor_movement">Cursor Movement</a></li>
 		<li><a href="#text_selection">Text Selection</a></li>
 		<li><a href="#delete_text">Delete Text</a></li>
@@ -62,105 +63,123 @@
 
 <h2 id="usage">Some Frequently Used Commands</h2>
 
+
+<h3 id="open_file">Open File</h3>
+
+<p>Open file and go to a particular line:</p>
+
+<p><code>$ gvim +⟨line number⟩ ⟨file⟩</code></p>
+
+<p>To open file in a new tab:</p>
+
+<p><code>$ gvim --remote-tab-silent ⟨file⟩</code></p>
+	
+
 <h3 id="cursor_movement">Cursor Movement</h3>
 
-<p>
-<code>e</code> &nbsp;
-	jump forwards to the end of a word<br />
-<code>E</code> &nbsp;
-	jump forwards to the end of a word including punctuation<br />
-<code>b</code> &nbsp;
-	jump backwards to the end of a word<br />
-<code>B</code> &nbsp;
-	jump backwards to the end of a word including punctuation<br />
-<code>$</code> &nbsp;
-	jump to the end of the line<br />
-<code>0</code> &nbsp;
-	jump to the start of the line<br />
-<code>gg</code> &nbsp;
-	go to the first line of the document<br />
-<code>G</code> &nbsp;
-	go to the last line of the document
-</p>
+<p><code>e</code> &nbsp;
+jump forwards to the end of a word</p>
 
-<p>
-<code>'.</code> &nbsp; jump back to the last modified line<br />
-<code>`.</code> &nbsp; jump to exact position in last modified line
-</p>
+<p><code>E</code> &nbsp; jump forwards to the end of a word including punctuation</p>
 
-<p>
-<code>Ctrl-o</code> &nbsp; jump cursor backwards<br />
-<code>Ctrl-i</code> &nbsp; jump cursor forwards</p>
+<p><code>b</code> &nbsp; jump backwards to the end of a word</p>
+
+<p><code>B</code> &nbsp; jump backwards to the end of a word including punctuation</p>
+
+<p><code>$</code> &nbsp; jump to the end of the line</p>
+
+<p><code>0</code> &nbsp; jump to the start of the line</p>
+
+<p><code>gg</code> &nbsp; go to the first line of the document</p>
+
+<p><code>G</code> &nbsp; go to the last line of the document</p>
+
+<p><code>'.</code> &nbsp; jump back to the last modified line</p>
+
+<p><code>`.</code> &nbsp; jump to exact position in last modified line</p>
+
+<p><code>Ctrl-o</code> &nbsp; jump cursor backwards</p>
+
+<p><code>Ctrl-i</code> &nbsp; jump cursor forwards</p>
 
 
 <h3 id="text_selection">Text Selection</h3>
 
-<p>
-<code>v</code> &nbsp; start visual mode<br />
-<code>V</code> &nbsp; start line-wise visual mode<br />
-<code>Ctrl-v</code> &nbsp; start visual block mode<br />
-<code>aw</code> &nbsp; mark a word<br />
-<code>ib</code> &nbsp; mark a block inside ()<br />
-<code>ab</code> &nbsp; mark a block with ()<br />
-<code>iB</code> &nbsp; mark a block inside {}<br />
-<code>aB</code> &nbsp; mark a block with {}<br />
-</p>
+<p><code>v</code> &nbsp; start visual mode</p>
+
+<p><code>V</code> &nbsp; start line-wise visual mode</p>
+
+<p><code>Ctrl-v</code> &nbsp; start visual block mode</p>
+
+<p><code>aw</code> &nbsp; mark a word</p>
+
+<p><code>ib</code> &nbsp; mark a block inside ()</p>
+
+<p><code>ab</code> &nbsp; mark a block with ()</p>
+
+<p><code>iB</code> &nbsp; mark a block inside {}</p>
+
+<p><code>aB</code> &nbsp; mark a block with {}</p>
 
 
 <h3 id="delete_text">Delete Text</h3>
 
-<p>
-<code>D</code> or <code>d$</code> &nbsp;
-	delete from cursor to end of line<br />
-<code>c$</code> &nbsp;
-	delete from cursor to end of line and start insert mode<br />
-<code>d0</code> &nbsp;
-	delete to start of line<br />
-<code>dB</code> or <code>dT&lang;Space&rang;</code> &nbsp;
-	delete backward to the first space<br />
-<code>dt</code> &nbsp;
-	delete forward to the first space (if there is no space then it will be not applied)<br />
-<code>cw</code> or <code>cW</code> &nbsp;
-	delete forward not including following white space and start insert mode<br />
-<code>dw</code> or <code>dW</code> &nbsp;
-	delete forward including following white space)<br />
-<code>cc</code> or <code>S</code>&nbsp;
-	delete line and start insert mode<br />
-<code>s</code> &nbsp;
-	delete character and start insert mode<br />
-<code>dgg</code> &nbsp;
-	delete from the current line to the top line of the document<br />
-<code>dG</code> &nbsp;
-	delete from the current line to the end of file
-</p>
+<p><code>D</code> or <code>d$</code> &nbsp; delete from cursor to end of line</p>
+
+<p><code>c$</code> &nbsp; delete from cursor to end of line and start insert mode</p>
+
+<p><code>d0</code> &nbsp; delete to start of line</p>
+
+<p><code>dB</code> or <code>dT⟨Space⟩</code> &nbsp; delete backward to the first space</p>
+
+<p><code>dt</code> &nbsp; delete forward to the first space (if there is no space then it will be not applied)</p>
+
+<p><code>cw</code> or <code>cW</code> &nbsp; delete forward not including following white space and start insert mode</p>
+
+<p><code>dw</code> or <code>dW</code> &nbsp; delete forward including following white space)</p>
+
+<p><code>cc</code> or <code>S</code>&nbsp; delete line and start insert mode</p>
+
+<p><code>s</code> &nbsp; delete character and start insert mode</p>
+
+<p><code>dgg</code> &nbsp; delete from the current line to the top line of the document</p>
+
+<p><code>dG</code> &nbsp; delete from the current line to the end of file</p>
 
 
 <h3 id="format_text">Format Text</h3>
 
 <p><code>J</code> &nbsp; join two lines (line below to the current one)</p>
 
-<p>Setting textwidth (<code>tw</code>) will auto line break during typing:<br />
-<code>set tw=80</code></p>
+<p>Setting textwidth (<code>tw</code>) will auto line break during typing:</p>
 
-<p>To break a long line into multiple lines<br />
-<code>gqgq</code> &nbsp; in normal mode or<br />
-<code>gq</code> &nbsp; in visual mode</p>
+<p><code>set tw=80</code></p>
 
-<p>
-<code>~</code> &nbsp; swap upper/lower case<br />
-<code>U</code> &nbsp; change selected text to upper case<br />
-<code>u</code> &nbsp; change selected to lower case<br />
-<code>:s/\&lt;[a-z]/\u&amp;/g</code> &nbsp; capitalize words in the current line<br />
-<code>xp</code> &nbsp; swap the current character with next one<br />
-<code>Xp</code> &nbsp; swap the current character with previous one<br />
-<code>ddp</code> &nbsp; swap the current line with next one<br />
-<code>ddkP</code> &nbsp; swap the current line with previous one
-</p>
+<p>To break a long line into multiple lines</p>
 
-<p>
-<code>&gt;</code> &nbsp; shift text right<br />
-<code>&lt;</code> &nbsp; shift text left<br />
-</p>
+<p><code>gqgq</code> &nbsp; in normal mode or</p>
+
+<p><code>gq</code> &nbsp; in visual mode</p>
+
+<p><code>~</code> &nbsp; swap upper/lower case</p>
+
+<p><code>U</code> &nbsp; change selected text to upper case</p>
+
+<p><code>u</code> &nbsp; change selected to lower case</p>
+
+<p><code>:s/\&lt;[a-z]/\u&amp;/g</code> &nbsp; capitalize words in the current line</p>
+
+<p><code>xp</code> &nbsp; swap the current character with next one</p>
+
+<p><code>Xp</code> &nbsp; swap the current character with previous one</p>
+
+<p><code>ddp</code> &nbsp; swap the current line with next one</p>
+
+<p><code>ddkP</code> &nbsp; swap the current line with previous one</p>
+
+<p><code>&gt;</code> &nbsp; shift text right</p>
+
+<p><code>&lt;</code> &nbsp; shift text left</p>
 
 <p><code>:filetype indent off/on</code> &nbsp; disable/enable file type based indentation for all file types</p>
 
@@ -170,11 +189,11 @@
 
 <p><code>:%s/old/new/gc</code> &nbsp; replace all occurrences of the "old" text with the "new" one asking for confirmation</p>
 
-<p>To replace some text in visually selected part:<br />
-<code>:s/old/new/g</code></p>
+<p>To replace some text in visually selected part:</p>
 
-<p><code>:1,10s/old/new/c</code> &nbsp;
-substitute in the lines 1-10 conforming each substitution.</p>
+<p><code>:s/old/new/g</code></p>
+
+<p><code>:1,10s/old/new/c</code> &nbsp; substitute in the lines 1-10 conforming each substitution.</p>
 
 <p><a href="vim-replace.html">Examples of Search and Replace in Vim</a></p>
 
@@ -183,76 +202,83 @@ substitute in the lines 1-10 conforming each substitution.</p>
 
 <h3 id="working_with_lines">Working with Lines</h3>
 
-<p>Jump to a line number<br />
-<code>:any_desired_number</code></p>
+<p>Jump to a line number</p>
+
+<p><code>:any_desired_number</code></p>
 
 <p><code>dG</code> &nbsp; delete everything from the current line to the end of file</p>
 
 <p><code>dgg</code> &nbsp; delete everything from the current line to the top of the file</p>
 
-<p>Remove all lines that started with a dollar sign: $<br />
-<code>:g/^\$/d</code></p>
+<p>Remove all lines that started with a dollar sign: $</p>
 
-<p>Sort, removing duplicate lines<br />
-<code>:%sort u</code></p>
+<p><code>:g/^\$/d</code></p>
 
-<p>Sort only specific lines using ranges, for instance, from 5 to 10 (inclusive)<br />
-<code>:5,10sort</code></p>
+<p>Sort, removing duplicate lines</p>
 
-<p>Remove blank lines in selection<br />
-<code>:'&lt;,'&gt;s/^\n//g</code></p>
+<p><code>:%sort u</code></p>
+
+<p>Sort only specific lines using ranges, for instance, from 5 to 10 (inclusive)</p>
+
+<p><code>:5,10sort</code></p>
+
+<p>Remove blank lines in selection</p>
+
+<p><code>:'&lt;,'&gt;s/^\n//g</code></p>
 
 
 <h3 id="undo_redo">Undo/Redo</h3>
 
-<p>
-<code>u</code> &nbsp; undo<br />
-<code>Ctrl-r</code> &nbsp; redo<br />
-<code>.</code> &nbsp; repeat last command
-</p>
+<p><code>u</code> &nbsp; undo</p>
+
+<p><code>Ctrl-r</code> &nbsp; redo</p>
+
+<p><code>.</code> &nbsp; repeat last command</p>
 
 
 <h3 id="tabs">Tabs</h3>
 
-<p>
-<code>:tabe</code> &nbsp; open a new <code>tab</code> with an empty window,
-after the current <code>tab</code><br />
-<code>:tabnew</code> &nbsp; same as <code>:tabe</code><br />
-<code>:tabclose</code><br />
-<code>:tabs</code> &nbsp; list all tabs<br />
-<code>:tabm</code> &nbsp; move current tab to last<br />
-<code>:tabm 0</code> &nbsp; move current tab to first<br />
-<code>:tab ba</code> &nbsp; rearrange the screen to open one window for each
-buffer in the buffer list<br />
-</p>
+<p><code>:tabe</code> &nbsp; open a new <code>tab</code> with an empty window, after the current <code>tab</code></p>
 
-<p>
-To open file in a new gvim tab<br />
-<code>$ gvim --remote-tab-silent &lang;file&rang;</code>
-</p>
+<p><code>:tabnew</code> &nbsp; same as <code>:tabe</code></p>
+
+<p><code>:tabclose</code></p>
+
+<p><code>:tabs</code> &nbsp; list all tabs</p>
+
+<p><code>:tabm</code> &nbsp; move current tab to last</p>
+
+<p><code>:tabm 0</code> &nbsp; move current tab to first</p>
+
+<p><code>:tab ba</code> &nbsp; rearrange the screen to open one window for each buffer in the buffer list</p>
 
 
 <h3 id="highlighting">Highlighting</h3>
 
-<p>
-<code>:set cursorline</code> &nbsp; highlight the current line in every window<br />
-<code>:set hlsearch</code> &nbsp; activate highlighting<br />
-<code>:nohl</code> &nbsp; de-activate<br />
-<code>:set hlsearch!</code> &nbsp; toggle search
-</p>
+<p><code>:set cursorline</code> &nbsp; highlight the current line in every window</p>
+
+<p><code>:set hlsearch</code> &nbsp; activate highlighting</p>
+
+<p><code>:nohl</code> &nbsp; de-activate</p>
+
+<p><code>:set hlsearch!</code> &nbsp; toggle search</p>
 
 
 <h3 id="spell_check">Spell Check</h3>
 
-<p>
-<code>:set spell</code> &nbsp; activate spell check<br />
-<code>:set spelllang=en</code> &nbsp; set up English language<br />
-<code>:set nospell</code> &nbsp; deactivate spell check<br />
-<code>z=</code> &nbsp; see suggestions<br />
-<code>zg</code> &nbsp; add word to dictionary<br />
-<code>]s</code> &nbsp; jump to the next spelling mistake<br />
-<code>[s</code> &nbsp; jump to the previous spelling mistake
-</p>
+<p><code>:set spell</code> &nbsp; activate spell check</p>
+
+<p><code>:set spelllang=en</code> &nbsp; set up English language</p>
+
+<p><code>:set nospell</code> &nbsp; deactivate spell check</p>
+
+<p><code>z=</code> &nbsp; see suggestions</p>
+
+<p><code>zg</code> &nbsp; add word to dictionary</p>
+
+<p><code>]s</code> &nbsp; jump to the next spelling mistake</p>
+
+<p><code>[s</code> &nbsp; jump to the previous spelling mistake</p>
 
 
 <h3 id="filename_completion">Filename Completion</h3>
@@ -262,11 +288,13 @@ To open file in a new gvim tab<br />
 
 <h3 id="spectial_characters">Special Characters</h3>
 
-<p>To enter special characters it is needed to set the digraph option<br />
-<code>:set dg</code><br />
+<p>To enter special characters it is needed to set the digraph option</p>
+
+<p><code>:set dg</code><br />
 and to enter £ type<br />
-<code>P Ctrl-H d</code><br />
-more info at <a href="http://vim.wikia.com/wiki/Entering_special_characters">Vim Wiki</a></p>
+<code>P Ctrl-H d</code></p>
+
+<p><a href="https://vim.fandom.com/wiki/Entering_special_characters">Entering special characters | Vim Tips Wiki</a></p>
 
 
 <h3 id="multi_window_cursor_movement">Cursor Movement in Multi-Windows</h3>
@@ -281,18 +309,16 @@ more info at <a href="http://vim.wikia.com/wiki/Entering_special_characters">Vim
 
 <h3 id="cursor_stops">Cursor Stops</h3>
 
-<p>
-By default cursor stops to move at the end or at the beginning of the line. To go automatically to the next/previous line, add<br />
-<code>set whichwrap+=&lt;,&gt;,[,]</code>
-</p>
+<p>By default cursor stops to move at the end or at the beginning of the line. To go automatically to the next/previous line, add:</p>
+
+<p><code>set whichwrap+=&lt;,&gt;,[,]</code></p>
 
 
 <h3 id="delete_line_end">Delete End of Line</h3>
 
-<p>
-	To be able to delete the line end by using the backspace and delete keys <br />
-	<code>set backspace=indent,eol,start</code>
-</p>
+<p>To be able to delete the line end by using the backspace and delete keys:</p>
+
+<p><code>set backspace=indent,eol,start</code></p>
 
 
 <h3 id="copy_and_paste">Copy and Paste</h3>
@@ -316,11 +342,9 @@ By default cursor stops to move at the end or at the beginning of the line. To g
 
 <h3 id="word_wrap">Word Wrap</h3>
 
-<p>To wrap long lines, but not split words in the middle (wrap only at  characters defined in <code>breakat</code>)<br />
-<code>
-:set nolist wrap linebreak breakat
-</code>
-</p>
+<p>To wrap long lines, but not split words in the middle (wrap only at  characters defined in <code>breakat</code>)</p>
+
+<p><code>:set nolist wrap linebreak breakat</code></p>
 
 
 <h3 id="tabstops">Tabstops</h3>
@@ -489,7 +513,7 @@ endif
 
 <div id="footer">
 <hr />
-Last Modified: 2023-07-23
+Last Modified: 2023-09-30
 </div>
 
 </body>
