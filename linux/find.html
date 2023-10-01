@@ -49,7 +49,7 @@
 
 <p>Find "Debian" in txt-files only:</p>
 
-<p><code>$ grep -r --color -n --include="*.txt" "Debian" *</code></p>
+<p><code>$ grep -r --color -n --include="*.txt" --exclude-dir=.git "Debian" *</code></p>
 
 <p><code>zgrep</code> can search in <code>gz</code>-files:</p>
 
@@ -58,7 +58,7 @@
 
 <div id="footer">
 <hr />
-Last Modified: 02 March 2021
+Last Modified: 2023-09-30
 </div>
 </body>
 </html>
