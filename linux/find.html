@@ -47,9 +47,13 @@
 
 <p><code>$ grep -r --color -n "update" *</code></p>
 
-<p>Find "Debian" in txt-files only:</p>
+<p>Find "Debian" in html and md files:</p>
 
-<p><code>$ grep -r --color -n --include="*.txt" --exclude-dir=.git "Debian" *</code></p>
+<p><code>$ grep -r --color -n --include="*.{html,md}" --exclude-dir=.git "Debian" *</code></p>
+
+<p>Find "Google" excluding files "*hosts.txt" and directory "img":</p>
+
+<p><code>$ grep -r --color -n --exclude-dir="img" --exclude="*hosts.txt" "Google" *</code></p>
 
 <p><code>zgrep</code> can search in <code>gz</code>-files:</p>
 
@@ -58,7 +62,7 @@
 
 <div id="footer">
 <hr />
-Last Modified: 2023-09-30
+Last Modified: 2024-03-01
 </div>
 </body>
 </html>
