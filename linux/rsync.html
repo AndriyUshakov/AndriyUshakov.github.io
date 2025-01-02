@@ -51,6 +51,14 @@
 
 <p><code>$ rsync -aunv --no-perms --no-owner --no-group source/ destination/</code></p>
 
+<h2>Sync Files not Older than X Days</h2>
+
+<p>Sync files modified in the last 7 days:</p>
+
+<p><code>find ~/myGit/soft -type f -mtime -7 -printf %P\\0 | rsync -auv --files-from=- --from0 ~/myGit/soft ~/shm/soft/</code></p>
+
+<h2 id="list_differences_in_git_commits">List Differences in Git Commits</h2>
+
 <p>To list the differences made in last commit:</p>
 
 <p><code>git diff @~</code></p>
@@ -63,8 +71,7 @@
 
 <p><code>git diff @~2 @~1</code></p>
 
-
-<h1 id="find_differences_between_2_directories">Find Differences between 2 Directories</h1>
+<h2 id="find_differences_between_2_directories">Find Differences between 2 Directories</h2>
 
 <p><code>$ diff -qr dir1 dir2</code></p>
 
