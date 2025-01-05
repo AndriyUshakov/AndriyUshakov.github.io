@@ -51,6 +51,10 @@
 
 <p><code>$ rsync -aunv --no-perms --no-owner --no-group source/ destination/</code></p>
 
+<p>Set permissions for copying from Windows to Linux:</p>
+
+<p><code>$ rsync -auv --chmod=Du=rwx,Dg=rx,Do=rx,Fu=rw,Fg=r,Fo=r source/ destination/</code></p>
+
 <h2>Sync Files not Older than X Days</h2>
 
 <p>Sync files modified in the last 7 days:</p>
