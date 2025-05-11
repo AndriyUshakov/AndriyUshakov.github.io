@@ -1,0 +1,9 @@
+!bleepingcomputer.com##ul#bc-home-news-main-wrap > li:has-text(Sponsored)
+bleepingcomputer.com##.cz-toa-wrapp
+bleepingcomputer.com##.ia_ad
+bleepingcomputer.com##.noty_bar
+bleepingcomputer.com##.s-ou-wrap
+bleepingcomputer.com##[href="https://try.flare.io/bleeping-computer/"]
+bleepingcomputer.com##[href^="https://www.bleepingcomputer.com/go/"]
+bleepingcomputer.com#?#.post_wrap:-abp-contains(AdBot)
+
