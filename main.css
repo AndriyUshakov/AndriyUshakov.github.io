@@ -1,117 +1,117 @@
-/* Created using Style Master from Western Civilisation CSS1 { 148 106 558 625 } */
+/*  */
 
 html, body {
-	font-family: 'Open Sans', 'Roboto', Helvetica, sans-serif;
-	background-color: #f8f8ff;
-	color: #252525;
+  font-family: 'Open Sans', 'Roboto', Helvetica, sans-serif;
+  background-color: #f8f8ff;
+  color: #252525;
 }
 
 p, td {
-	margin-top: 6px;
-	margin-bottom: 6px;
-	font-size: 16px;
-	line-height: 20px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 h1 {
-	font-size: 32px;
-	font-weight: 600;
-	margin-top: 15px;
-	margin-bottom: 6px;
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 6px;
 }
 
 h2 {
-	font-size: 24px;
-	font-weight: 600;
-	margin-top: 9px;
-	margin-bottom: 6px;
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 9px;
+  margin-bottom: 6px;
 }
 
 h3 {
-	font-size: 20px;
-	font-weight: 600;
-	margin-top: 9px;
-	margin-bottom: 6px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 9px;
+  margin-bottom: 6px;
 }
 
 h4 {
-	font-style: oblique;
-	font-size: 18px;
-	/*font-family: Times, serif;*/
+  font-style: oblique;
+  font-size: 18px;
+  /*font-family: Times, serif;*/
 }
 
 a:link, a:link code {
-	color: #0000da;
-	text-decoration: none;
+  color: #0000da;
+  text-decoration: none;
 }
 
 a:visited, a:visited code {
-	color: #6c006c;
-	text-decoration: none;
+  color: #6c006c;
+  text-decoration: none;
 }
 
 a:active, a:active code {
-	color: #ff0000;
-	text-decoration: none;
+  color: #ff0000;
+  text-decoration: none;
 }
 
 a:hover, a:hover code {
-	color: #F45619;
-	text-decoration: none;
+  color: #F45619;
+  text-decoration: none;
 }
 
 /*non-standard element
 tt {
-	font-family: Monaco, monospace;
+  font-family: Monaco, monospace;
 }*/
 
 pre, textarea, code {
-	font-family: 'DejaVu Sans Mono', 'Lucida Console', monospace;
-	color: #004a00;
+  font-family: 'DejaVu Sans Mono', 'Lucida Console', monospace;
+  color: #004a00;
 }
 
 pre {
-	display: block;
-	white-space: pre;
-	margin-top: 0.5em;
-	margin-bottom: 0.5em;
+  display: block;
+  white-space: pre;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 textarea {
-	font-size: medium;
-	background-color: #f8f8ff;
-	width: 100%;
-	border: none;
-	overflow: auto;
-	margin-bottom: 0px;
-	white-space: pre;
+  font-size: medium;
+  background-color: #f8f8ff;
+  width: 100%;
+  border: none;
+  overflow: auto;
+  margin-bottom: 0px;
+  white-space: pre;
 }
 
 .single {
-	margin-bottom: 0px;
-	margin-top: 0px;
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 .double {
-	margin-bottom: 5px;
-	margin-top: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .lisingle {
-	margin-bottom: 5px;
-	margin-top: 5px;
-	margin-left:20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left:20px;
 }
 
 p.padding{
-	padding-left: 16px;
-	text-indent: -16px;
+  padding-left: 16px;
+  text-indent: -16px;
 }
 
 p.refN{
-	padding-left: 32px;
-	text-indent: -32px;
-	font-size: 0.95em;
+  padding-left: 32px;
+  text-indent: -32px;
+  font-size: 0.95em;
 }
 
 /*
@@ -120,156 +120,156 @@ p.refN{
 */
 
 #menu {
-	float:right;
-	margin-bottom:10px;
+  float:right;
+  margin-bottom:10px;
 }
 
 #menutop {
-	font-weight: 600;
-	line-height: 2.4em;
+  font-weight: 600;
+  line-height: 2.4em;
 }
 
 #footer {
-	padding-top: 4px;
-	font-size:small;
+  padding-top: 4px;
+  font-size:small;
 }
 
 #photo {
-	float:right;
-	height:294px;
+  float:right;
+  height:294px;
 }
 
 #search {
-	float:right;
-	top:0px;
+  float:right;
+  top:0px;
 }
 
 hr {
-	margin-right: 70%;
-	border-width: 1px;
+  margin-right: 70%;
+  border-width: 1px;
 }
 
 .tb0 {
-	padding: 4px 10px;
-	border: 1px solid #3366FF;
-	border-left: 5px solid #3366FF;
-	color: #F45619;
-	white-space: nowrap;
+  padding: 4px 10px;
+  border: 1px solid #3366FF;
+  border-left: 5px solid #3366FF;
+  color: #F45619;
+  white-space: nowrap;
 }
 
 .tb0 code{
-	color: #F45619;
+  color: #F45619;
 }
 
 .tb0 img{
-	vertical-align:-2px;
+  vertical-align:-2px;
 }
 
 .tb1 {
-	padding: 3px 10px;
-	border: 1px solid #3366FF;
-	white-space: nowrap;
+  padding: 3px 10px;
+  border: 1px solid #3366FF;
+  white-space: nowrap;
 }
 
 .tb1 img{
-	vertical-align:-2px;
+  vertical-align:-2px;
 }
 
 .tbrounded {
-	font-size:0.875em;
-	border:1px solid #456879;
-	border-radius:7px;
+  font-size:0.875em;
+  border:1px solid #456879;
+  border-radius:7px;
 }
 
 span.tbrr {
-	font-size:0.75em;
-	color: red;
-	padding: 0px 4px;
-	border:1px solid red;
-	border-radius:7px;
+  font-size:0.75em;
+  color: red;
+  padding: 0px 4px;
+  border:1px solid red;
+  border-radius:7px;
 }
 
 span.tbry {
-	font-size:0.75em;
-	color: #D88000;
-	padding: 0px 4px;
-	border:1px solid #D88000;
-	border-radius:7px;
+  font-size:0.75em;
+  color: #D88000;
+  padding: 0px 4px;
+  border:1px solid #D88000;
+  border-radius:7px;
 }
 
 span.tbrg {
-	font-size:0.75em;
-	color: #1C9C00;
-	padding: 0px 4px;
-	border:1px solid #1C9C00;
-	border-radius:7px;
+  font-size:0.75em;
+  color: #1C9C00;
+  padding: 0px 4px;
+  border:1px solid #1C9C00;
+  border-radius:7px;
 }
 
 span.checkmark {
   display:inline-block;
-	width:1.2em;
-	height:1.2em;
-	margin:1px 0;
-	border:1px solid black;
-	background-color: #DCFFDC;
-	color:black;
-	font-size:100%;
-	text-align:center;
+  width:1.2em;
+  height:1.2em;
+  margin:1px 0;
+  border:1px solid black;
+  background-color: #DCFFDC;
+  color:black;
+  font-size:100%;
+  text-align:center;
 }
 
 span.exclamationmark {
   display:inline-block;
-	width:1.2em;
-	height:1.2em;
-	margin:1px 0;
-	border:1px solid black;
-	background-color: #FFE684;
-	color:black;
-	font-size:100%;
-	text-align:center;
+  width:1.2em;
+  height:1.2em;
+  margin:1px 0;
+  border:1px solid black;
+  background-color: #FFE684;
+  color:black;
+  font-size:100%;
+  text-align:center;
 }
 
 span.xmark {
   display:inline-block;
-	width:1.2em;
-	height:1.2em;
-	margin:1px 0;
-	border:1px solid black;
-	background-color: #FCC;
-	color:black;
-	font-size:100%;
-	text-align:center;
+  width:1.2em;
+  height:1.2em;
+  margin:1px 0;
+  border:1px solid black;
+  background-color: #FCC;
+  color:black;
+  font-size:100%;
+  text-align:center;
 }
 
 ul, ol {
-	margin-top: 6px;
-	margin-bottom: 6px;
-	padding-inline-start: 20px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding-inline-start: 20px;
 }
 
 ul.bull {
-	list-style-type: "\2022";
-	padding-inline-start: 16px;
-	margin-top: 0px;
-	margin-bottom: 0px;
+  list-style-type: "\2022";
+  padding-inline-start: 16px;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 ul.bull li {
-	padding-left: 6px;
+  padding-left: 6px;
 }
 
 #container {
-	overflow: hidden;
+  overflow: hidden;
 }
 
 #container div {
-	float: left;
-	padding-right: 35px;
+  float: left;
+  padding-right: 35px;
 }
 
 sub, sup {
-	line-height: 0;
-	font-size: 80%;
+  line-height: 0;
+  font-size: 80%;
 }
 
 .highlighted {
@@ -277,42 +277,42 @@ sub, sup {
 }
 
 a.tooltip span{
-z-index: 10;
-display: none; 
-border-radius:4px;
-} 
-
-a.tooltip:hover span{ 
-display: inline; 
-border: 1px solid #8c8c8c; 
-background: #f4f4f4;
-} 
-
-a.tooltip > span{
-/*width: 220px; */
-padding: 4px 6px; 
-opacity: 0; 
-visibility: visible; 
-z-index: 10; 
-position: absolute; 
-font-size: 13px; 
-font-style: normal; 
-border-radius: 3px; 
-box-shadow: 4px 4px 4px #d9b3c3; 
-color: #000000; 
-background: #f4f4f4; 
-background: -moz-linear-gradient(top, #FBF5E6 0%, #FFFFFF 100%); 
-border: 1px solid #8c8c8c; 
+  z-index: 10;
+  display: none;
+  border-radius:4px;
 }
 
-a.tooltip:hover > span{ 
-opacity: 1; 
-text-decoration:none; 
-visibility: visible; 
-overflow: visible; 
-margin-top: 24px; 
-display: inline; 
-margin-left: -25px;
+a.tooltip:hover span{
+  display: inline;
+  border: 1px solid #8c8c8c;
+  background: #f4f4f4;
+}
+
+a.tooltip > span{
+  /*width: 220px; */
+  padding: 4px 6px;
+  opacity: 0;
+  visibility: visible;
+  z-index: 10;
+  position: absolute;
+  font-size: 13px;
+  font-style: normal;
+  border-radius: 3px;
+  box-shadow: 4px 4px 4px #d9b3c3;
+  color: #000000;
+  background: #f4f4f4;
+  background: -moz-linear-gradient(top, #FBF5E6 0%, #FFFFFF 100%);
+  border: 1px solid #8c8c8c;
+}
+
+a.tooltip:hover > span{
+  opacity: 1;
+  text-decoration:none;
+  visibility: visible;
+  overflow: visible;
+  margin-top: 24px;
+  display: inline;
+  margin-left: -25px;
 }
 
 blockquote {
@@ -354,9 +354,19 @@ blockquote {
 }
 
 img.vertical-align {
-	vertical-align: middle;
-}
-img.vertical-align-menu {
-	vertical-align: -2px;
+  vertical-align: middle;
 }
 
+img.vertical-align-menu {
+  vertical-align: -2px;
+}
+
+dl {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+dt {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
