@@ -46,17 +46,33 @@
 
 <p><a href="https://www.gnu.org/software/wget/manual/wget.html">Wget Manual</a></p>
 
+<p>user-agent sent by default:</p>
+
+<p><pre>$ wget -qO- https://httpbin.org/user-agent
+{
+  "user-agent": "Wget/1.25.0"
+}
+</pre></p>
+
+<a href="https://www.baeldung.com/linux/wget-different-user-agents">Using Different User-Agents with wget · Baeldung on Linux</a>
+
+<p>Some websites may block <code>wget</code> default user-agent to prevent automated access. A custom user agent can be set to make wget look like a regular browser. Add to <code>~/.wgetrc</code>:</p>
+<pre>user_agent = Mozilla/5.0 (Windows NT 10.0; Win64; x64)</pre>
+
 <p>Download remote file:</p>
 
-<p><code>$ wget -c --user-agent "" &lang;URL&rang;</code></p>
+<p><code>$ wget -S -c &lang;URL&rang;</code></p>
 
-<p><code>-c</code> : resume getting a partially-downloaded file</p>
+<p><code>-c, --continue</code> : resume getting a partially-downloaded file</p>
+<p><code>-S, --server-response </code> : print server response</p>
 
-<p><a href="https://www.useragents.me/">The Latest and Most Common User Agents List</a></p>
+<p>Don't download anything:</p>
+
+<p><code>wget -S --spider &lang;URL&rang;</code></p>
 
 <div id="footer">
 <hr />
-Last Modified: 2023-09-10
+Last Modified: 2025-08-28
 </div>
 
 </body>
