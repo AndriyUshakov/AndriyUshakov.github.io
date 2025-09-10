@@ -19,8 +19,33 @@
 	<span class="tb0">Find</span>
 </div>
 
+<h1>Find Text and Files</h1>
 
-<h1>Find Files and Text</h1>
+<h2 id="find_text">Find Text</h2>
+
+<p><a href="https://github.com/BurntSushi/ripgrep"><code>ripgrep</code></a> searches significantly faster in comparison to <code>grep</code>.</p>
+
+<p><code>$ rg 'test' -g '*.py'</code></p>
+
+<p><code>ripgrep </code> supports formats zip, gzip, bzip2, xz, lzma, zstd, etc.. To search inside gzipped file:</p>
+
+<p><code>$ rg -z --text 'test' file.gz</code></p>
+
+<p><a href="https://github.com/phiresky/ripgrep-all/"><code>rga</code></a> can search in pdf and docx/odt files.</p>
+
+<p><code>$ rga test *</code></p>
+
+<p>Find "update" in all files recursively and show line number using <code>grep</code>:</p>
+
+<p><code>$ grep -r --color -n "update" *</code></p>
+
+<p>Find "Debian" in html and md files:</p>
+
+<p><code>$ grep -r --color -n --include="*.{html,md}" --exclude-dir=.git "Debian" *</code></p>
+
+<p>Find "Google" excluding files "*hosts.txt" and directory "img":</p>
+
+<p><code>$ grep -r --color -n --exclude-dir="img" --exclude="*hosts.txt" "Google" *</code></p>
 
 
 <h2 id="file_files">Find Files</h2>
@@ -41,28 +66,9 @@
 <p><a href="https://www.binarytides.com/linux-find-command-examples/">25 simple examples of Linux find command - BinaryTides</a></p>
 
 
-<h2 id="find_text">Find Text</h2>
-
-<p>Find "update" in all files recursively and show line number:</p>
-
-<p><code>$ grep -r --color -n "update" *</code></p>
-
-<p>Find "Debian" in html and md files:</p>
-
-<p><code>$ grep -r --color -n --include="*.{html,md}" --exclude-dir=.git "Debian" *</code></p>
-
-<p>Find "Google" excluding files "*hosts.txt" and directory "img":</p>
-
-<p><code>$ grep -r --color -n --exclude-dir="img" --exclude="*hosts.txt" "Google" *</code></p>
-
-<p><code>zgrep</code> can search in <code>gz</code>-files:</p>
-
-<p><code># zgrep -n "firefox" /var/log/apt/history.log*</code></p>
-
-
 <div id="footer">
 <hr />
-Last Modified: 2024-03-01
+Last Modified: 2025-09-09
 </div>
 </body>
 </html>
