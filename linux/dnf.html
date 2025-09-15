@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>dnf</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../main.css" type="text/css" media="screen">
+</head>
+
+<body>
+
+<div id="menutop">
+  <span class="tb1"><a href="../index.html"><img src="../img/home.svg" width="16" height="16" alt="Home"/> Home</a></span>
+  <span class="tb1"><a href="../software/software-index.html"><img src="../img/software.svg" width="16" height="16" alt="Software"/> Software</a></span>
+  <span class="tb1"><a href="linux-index.html"><img src="../img/Linux.png" width="16" height="16" alt="Linux"/> Linux</a></span>
+  <span class="tb0"><code>dnf</code></span>
+</div>
+
+<h1>dnf</h1>
+
+<h2>Search Packages</h2>
+
+<h3>Search by Package Name</h3>
+
+<p><code>$ dnf list &lang;package-name&rang;</code></p>
+
+<h3>Searching Packages by Keyword in Description</h3>
+
+<p><code>$ dnf search &lang;keyword&rang;</code></p>
+
+<h3>Find Package that Provides File</h3>
+
+<p><code>$ dnf provides "*/&lang;file-name&rang;"</code></p>
+
+
+<h3>Orphans</h3>
+
+<p><code>$ dnf list --extras</code> <br />
+list packages installed on the system that are not available in any known repository.</p>
+
+<h3>List Installed Packages from Certain Repository</h3>
+
+<p><code>dnf list --installed | grep &lang;repo-name&rang;</code></p>
+
+<h2>Changelog</h2>
+
+<p><code>$ dnf changelog &lang;package&rang;</code></p>
+
+<h2>History</h2>
+
+<p>The history of changes made by <code>dnf</code> is stored in <code>/var/log/dnf.log</code>.</p>
+
+<p><code># dnf history</code></p>
+
+<p><code># dnf history info &lang;id-number&rang;</code></p>
+
+<p><code># dnf history undo &lang;id-number&rang;</code><br />
+<code># dnf history redo &lang;id-number&rang;</code></p>
+
+<h2>Download Package</h2>
+
+<p><code># dnf download &lang;package&rang;</code>
+
+<h2>Cache</h2>
+
+<p>By default, `dnf does not keep packages in cache that is located in <code>/var/cache/dnf/</code></p>
+
+<p>To keep installed packages: add/edit <code>/etc/dnf/dnf.conf</code></br> <code>keepcache=1</code>.</p>
+
+
+<h2 id="repositories">Repositories</h2>
+
+<p><code>$ dnf repolist all</code></p>
+
+<p><code># dnf --disablerepo=&lang;repo-name&rang;</code></p>
+
+<h2>Temporary Activate Repository</h2>
+
+<p><code>$ dnf --enablerepo=&lang;repo-name&rang; list --updates</code></p>
+
+<h2>Temporary Exclude Certain Packages from Update</h2>
+
+<p><code># dnf --exclude=&lang;package&rang; update</code></p>
+
+
+<div id="footer">
+<hr />
+Last Modified: 2025-09-14
+</div>
+
+</body>
+</html>
