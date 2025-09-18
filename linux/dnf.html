@@ -29,6 +29,22 @@
 
 <p><code>$ dnf search &lang;keyword&rang;</code></p>
 
+
+<h2>Dependencies</h2>
+
+<h3>Reverse dependencies</h3>
+
+<p><code>$ dnf repoquery --installed --whatrequires &lang;package&rang;</code></p>
+
+<h3>Dependencies</h3>
+
+<p><code>$ dnf repoquery --requires --resolve --installed &lang;package&rang;</code></p>
+
+<h3>Recommends</h3>
+
+<p><code>$ dnf repoquery --recommends --installed &lang;package&rang;</code></p>
+
+
 <h3>Find Package that Provides File</h3>
 
 <p><code>$ dnf provides "*/&lang;file-name&rang;"</code></p>
@@ -41,7 +57,7 @@ list packages installed on the system that are not available in any known reposi
 
 <h3>List Installed Packages from Certain Repository</h3>
 
-<p><code>dnf list --installed | grep &lang;repo-name&rang;</code></p>
+<p><code>$ dnf list --installed | grep &lang;repo-name&rang;</code></p>
 
 <h2>Changelog</h2>
 
@@ -51,9 +67,9 @@ list packages installed on the system that are not available in any known reposi
 
 <p>The history of changes made by <code>dnf</code> is stored in <code>/var/log/dnf.log</code>.</p>
 
-<p><code># dnf history</code></p>
+<p><code>$ dnf history</code></p>
 
-<p><code># dnf history info &lang;id-number&rang;</code></p>
+<p><code>$ dnf history info &lang;id-number&rang;</code></p>
 
 <p><code># dnf history undo &lang;id-number&rang;</code><br />
 <code># dnf history redo &lang;id-number&rang;</code></p>
@@ -86,7 +102,7 @@ list packages installed on the system that are not available in any known reposi
 
 <div id="footer">
 <hr />
-Last Modified: 2025-09-14
+Last Modified: 2025-09-17
 </div>
 
 </body>
