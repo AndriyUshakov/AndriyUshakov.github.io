@@ -21,6 +21,7 @@
 
 <p>
 • <a href="#find_text">Find Text</a><br />
+• <a href="#delete_pages">Delete Pages</a><br />
 • <a href="#merge">Merge</a><br />
 • <a href="#compare">Compare</a><br />
 • <a href="#save_web_page_as_pdf">Save Web Page as PDF</a><br />
@@ -36,6 +37,11 @@
 
 <p><code>$ pdfgrep -n -r --include "*.pdf" "Important"</code> </p>
 
+<h2 id="delete_pages">Delete Pages</h2>
+
+<p>Extract the pages you want (2-5) to keep into a new file, preserving the bookmarks:</p>
+
+<p><code>$ qpdf input.pdf --pages input.pdf 2-5 -- output.pdf</code></p>
 
 <h2 id="merge">Merge</h2>
 
